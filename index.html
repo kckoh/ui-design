@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1주차 과제</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+
+        .banner-image {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./img/banner.jpg");
+            height: 50%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+
+        .banner-text {
+            text-align: center;
+            position: absolute;
+            top: 42%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 16px;
+        }
+
+
+
+        @media screen and (max-width: 600px) {
+            .topnav {
+                overflow: hidden;
+                background-color: #191919;
+                position: relative;
+            }
+
+            .topnav #myLinks {
+                display: none;
+            }
+
+            .topnav a {
+                color: white;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 17px;
+                display: block;
+            }
+
+            .topnav a.icon-menu {
+
+                display: block;
+                position: absolute;
+                top: 0;
+            }
+
+            .topnav a.icon-search {
+
+                display: block;
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+
+            .topnav a:hover {
+                background-color: gray;
+
+            }
+
+            .active {
+                background-color: #191919;
+                color: white;
+            }
+
+            .logo {
+                text-align: center;
+            }
+
+            .search {
+                width: 80%;
+                height: 40px;
+                z-index: 500;
+                background: rgba(0, 0, 0, .2);
+                border: 1px solid hsla(0, 0%, 100%, .5);
+                border-radius: 30px;
+
+                position: absolute;
+                top: 73%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: white;
+            }
+
+            .search-input {
+                border: 0;
+                width: 70%;
+                height: 38px;
+                background: transparent;
+                font-size: 25px;
+                line-height: 110%;
+                padding: 0 50px 0 20px;
+                box-sizing: border-box;
+                margin: auto;
+                color: #fafafa;
+            }
+
+
+            /* .title-area {
+                display: block;
+                position: absolute;
+                top: 41%;
+                left: 0;
+                width: 100%;
+                margin-top: -28px;
+                font-size: 5vw;
+                color: #fff;
+                text-align: center;
+
+            } */
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="topnav">
+        <div class="logo"><a href="#home" class="active">Logo</a></div>
+        <a href="javascript:void(0);" class="icon-menu" onclick="myFunction()">
+            <i class="fas fa-bars"></i>
+        </a>
+        <nav id="myLinks">
+            <a href="#">PRODUCT SUPPORT</a>
+            <a href="#">TOPICS</a>
+            <a href="#">TRAINING</a>
+            <a href="#">NEWS LETTERS</a>
+            <a href="#">ADMIN</a>
+        </nav>
+
+        <a href="#" class="icon-search"><i class="fas fa-search"></i> </a>
+
+    </div>
+
+    <div class="banner-image">
+        <div class="banner-text">
+            <h2>Know your Product / Serial Number?</h2>
+        </div>
+        <div class="search">
+            <input class="search-input" type="text">
+            <a href="#" class="icon-search"><i class="fas fa-search"></i> </a>
+        </div>
+    </div>
+
+    </div>
+
+
+    <div class="container">
+        <div class="product_category">
+            <div class="title_area">
+                <h2>PRODUCT CATEGORY</h2>
+
+
+            </div>
+            <ul class="common_list">
+                <li class="product_area">
+                    <a href="">
+                        <img src="" alt="">
+                        <h4>
+                            RANGES
+                        </h4>
+                    </a>
+                </li>
+                <li class="product_area">
+                    <a href="">
+                        <img src="" alt="">
+                        <h4>
+                            COOKTOPS
+                        </h4>
+                    </a>
+                </li>
+                <li class="product_area">
+                    <a href="">
+                        <img src="" alt="">
+                        <h4>
+                            WALL OVENS
+                        </h4>
+                    </a>
+                </li>
+                <li class="product_area">
+                    <a href="">
+                        <img src="" alt="">
+                        <h4>
+                            MICROWAVES
+                        </h4>
+                    </a>
+                </li>
+                <li class="product_area">
+                    <a href="">
+                        <img src="" alt="">
+                        <h4>
+                            WARMING DRAWER
+                        </h4>
+                    </a>
+                </li>
+                <li class="product_area">
+                    <a href="">
+                        <img src="" alt="">
+                        <h4>
+                            OUTDOOR
+                        </h4>
+                    </a>
+                </li>
+                <li class="product_area">
+                    <a href="">
+                        <img src="" alt="">
+                        <h4>
+                            REGRIGERATION
+                        </h4>
+                    </a>
+                </li>
+                <li class="product_area">
+                    <a href="">
+                        <img src="" alt="">
+                        <h4>
+                            WINE & BEVERAGE
+                        </h4>
+                    </a>
+                </li>
+                <li class="product_area">
+                    <a href="">
+                        <img src="" alt="">
+                        <h4>
+                            DISHWASHERS
+                        </h4>
+                    </a>
+                </li>
+                <li class="product_area">
+                    <a href="">
+                        <img src="" alt="">
+                        <h4>
+                            ACCESSORIES
+                        </h4>
+                    </a>
+                </li>
+                <li class="product_area">
+                    <a href="">
+                        <img src="" alt="">
+                        <h4>
+                            COFFEE SYSTEMS
+                        </h4>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="topics">
+            <div class="title_area">
+                <h2>TOPICS</h2>
+                <p>You can access knowledge detail by knowledge content type</p>
+            </div>
+            <ul class="common_list">
+                <li class="topic_area">
+                    <a href="">
+                        <img src="" alt="">
+                        <h4>
+                            ERROR CODES
+                        </h4>
+                    </a>
+                </li>
+                <li class="topic_area">
+                    <a href="">
+                        <img src="" alt="">
+                        <h4>
+                            SERVICE GUIDE
+                        </h4>
+                    </a>
+                </li>
+                <li class="topic_area">
+                    <a href="">
+                        <img src="" alt="">
+                        <h4>
+                            PARTS CATALOG
+                        </h4>
+                    </a>
+                </li>
+                <li class="topic_area">
+                    <a href="">
+                        <img src="" alt="">
+                        <h4>
+                            SYMPTOMS
+                        </h4>
+                    </a>
+                </li>
+                <li class="topic_area">
+                    <a href="">
+                        <img src="" alt="">
+                        <h4>
+                            PRODUCT INFO
+                        </h4>
+                    </a>
+                </li>
+                <li class="topic_area">
+                    <a href="">
+                        <img src="" alt="">
+                        <h4>
+                            FAQ
+                        </h4>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="recent_searched">
+            <div class="title_area">
+                <h2>RECENT SEARCHED</h2>
+            </div>
+        </div>
+        <div class="customer_care">
+            <div class="title_area">
+                <h2>EXCEPTIONAL 24/7</h2>
+                <p>Our dedicated support team is ready to take your call 24/7.
+                    We are committed to ensuring you have an exceptional customer experience.
+                </p>
+            </div>
+            <button>CONTACT US</button>
+        </div>
+    </div>
+
+    <div class="footer">
+
+    </div>
+
+    <script>
+        function myFunction() {
+            var nav_links = document.getElementById("myLinks");
+            if (nav_links.style.display === "block") {
+                nav_links.style.display = "none";
+            } else {
+                nav_links.style.display = "block";
+            }
+        }
+    </script>
+</body>
+
+</html>
