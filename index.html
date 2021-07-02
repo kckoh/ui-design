@@ -144,7 +144,7 @@
 <body>
     <div class="topnav">
         <div class="logo"><a href="#home" class="active">Logo</a></div>
-        <a href="javascript:void(0);" class="icon-menu" onclick="myFunction()">
+        <a href="javascript:void(0);" class="icon-menu" onclick="hideMenu()">
             <i class="fas fa-bars"></i>
         </a>
         <nav id="myLinks">
@@ -169,7 +169,7 @@
         </div>
     </div>
 
-    </div>
+    
 
 
     <div class="container">
@@ -181,39 +181,39 @@
             </div>
             <ul class="common_list">
                 <li class="product_area">
-                    <a href="">
-                        <img src="" alt="">
+                    <a href="#">
+                        <img src="./img/product_category/ranges.jpg" alt="an image for ranges">
                         <h4>
                             RANGES
                         </h4>
                     </a>
                 </li>
                 <li class="product_area">
-                    <a href="">
-                        <img src="" alt="">
+                    <a href="#">
+                        <img src="./img/product_category/cooktops.jpg" alt="">
                         <h4>
                             COOKTOPS
                         </h4>
                     </a>
                 </li>
                 <li class="product_area">
-                    <a href="">
-                        <img src="" alt="">
+                    <a href="#">
+                        <img src="./img/product_category/wall.jpg" alt="an image for wall ovens">
                         <h4>
                             WALL OVENS
                         </h4>
                     </a>
                 </li>
                 <li class="product_area">
-                    <a href="">
-                        <img src="" alt="">
+                    <a href="#">
+                        <img src="./img/product_category/microwaves.jpg" alt="an image for microwaves">
                         <h4>
                             MICROWAVES
                         </h4>
                     </a>
                 </li>
                 <li class="product_area">
-                    <a href="">
+                    <a href="#">
                         <img src="" alt="">
                         <h4>
                             WARMING DRAWER
@@ -348,7 +348,7 @@
     </div>
 
     <script>
-        function myFunction() {
+        function hideMenu() {
             var nav_links = document.getElementById("myLinks");
             if (nav_links.style.display === "block") {
                 nav_links.style.display = "none";
