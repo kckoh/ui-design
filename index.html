@@ -9,9 +9,15 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <style>
-        body {
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        h2,
+        h6 {
+            margin: auto;
         }
 
         body,
@@ -45,25 +51,82 @@
             font-size: 16px;
         }
 
+        .container {
+            background-color: #282828;
+        }
+
+        .footer {
+            background-color: #1f1f1f;
+        }
 
 
-        @media screen and (max-width: 600px) {
+        @media screen and (max-width: 812px) {
+
+            /* sidebar menu css */
+            .overlay {
+                height: 100%;
+                width: 0%;
+                position: fixed;
+                z-index: 1;
+
+                left: 0;
+                background-color: rgb(0, 0, 0);
+                background-color: rgba(0, 0, 0, 0.9);
+                overflow-x: hidden;
+                transition: 0.5s;
+            }
+
+            .overlay-content {
+                position: relative;
+                width: 100%;
+                margin-top: 20px;
+            }
+
+            .overlay a,
+            .dropdown-btn {
+                padding: 8px;
+                text-decoration: none;
+                font-size: 36px;
+                color: #818181;
+                display: block;
+                transition: 0.3s;
+            }
+
+            /* dropbox element hover color */
+            .overlay .dropdown-container a:hover,
+            .overlay .dropdown-container :focus {
+                color: #f1f1f1;
+            }
+
+            /* overall dropbox style */
+            .dropdown-container {
+                display: none;
+                padding-left: 8px;
+            }
+
+
+            /* top navigation menu */
             .topnav {
                 overflow: hidden;
                 background-color: #191919;
                 position: relative;
             }
 
-            .topnav #myLinks {
-                display: none;
-            }
 
-            .topnav a {
+            /* general link color and style */
+            .topnav a,
+            .dropdown-btn {
                 color: white;
                 padding: 14px 16px;
                 text-decoration: none;
                 font-size: 17px;
                 display: block;
+                border: none;
+                background: none;
+            }
+
+            .topnav .dropdown-container a {
+                color: gray;
             }
 
             .topnav a.icon-menu {
@@ -81,11 +144,6 @@
                 top: 0;
             }
 
-            .topnav a:hover {
-                background-color: gray;
-
-            }
-
             .active {
                 background-color: #191919;
                 color: white;
@@ -98,7 +156,7 @@
             .search {
                 width: 80%;
                 height: 40px;
-                z-index: 500;
+                z-index: 0.5;
                 background: rgba(0, 0, 0, .2);
                 border: 1px solid hsla(0, 0%, 100%, .5);
                 border-radius: 30px;
@@ -112,12 +170,12 @@
 
             .search-input {
                 border: 0;
-                width: 70%;
+                width: 52vw;
                 height: 38px;
                 background: transparent;
-                font-size: 25px;
+                font-size: 3vw;
                 line-height: 110%;
-                padding: 0 50px 0 20px;
+                padding: 0;
                 box-sizing: border-box;
                 margin: auto;
                 color: #fafafa;
@@ -137,26 +195,90 @@
 
             } */
 
+            #product-list {
+                width: 10vw;
+                background-color: transparent;
+                color: white;
+                border-color: transparent;
+                margin-left: 14px;
+            }
+            select option {
+                background: black;
+                color: white;
+            }
+
+            .search-vertical {
+                width: 1px;
+    height: 18px;
+    display: inline-block;
+            }
+
+
+            .icon-search{
+                color: white;
+            }
+
+            .common-list {
+                display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+            }
+
+            .product-area {
+                width: 50%;
+                height: 226px;
+                text-align: center;
+                border-style: solid;
+                border-color: white;
+            }
+
+            .product-img{
+                margin-top: 40px;
+                margin-bottom: 18px;
+            }
+
+            .title-area{
+                text-align: center;
+                color: white;
+            }
+
+            .product-text {
+                color: white;
+                text-decoration: none;
+                text-align: center;
+            }
+
         }
+
+        
     </style>
 </head>
 
 <body>
     <div class="topnav">
         <div class="logo"><a href="#home" class="active">Logo</a></div>
-        <a href="javascript:void(0);" class="icon-menu" onclick="hideMenu()">
+        <a href="javascript:void(0);" class="icon-menu" onclick="openNav()">
             <i class="fas fa-bars"></i>
         </a>
-        <nav id="myLinks">
-            <a href="#">PRODUCT SUPPORT</a>
-            <a href="#">TOPICS</a>
-            <a href="#">TRAINING</a>
-            <a href="#">NEWS LETTERS</a>
-            <a href="#">ADMIN</a>
-        </nav>
+        <div id="myNav" class="overlay">
+
+            <div class="overlay-content">
+                <button class="dropdown-btn" onclick="openDropdown()">PRODUCT SUPPORT<i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-container">
+                    <a href="#">RANGES</a>
+                    <a href="#">COOKTOPS</a>
+                    <a href="#">WALL OVENS</a>
+                    <a href="#">VENTILATION</a>
+                </div>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Clients</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
 
         <a href="#" class="icon-search"><i class="fas fa-search"></i> </a>
-
     </div>
 
     <!-- css background-image will be used  -->
@@ -165,110 +287,133 @@
             <h2>Know your Product / Serial Number?</h2>
         </div>
         <div class="search">
-            <input class="search-input" type="text">
+            <select name="product-list" id="product-list">
+                <option value="">Product</option>
+                <option value="ranges">Ranges</option>
+                <option value="cooktops">Cooktops</option>
+                <option value="wall-ovens">Wall Ovens</option>
+                <option value="ventilation">Ventilation</option>
+                <option value="microwaves">Microwaves</option>
+                <option value="warming-drawer">Warming Drawer</option>
+                <option value="outdoor">Outdoor</option>
+                <option value="refrigeration">Refrigeration</option>
+                <option value="wine-beverage">Wine&Beverage</option>
+                <option value="dishwashers">Dishwashers</option>
+                <option value="accessories">Accessories</option>
+                <option value="coffee-systems">Coffee Systems</option>
+            </select>
+            <hr class="search-vertical">
+            <input class="search-input" type="text" placeholder="Enter your model number" >
             <a href="#" class="icon-search"><i class="fas fa-search"></i> </a>
         </div>
     </div>
 
 
-
-
     <div class="container">
         <div class="product_category">
-            <div class="title_area">
+            <div class="title-area">
                 <h2>PRODUCT CATEGORY</h2>
+                <h5>Start your product knowledge discovery by selecting it's category</h5>
             </div>
             <ul class="common-list">
                 <li class="product-area">
-                    <a href="#">
-                        <img src="./img/product_category/ranges.jpg" alt="an image for ranges">
+                    <a class="product-text" href="#">
+                        <img class="product-img" src="./img/product_category/ranges.jpg" alt="an image for ranges">
                         <h4>
                             RANGES
                         </h4>
                     </a>
                 </li>
                 <li class="product-area">
-                    <a href="#">
-                        <img src="./img/product_category/cooktops.jpg" alt="">
+                    <a class="product-text" href="#">
+                        <img class="product-img" src="./img/product_category/cooktops.jpg" alt="">
                         <h4>
                             COOKTOPS
                         </h4>
                     </a>
                 </li>
                 <li class="product-area">
-                    <a href="#">
-                        <img src="./img/product_category/wallovens.jpg" alt="an image for wall ovens">
+                    <a class="product-text" href="#">
+                        <img class="product-img" src="./img/product_category/wallovens.jpg" alt="an image for wall ovens">
                         <h4>
                             WALL OVENS
                         </h4>
                     </a>
                 </li>
                 <li class="product-area">
-                    <a href="#">
-                        <img src="./img/product_category/microwaves.jpg" alt="an image for microwaves">
+                    <a class="product-text" href="#">
+                        <img class="product-img" src="./img/product_category/ventilation.jpg" alt="an image for microwaves">
+                        <h4>
+                            VENTILATION
+                        </h4>
+                    </a>
+                </li>
+                <li class="product-area">
+                    <a class="product-text" href="#">
+                        <img class="product-img" src="./img/product_category/microwaves.jpg" alt="an image for microwaves">
                         <h4>
                             MICROWAVES
                         </h4>
                     </a>
                 </li>
                 <li class="product-area">
-                    <a href="#">
-                        <img src="./img/product_category/warming_drawer.jpg" alt="an image for warming DRAWER">
+                    <a class="product-text" href="#">
+                        <img class="product-img" src="./img/product_category/warming_drawer.jpg" alt="an image for warming DRAWER">
                         <h4>
                             WARMING DRAWER
                         </h4>
                     </a>
                 </li>
                 <li class="product-area">
-                    <a href="#">
-                        <img src="./img/product_category/outdoor.jpg" alt="an image for outdoor">
+                    <a class="product-text" href="#">
+                        <img class="product-img" src="./img/product_category/outdoor.jpg" alt="an image for outdoor">
                         <h4>
                             OUTDOOR
                         </h4>
                     </a>
                 </li>
                 <li class="product-area">
-                    <a href="#">
-                        <img src="./img/product_category/refrigeration.jpg" alt="an image for refrigeration">
+                    <a class="product-text" href="#">
+                        <img class="product-img" src="./img/product_category/refrigeration.jpg" alt="an image for refrigeration">
                         <h4>
                             REGRIGERATION
                         </h4>
                     </a>
                 </li>
                 <li class="product-area">
-                    <a href="#">
-                        <img src="./img/product_category/wine_beverage.jpg" alt="an image for wine and beverage">
+                    <a class="product-text" href="#">
+                        <img class="product-img" src="./img/product_category/wine_beverage.jpg" alt="an image for wine and beverage">
                         <h4>
                             WINE & BEVERAGE
                         </h4>
                     </a>
                 </li>
                 <li class="product-area">
-                    <a href="#">
-                        <img src="./img/product_category/dishwashers.jpg" alt="an image for dishwashers">
+                    <a class="product-text" href="#">
+                        <img class="product-img" src="./img/product_category/dishwashers.jpg" alt="an image for dishwashers">
                         <h4>
                             DISHWASHERS
                         </h4>
                     </a>
                 </li>
                 <li class="product-area">
-                    <a href="#">
-                        <img src="./img/product_category/accessories.jpg" alt="an image for accessories">
+                    <a class="product-text" href="#">
+                        <img class="product-img" src="./img/product_category/accessories.jpg" alt="an image for accessories">
                         <h4>
                             ACCESSORIES
                         </h4>
                     </a>
                 </li>
                 <li class="product-area">
-                    <a href="#">
-                        <img src="./img/product_category/coffeesystems.jpg" alt="an image for coffee system">
+                    <a class="product-text" href="#">
+                        <img class="product-img" src="./img/product_category/coffeesystems.jpg" alt="an image for coffee system">
                         <h4>
                             COFFEE SYSTEMS
                         </h4>
                     </a>
                 </li>
             </ul>
-            <hr>
+
         </div>
 
         <div class="topics">
@@ -326,7 +471,7 @@
                     </a>
                 </li>
             </ul>
-            <hr>
+
         </div>
         <div class="recent-searched">
             <div class="title-area">
@@ -334,41 +479,41 @@
             </div>
             <div class="recent-area">
                 <img src="./img/recent_searched/wallovens.jpg" alt="an image for wallovens">
-                <hr>
+
                 <p>5.8 cu. ft. 30" Gas Chef Collection Pro Range with Dual Convection</p>
                 <button>RF22N9781SG/AA</button>
             </div>
             <div class="recent-area">
                 <img src="./img/recent_searched/ranges.jpg" alt="an image for ranges">
-                <hr>
+
                 <p>5.8 cu. ft. 30" Gas Chef Collection Pro Range with Dual Convection</p>
                 <button>NX58M9960PS/AA</button>
             </div>
             <div class="recent-area">
                 <img src="./img/recent_searched/single_wallovens.jpg" alt="an image for wallovens">
-                <hr>
+
                 <p>30" Chef Collection Single Wall Oven with Flex Duo™</p>
                 <button>NV51M9770SM/AA</button>
             </div>
             <div class="recent-area">
                 <img src="./img/recent_searched/refrigerator.jpg" alt="an image for refrigerator">
-                <hr>
+
                 <p>29 cu. ft. Side-by-Side Food ShowCase Refrigerator with Metal Cooling</p>
                 <button>RH29H9000SR/AA</button>
             </div>
             <div class="recent-area">
                 <img src="./img/recent_searched/gasdryer.jpg" alt="an image for a gas dryer">
-                <hr>
+
                 <p>DV9600 7.5 cu. ft. FlexDry™ Gas Dryer</p>
                 <button>DVG55M9600V/A3</button>
             </div>
             <div class="recent-area">
                 <img src="./img/recent_searched/washer.jpg" alt="an image for a washer">
-                <hr>
+
                 <p>WA7450 5.0 cu. ft. Top Load Washer</p>
                 <button>WA50M7450AW/A4</button>
             </div>
-            <hr>
+
         </div>
         <div class="customer_care">
             <div class="title-area">
@@ -431,33 +576,62 @@
             </a>
 
         </div>
-        <div class="footer-link">
+        <div class="footer-search">
             <form action="#">
                 <input type="text" placeholder="Search" name="search">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form>
             <div class="follow">
-
+                <a href="#">FOLLOW US</a>
+                <ul>
+                    <li><a href="www.facebook.com"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="www.twitter.com"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="www.youtube.com"><i class="fab fa-youtube"></i></a></li>
+                    <li><a href="www.pinterest.com"><i class="fab fa-pinterest-p"></i></a></li>
+                </ul>
             </div>
         </div>
+
         <div class="footer-bottom">
-            <ul>
-                <li><a href="#">SITEMAP</a></li>
-                <li><a href="#">PRIVACY POLICY</a></li>
-                <li><a href="#">TERMS OF USE</a></li>
-                <li><a href="#">CONTACT US</a></li>
-            </ul>
+
+            <a href="#">SITEMAP</a></li>
+            <a href="#">PRIVACY POLICY</a></li>
+            <a href="#">TERMS OF USE</a></li>
+            <a href="#">CONTACT US</a></li>
+
         </div>
 
     </div>
 
     <script>
-        function hideMenu() {
-            var nav_links = document.getElementById("myLinks");
-            if (nav_links.style.display === "block") {
-                nav_links.style.display = "none";
+        window.onscroll = function () { myFunction() };
+
+            var navbar = document.getElementsByClassName("topnav")[0];
+            var sticky = navbar.offsetTop;
+
+            function myFunction() {
+                if (window.pageYOffset >= sticky) {
+                    navbar.classList.add("sticky")
+                } else {
+                    navbar.classList.remove("sticky");
+                }
+            }
+        function openNav() {
+            var nav = document.getElementById("myNav");
+            if (nav.style.width === "") {
+                nav.style.width = "100vw";
             } else {
-                nav_links.style.display = "block";
+                nav.style.width = "";
+            }
+        }
+
+        function openDropdown() {
+            var dropdown = document.getElementsByClassName("dropdown-btn")[0];
+            var dropdownContainer = document.getElementsByClassName("dropdown-container")[0];
+            if (dropdownContainer.style.display === "") {
+                dropdownContainer.style.display = "block";
+            } else {
+                dropdownContainer.style.display = "";
             }
         }
     </script>
