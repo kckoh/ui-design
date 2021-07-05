@@ -65,9 +65,9 @@
             /* sidebar menu css */
             .overlay {
                 height: 100%;
-                width: 0%;
+                width: 0;
                 position: fixed;
-                z-index: 1;
+                z-index: 2;
 
                 left: 0;
                 background-color: rgb(0, 0, 0);
@@ -94,7 +94,7 @@
 
             /* dropbox element hover color */
             .overlay .dropdown-container a:hover,
-            .overlay .dropdown-container :focus {
+            .overlay .dropdown-container:focus {
                 color: #f1f1f1;
             }
 
@@ -156,9 +156,9 @@
             .search {
                 width: 80%;
                 height: 40px;
-                z-index: 0.5;
-                background: rgba(0, 0, 0, .2);
-                border: 1px solid hsla(0, 0%, 100%, .5);
+                z-index: 1;
+                background: rgba(0, 0, 0, 0.2);
+                border: 1px solid hsla(0, 0%, 100%, 0.5);
                 border-radius: 30px;
 
                 position: absolute;
@@ -179,21 +179,8 @@
                 box-sizing: border-box;
                 margin: auto;
                 color: #fafafa;
+
             }
-
-
-            /* .title-area {
-                display: block;
-                position: absolute;
-                top: 41%;
-                left: 0;
-                width: 100%;
-                margin-top: -28px;
-                font-size: 5vw;
-                color: #fff;
-                text-align: center;
-
-            } */
 
             #product-list {
                 width: 10vw;
@@ -202,6 +189,7 @@
                 border-color: transparent;
                 margin-left: 14px;
             }
+
             select option {
                 background: black;
                 color: white;
@@ -209,19 +197,19 @@
 
             .search-vertical {
                 width: 1px;
-    height: 18px;
-    display: inline-block;
+                height: 18px;
+                display: inline-block;
             }
 
 
-            .icon-search{
+            .icon-search {
                 color: white;
             }
 
             .common-list {
                 display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+                flex-wrap: wrap;
+                align-items: center;
             }
 
             .product-area {
@@ -232,19 +220,24 @@
                 border-color: white;
                 display: flex;
                 border-width: thin;
-                border-color: rgba(255,255,255,0.1);
+                border-color: rgba(255, 255, 255, 0.1);
                 justify-content: center;
                 align-items: center;
             }
 
-            .product-img{
+            .product-img {
                 margin-top: 40px;
                 margin-bottom: 18px;
             }
 
-            .title-area{
+            /* texts for each category */
+            .title-area {
                 text-align: center;
                 color: white;
+                text-align: center;
+                color: white;
+                padding-top: 45px;
+                padding-bottom: 46px;
             }
 
             .product-text {
@@ -254,14 +247,14 @@
             }
 
         }
-
-        
     </style>
 </head>
 
 <body>
     <div class="topnav">
-        <div class="logo"><a href="#home" class="active">Logo</a></div>
+        <div class="logo">
+            <a href="#home" class="active">Logo</a>
+        </div>
         <a href="javascript:void(0);" class="icon-menu" onclick="openNav()">
             <i class="fas fa-bars"></i>
         </a>
@@ -283,7 +276,9 @@
             </div>
         </div>
 
-        <a href="#" class="icon-search"><i class="fas fa-search"></i> </a>
+        <a href="#" class="icon-search">
+            <i class="fas fa-search"></i>
+        </a>
     </div>
 
     <!-- css background-image will be used  -->
@@ -308,8 +303,10 @@
                 <option value="coffee-systems">Coffee Systems</option>
             </select>
             <hr class="search-vertical">
-            <input class="search-input" type="text" placeholder="Enter your model number" >
-            <a href="#" class="icon-search"><i class="fas fa-search"></i> </a>
+            <input class="search-input" type="text" placeholder="Enter your model number">
+            <a href="#" class="icon-search">
+                <i class="fas fa-search"></i>
+            </a>
         </div>
     </div>
 
@@ -339,7 +336,8 @@
                 </li>
                 <li class="product-area">
                     <a class="product-text" href="#">
-                        <img class="product-img" src="./img/product_category/wallovens.jpg" alt="an image for wall ovens">
+                        <img class="product-img" src="./img/product_category/wallovens.jpg"
+                            alt="an image for wall ovens">
                         <h4>
                             WALL OVENS
                         </h4>
@@ -347,7 +345,8 @@
                 </li>
                 <li class="product-area">
                     <a class="product-text" href="#">
-                        <img class="product-img" src="./img/product_category/ventilation.jpg" alt="an image for microwaves">
+                        <img class="product-img" src="./img/product_category/ventilation.jpg"
+                            alt="an image for microwaves">
                         <h4>
                             VENTILATION
                         </h4>
@@ -355,7 +354,8 @@
                 </li>
                 <li class="product-area">
                     <a class="product-text" href="#">
-                        <img class="product-img" src="./img/product_category/microwaves.jpg" alt="an image for microwaves">
+                        <img class="product-img" src="./img/product_category/microwaves.jpg"
+                            alt="an image for microwaves">
                         <h4>
                             MICROWAVES
                         </h4>
@@ -363,7 +363,8 @@
                 </li>
                 <li class="product-area">
                     <a class="product-text" href="#">
-                        <img class="product-img" src="./img/product_category/warming_drawer.jpg" alt="an image for warming DRAWER">
+                        <img class="product-img" src="./img/product_category/warming_drawer.jpg"
+                            alt="an image for warming DRAWER">
                         <h4>
                             WARMING DRAWER
                         </h4>
@@ -379,7 +380,8 @@
                 </li>
                 <li class="product-area">
                     <a class="product-text" href="#">
-                        <img class="product-img" src="./img/product_category/refrigeration.jpg" alt="an image for refrigeration">
+                        <img class="product-img" src="./img/product_category/refrigeration.jpg"
+                            alt="an image for refrigeration">
                         <h4>
                             REGRIGERATION
                         </h4>
@@ -387,7 +389,8 @@
                 </li>
                 <li class="product-area">
                     <a class="product-text" href="#">
-                        <img class="product-img" src="./img/product_category/wine_beverage.jpg" alt="an image for wine and beverage">
+                        <img class="product-img" src="./img/product_category/wine_beverage.jpg"
+                            alt="an image for wine and beverage">
                         <h4>
                             WINE & BEVERAGE
                         </h4>
@@ -395,7 +398,8 @@
                 </li>
                 <li class="product-area">
                     <a class="product-text" href="#">
-                        <img class="product-img" src="./img/product_category/dishwashers.jpg" alt="an image for dishwashers">
+                        <img class="product-img" src="./img/product_category/dishwashers.jpg"
+                            alt="an image for dishwashers">
                         <h4>
                             DISHWASHERS
                         </h4>
@@ -403,7 +407,8 @@
                 </li>
                 <li class="product-area">
                     <a class="product-text" href="#">
-                        <img class="product-img" src="./img/product_category/accessories.jpg" alt="an image for accessories">
+                        <img class="product-img" src="./img/product_category/accessories.jpg"
+                            alt="an image for accessories">
                         <h4>
                             ACCESSORIES
                         </h4>
@@ -411,7 +416,8 @@
                 </li>
                 <li class="product-area">
                     <a class="product-text" href="#">
-                        <img class="product-img" src="./img/product_category/coffeesystems.jpg" alt="an image for coffee system">
+                        <img class="product-img" src="./img/product_category/coffeesystems.jpg"
+                            alt="an image for coffee system">
                         <h4>
                             COFFEE SYSTEMS
                         </h4>
@@ -538,18 +544,18 @@
                 <h6>PRODUCT SUPPORT</h6>
             </a>
             <ul>
-                <li><a href="#">Wall Ovens</a> </li>
-                <li><a href="#">Ranges</a> </li>
-                <li><a href="#">Cooktops</a> </li>
-                <li><a href="#">Regrigeration</a> </li>
-                <li><a href="#">Microwaves</a> </li>
-                <li><a href="#">Dishwashers</a> </li>
-                <li><a href="#">Ventilation</a> </li>
-                <li><a href="#">Wine & Beverage</a> </li>
-                <li><a href="#">Warming Drawers</a> </li>
-                <li><a href="#">Outdoor</a> </li>
-                <li><a href="#">Coffee system</a> </li>
-                <li><a href="#">Accessories</a> </li>
+                <li><a href="#">Wall Ovens</a></li>
+                <li><a href="#">Ranges</a></li>
+                <li><a href="#">Cooktops</a></li>
+                <li><a href="#">Regrigeration</a></li>
+                <li><a href="#">Microwaves</a></li>
+                <li><a href="#">Dishwashers</a></li>
+                <li><a href="#">Ventilation</a></li>
+                <li><a href="#">Wine & Beverage</a></li>
+                <li><a href="#">Warming Drawers</a></li>
+                <li><a href="#">Outdoor</a></li>
+                <li><a href="#">Coffee system</a></li>
+                <li><a href="#">Accessories</a></li>
             </ul>
         </div>
         <div class="footer-link">
@@ -558,11 +564,11 @@
             </a>
             <ul>
                 <li><a href="#">Error Codes</a></li>
-                <li><a href="#">Service Guide</a> </li>
-                <li><a href="#">Parts Catalog</a> </li>
-                <li><a href="#">Symptoms</a> </li>
-                <li><a href="#">Product Info</a> </li>
-                <li><a href="#">FAQ</a> </li>
+                <li><a href="#">Service Guide</a></li>
+                <li><a href="#">Parts Catalog</a></li>
+                <li><a href="#">Symptoms</a></li>
+                <li><a href="#">Product Info</a></li>
+                <li><a href="#">FAQ</a></li>
             </ul>
         </div>
         <div class="footer-link">
@@ -571,7 +577,7 @@
             </a>
             <ul>
                 <li><a href="#">Technical Training</a></li>
-                <li><a href="#">Customer Service Training</a> </li>
+                <li><a href="#">Customer Service Training</a></li>
             </ul>
 
         </div>
@@ -584,7 +590,9 @@
         <div class="footer-search">
             <form action="#">
                 <input type="text" placeholder="Search" name="search">
-                <button type="submit"><i class="fa fa-search"></i></button>
+                <button type="submit">
+                    <i class="fa fa-search"></i>
+                </button>
             </form>
             <div class="follow">
                 <a href="#">FOLLOW US</a>
@@ -598,29 +606,33 @@
         </div>
 
         <div class="footer-bottom">
+            <ul>
+                <!-- <a href="#">SITEMAP</a>
+            </li>
+            <a href="#">PRIVACY POLICY</a>
+            </li>
+            <a href="#">TERMS OF USE</a> -->
 
-            <a href="#">SITEMAP</a></li>
-            <a href="#">PRIVACY POLICY</a></li>
-            <a href="#">TERMS OF USE</a></li>
-            <a href="#">CONTACT US</a></li>
+                <li><a href="#">CONTACT US</a></li>
+            </ul>
 
         </div>
-
     </div>
-
     <script>
-        window.onscroll = function () { myFunction() };
+        window.onscroll = function () {
+            myFunction()
+        };
 
-            var navbar = document.getElementsByClassName("topnav")[0];
-            var sticky = navbar.offsetTop;
+        var navbar = document.getElementsByClassName("topnav")[0];
+        var sticky = navbar.offsetTop;
 
-            function myFunction() {
-                if (window.pageYOffset >= sticky) {
-                    navbar.classList.add("sticky")
-                } else {
-                    navbar.classList.remove("sticky");
-                }
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
             }
+        }
         function openNav() {
             var nav = document.getElementById("myNav");
             if (nav.style.width === "") {
@@ -638,8 +650,7 @@
             } else {
                 dropdownContainer.style.display = "";
             }
-        }
-    </script>
+        }</script>
 </body>
 
 </html>
