@@ -212,7 +212,8 @@
                 align-items: center;
             }
 
-            .product-area {
+            .product-area,
+            .topic-area {
                 width: 50%;
                 height: 250px;
                 text-align: center;
@@ -225,7 +226,8 @@
                 align-items: center;
             }
 
-            .product-img {
+            .product-img,
+            .topic-img {
                 margin-top: 40px;
                 margin-bottom: 18px;
             }
@@ -240,7 +242,12 @@
                 padding-bottom: 46px;
             }
 
-            .product-text {
+            .title-padding {
+                padding-bottom: 10px;
+            }
+
+            .product-text,
+            .topic-text {
                 color: white;
                 text-decoration: none;
                 text-align: center;
@@ -314,7 +321,7 @@
     <div class="container">
         <div class="product_category">
             <div class="title-area">
-                <h2>PRODUCT CATEGORY</h2>
+                <h2 class="title-padding">PRODUCT CATEGORY</h2>
                 <h5>Start your product knowledge discovery by selecting it's category</h5>
             </div>
             <ul class="common-list">
@@ -428,54 +435,54 @@
         </div>
 
         <div class="topics">
-            <div class="title_area">
-                <h2>TOPICS</h2>
+            <div class="title-area">
+                <h2 class="title-padding">TOPICS</h2>
                 <p>You can access knowledge detail by knowledge content type</p>
             </div>
-            <ul class="common_list">
-                <li class="topic_area">
-                    <a href="#">
-                        <img src="./img/topics/error_codes.jpg" alt="an image for error code">
+            <ul class="common-list">
+                <li class="topic-area">
+                    <a class="topic-text" href="#">
+                        <img class="topic-img" src="./img/topics/error_codes.jpg" alt="an image for error code">
                         <h4>
                             ERROR CODES
                         </h4>
                     </a>
                 </li>
-                <li class="topic_area">
-                    <a href="#">
-                        <img src="./img/topics/service_guide.jpg" alt="an image for service guide">
+                <li class="topic-area">
+                    <a class="topic-text" href="#">
+                        <img class="topic-img" src="./img/topics/service_guide.jpg" alt="an image for service guide">
                         <h4>
                             SERVICE GUIDE
                         </h4>
                     </a>
                 </li>
-                <li class="topic_area">
-                    <a href="#">
-                        <img src="./img/topics/parts_catalog.jpg" alt="an image for parts catalog">
+                <li class="topic-area">
+                    <a class="topic-text" href="#">
+                        <img class="topic-img" src="./img/topics/parts_catalog.jpg" alt="an image for parts catalog">
                         <h4>
                             PARTS CATALOG
                         </h4>
                     </a>
                 </li>
-                <li class="topic_area">
-                    <a href="#">
-                        <img src="./img/topics/symptoms.jpg" alt="an image for symptoms">
+                <li class="topic-area">
+                    <a class="topic-text" href="#">
+                        <img class="topic-img" src="./img/topics/symptoms.jpg" alt="an image for symptoms">
                         <h4>
                             SYMPTOMS
                         </h4>
                     </a>
                 </li>
-                <li class="topic_area">
-                    <a href="#">
-                        <img src="./img/topics/product_info.jpg" alt="an image for product info">
+                <li class="topic-area">
+                    <a class="topic-text" href="#">
+                        <img class="topic-img" src="./img/topics/product_info.jpg" alt="an image for product info">
                         <h4>
                             PRODUCT INFO
                         </h4>
                     </a>
                 </li>
-                <li class="topic_area">
-                    <a href="#">
-                        <img src="./img/topics/faq.jpg" alt="an image for faq">
+                <li class="topic-area">
+                    <a class="topic-text" href="#">
+                        <img class="topic-img" src="./img/topics/faq.jpg" alt="an image for faq">
                         <h4>
                             FAQ
                         </h4>
@@ -488,42 +495,45 @@
             <div class="title-area">
                 <h2>RECENT SEARCHED</h2>
             </div>
-            <div class="recent-area">
-                <img src="./img/recent_searched/wallovens.jpg" alt="an image for wallovens">
+            <div class="recent-container">
+                <div class="recent-area">
+                    <img src="./img/recent_searched/wallovens.jpg" alt="an image for wallovens">
 
-                <p>5.8 cu. ft. 30" Gas Chef Collection Pro Range with Dual Convection</p>
-                <button>RF22N9781SG/AA</button>
-            </div>
-            <div class="recent-area">
-                <img src="./img/recent_searched/ranges.jpg" alt="an image for ranges">
+                    <p>5.8 cu. ft. 30" Gas Chef Collection Pro Range with Dual Convection</p>
+                    <button>RF22N9781SG/AA</button>
+                </div>
+                <div class="recent-area">
+                    <img src="./img/recent_searched/ranges.jpg" alt="an image for ranges">
 
-                <p>5.8 cu. ft. 30" Gas Chef Collection Pro Range with Dual Convection</p>
-                <button>NX58M9960PS/AA</button>
-            </div>
-            <div class="recent-area">
-                <img src="./img/recent_searched/single_wallovens.jpg" alt="an image for wallovens">
+                    <p>5.8 cu. ft. 30" Gas Chef Collection Pro Range with Dual Convection</p>
+                    <button>NX58M9960PS/AA</button>
+                </div>
+                <div class="recent-area">
+                    <img src="./img/recent_searched/single_wallovens.jpg" alt="an image for wallovens">
 
-                <p>30" Chef Collection Single Wall Oven with Flex Duo™</p>
-                <button>NV51M9770SM/AA</button>
-            </div>
-            <div class="recent-area">
-                <img src="./img/recent_searched/refrigerator.jpg" alt="an image for refrigerator">
+                    <p>30" Chef Collection Single Wall Oven with Flex Duo™</p>
+                    <button>NV51M9770SM/AA</button>
+                </div>
+                <div class="recent-area">
+                    <img src="./img/recent_searched/refrigerator.jpg" alt="an image for refrigerator">
 
-                <p>29 cu. ft. Side-by-Side Food ShowCase Refrigerator with Metal Cooling</p>
-                <button>RH29H9000SR/AA</button>
-            </div>
-            <div class="recent-area">
-                <img src="./img/recent_searched/gasdryer.jpg" alt="an image for a gas dryer">
+                    <p>29 cu. ft. Side-by-Side Food ShowCase Refrigerator with Metal Cooling</p>
+                    <button>RH29H9000SR/AA</button>
+                </div>
+                <div class="recent-area">
+                    <img src="./img/recent_searched/gasdryer.jpg" alt="an image for a gas dryer">
 
-                <p>DV9600 7.5 cu. ft. FlexDry™ Gas Dryer</p>
-                <button>DVG55M9600V/A3</button>
-            </div>
-            <div class="recent-area">
-                <img src="./img/recent_searched/washer.jpg" alt="an image for a washer">
+                    <p>DV9600 7.5 cu. ft. FlexDry™ Gas Dryer</p>
+                    <button>DVG55M9600V/A3</button>
+                </div>
+                <div class="recent-area">
+                    <img src="./img/recent_searched/washer.jpg" alt="an image for a washer">
 
-                <p>WA7450 5.0 cu. ft. Top Load Washer</p>
-                <button>WA50M7450AW/A4</button>
+                    <p>WA7450 5.0 cu. ft. Top Load Washer</p>
+                    <button>WA50M7450AW/A4</button>
+                </div>
             </div>
+
 
         </div>
         <div class="customer_care">
