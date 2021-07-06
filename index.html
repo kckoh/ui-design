@@ -262,6 +262,49 @@
 
             .recent-area {
                 display: none;
+                background: gray;
+            }
+
+            /* Next & previous buttons */
+            .prev,
+            .next {
+                cursor: pointer;
+                position: absolute;
+                top: 50%;
+                width: auto;
+                padding: 16px;
+                margin-top: -22px;
+                color: white;
+                font-weight: bold;
+                font-size: 18px;
+                transition: 0.6s ease;
+                border-radius: 0 3px 3px 0;
+                user-select: none;
+            }
+
+            /* Position the "next button" to the right */
+            .next {
+                right: 0;
+                border-radius: 3px 0 0 3px;
+            }
+
+            /* On hover, add a black background color with a little bit see-through */
+            .prev:hover,
+            .next:hover {
+                background-color: rgba(0, 0, 0, 0.8);
+            }
+
+            /* recent button */
+            .recent-button {
+                border-radius: 25px;
+                height: 35px;
+                padding-left: 10px;
+                padding-right: 10px;
+
+            }
+
+            .recent-img {
+                width: 28vw;
             }
 
         }
@@ -508,40 +551,51 @@
             </div>
             <div class="recent-container">
                 <div class="recent-area">
-                    <img src="./img/recent_searched/wallovens.jpg" alt="an image for wallovens">
+                    <img class="recent-img" src="./img/recent_searched/wallovens.jpg" alt="an image for wallovens">
+                    <div class="recent-text-img">
+                        <p>5.8 cu. ft. 30" Gas Chef Collection Pro Range with Dual Convection</p>
+                        <button class="recent-button">RF22N9781SG/AA</button>
+                    </div>
 
-                    <p>5.8 cu. ft. 30" Gas Chef Collection Pro Range with Dual Convection</p>
-                    <button>RF22N9781SG/AA</button>
                 </div>
                 <div class="recent-area">
                     <img src="./img/recent_searched/ranges.jpg" alt="an image for ranges">
-
-                    <p>5.8 cu. ft. 30" Gas Chef Collection Pro Range with Dual Convection</p>
-                    <button>NX58M9960PS/AA</button>
+                    <div class="recent-text-img">
+                        <p>5.8 cu. ft. 30" Gas Chef Collection Pro Range with Dual Convection</p>
+                        <button class="recent-button">NX58M9960PS/AA</button>
+                    </div>
                 </div>
                 <div class="recent-area">
                     <img src="./img/recent_searched/single_wallovens.jpg" alt="an image for wallovens">
+                    <div class="recent-text-img">
+                        <p>30" Chef Collection Single Wall Oven with Flex Duo™</p>
+                        <button class="recent-button">NV51M9770SM/AA</button>
+                    </div>
 
-                    <p>30" Chef Collection Single Wall Oven with Flex Duo™</p>
-                    <button>NV51M9770SM/AA</button>
                 </div>
                 <div class="recent-area">
                     <img src="./img/recent_searched/refrigerator.jpg" alt="an image for refrigerator">
+                    <div class="recent-text-img">
+                        <p>29 cu. ft. Side-by-Side Food ShowCase Refrigerator with Metal Cooling</p>
+                        <button class="recent-button">RH29H9000SR/AA</button>
+                    </div>
 
-                    <p>29 cu. ft. Side-by-Side Food ShowCase Refrigerator with Metal Cooling</p>
-                    <button>RH29H9000SR/AA</button>
                 </div>
                 <div class="recent-area">
                     <img src="./img/recent_searched/gasdryer.jpg" alt="an image for a gas dryer">
+                    <div class="recent-text-img">
+                        <p>DV9600 7.5 cu. ft. FlexDry™ Gas Dryer</p>
+                        <button class="recent-button">DVG55M9600V/A3</button>
+                    </div>
 
-                    <p>DV9600 7.5 cu. ft. FlexDry™ Gas Dryer</p>
-                    <button>DVG55M9600V/A3</button>
                 </div>
                 <div class="recent-area">
                     <img src="./img/recent_searched/washer.jpg" alt="an image for a washer">
+                    <div class="recent-text-img">
+                        <p>WA7450 5.0 cu. ft. Top Load Washer</p>
+                        <button class="recent-button">WA50M7450AW/A4</button>
+                    </div>
 
-                    <p>WA7450 5.0 cu. ft. Top Load Washer</p>
-                    <button>WA50M7450AW/A4</button>
                 </div>
 
                 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -698,7 +752,7 @@
                 slides[i].style.display = "none";
             }
 
-            slides[slideIndex - 1].style.display = "block";
+            slides[slideIndex - 1].style.display = "flex";
         }
 
     </script>
