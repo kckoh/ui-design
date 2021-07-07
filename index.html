@@ -1,910 +1,1008 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>1주차 과제</title>
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      h2,
+      h6 {
+        margin: auto;
+      }
+
+      body,
+      html {
+        height: 100%;
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      li {
+        list-style-type: none;
+      }
+
+      .hidden-txt {
+        position: absolute;
+
+        width: 0;
+
+        height: 0;
+
+        overflow: hidden;
+
+        font-size: 0;
+
+        line-height: 0;
+
+        color: rgba(0, 0, 0, 0);
+      }
+
+      .banner-image {
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+          ),
+          url("./img/banner.jpg");
+        height: 50%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+      }
+
+      .banner-text {
+        text-align: center;
+        position: absolute;
+        top: 42%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 16px;
+      }
+
+      .container {
+        background-color: #282828;
+      }
+
+      .footer {
+        background-color: #1f1f1f;
+      }
+
+      @media screen and (max-width: 812px) {
+        .hr-style {
+          margin-top: 45px;
+          border-style: solid;
+          border-color: white;
+          border-width: thin;
+          border-color: rgba(255, 255, 255, 0.1);
         }
 
-        h2,
-        h6 {
-            margin: auto;
+        /* sidebar menu css */
+        .overlay {
+          height: 100%;
+          width: 0;
+          position: fixed;
+          z-index: 2;
+
+          left: 0;
+          background-color: rgb(0, 0, 0);
+          background-color: rgba(0, 0, 0, 0.9);
+          overflow-x: hidden;
+          transition: 0.5s;
         }
 
-        body,
-        html {
-            height: 100%;
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
+        .overlay-content {
+          position: relative;
+          width: 100%;
+          margin-top: 20px;
         }
 
-        li {
-            list-style-type: none;
+        .overlay a,
+        .dropdown-btn {
+          padding: 8px;
+          text-decoration: none;
+          font-size: 36px;
+          color: #818181;
+          display: block;
+          transition: 0.3s;
         }
 
-        .hidden-txt {
-            position: absolute;
-
-            width: 0;
-
-            height: 0;
-
-            overflow: hidden;
-
-            font-size: 0;
-
-            line-height: 0;
-
-            color: rgba(0, 0, 0, 0);
+        /* dropbox element hover color */
+        .overlay .dropdown-container a:hover,
+        .overlay .dropdown-container:focus {
+          color: #f1f1f1;
         }
 
-        .banner-image {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5),
-                    rgba(0, 0, 0, 0.5)),
-                url("./img/banner.jpg");
-            height: 50%;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            position: relative;
+        /* overall dropbox style */
+        .dropdown-container {
+          display: none;
+          padding-left: 8px;
         }
 
-        .banner-text {
-            text-align: center;
-            position: absolute;
-            top: 42%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            font-size: 16px;
+        /* top navigation menu */
+        .header {
+          overflow: hidden;
+          background-color: #191919;
+          position: relative;
         }
 
-        .container {
-            background-color: #282828;
+        /* general link color and style */
+        .header a,
+        .header button,
+        .dropdown-btn {
+          color: white;
+          padding: 14px 16px;
+          text-decoration: none;
+          font-size: 17px;
+          display: block;
+          border: none;
+          background: none;
         }
 
-        .footer {
-            background-color: #1f1f1f;
+        .header .dropdown-container a {
+          color: gray;
         }
 
-        @media screen and (max-width: 812px) {
-            .hr-style {
-                margin-top: 45px;
-                border-style: solid;
-                border-color: white;
-                border-width: thin;
-                border-color: rgba(255, 255, 255, 0.1);
-            }
-
-            /* sidebar menu css */
-            .overlay {
-                height: 100%;
-                width: 0;
-                position: fixed;
-                z-index: 2;
-
-                left: 0;
-                background-color: rgb(0, 0, 0);
-                background-color: rgba(0, 0, 0, 0.9);
-                overflow-x: hidden;
-                transition: 0.5s;
-            }
-
-            .overlay-content {
-                position: relative;
-                width: 100%;
-                margin-top: 20px;
-            }
-
-            .overlay a,
-            .dropdown-btn {
-                padding: 8px;
-                text-decoration: none;
-                font-size: 36px;
-                color: #818181;
-                display: block;
-                transition: 0.3s;
-            }
-
-            /* dropbox element hover color */
-            .overlay .dropdown-container a:hover,
-            .overlay .dropdown-container:focus {
-                color: #f1f1f1;
-            }
-
-            /* overall dropbox style */
-            .dropdown-container {
-                display: none;
-                padding-left: 8px;
-            }
-
-            /* top navigation menu */
-            .header {
-                overflow: hidden;
-                background-color: #191919;
-                position: relative;
-            }
-
-            /* general link color and style */
-            .header a,
-            .header button,
-            .dropdown-btn {
-                color: white;
-                padding: 14px 16px;
-                text-decoration: none;
-                font-size: 17px;
-                display: block;
-                border: none;
-                background: none;
-            }
-
-            .header .dropdown-container a {
-                color: gray;
-            }
-
-            .header button.icon-menu {
-                display: block;
-                position: absolute;
-                top: 0;
-            }
-
-            .header a.icon-search {
-                display: block;
-                position: absolute;
-                right: 0;
-                top: 0;
-            }
-
-            .search-button {
-                background-color: transparent;
-                border: none;
-                color: white;
-            }
-
-            .active {
-                background-color: #191919;
-                color: white;
-            }
-
-            .logo {
-                text-align: center;
-            }
-
-            .search {
-                width: 80%;
-                height: 40px;
-                z-index: 1;
-                background: rgba(0, 0, 0, 0.2);
-                border: 1px solid hsla(0, 0%, 100%, 0.5);
-                border-radius: 30px;
-
-                position: absolute;
-                top: 73%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                color: white;
-            }
-
-            .search-input {
-                border: 0;
-                width: 52vw;
-                height: 38px;
-                background: transparent;
-                font-size: 3vw;
-                line-height: 110%;
-                padding: 0;
-                box-sizing: border-box;
-                margin: auto;
-                color: #fafafa;
-            }
-
-            #product-list {
-                width: 10vw;
-                background-color: transparent;
-                color: white;
-                border-color: transparent;
-                margin-left: 14px;
-            }
-
-            select option {
-                background: black;
-                color: white;
-            }
-
-            .search-vertical {
-                width: 1px;
-                height: 18px;
-                display: inline-block;
-            }
-
-            .icon-search {
-                color: white;
-            }
-
-            .common-list {
-                display: flex;
-                flex-wrap: wrap;
-                align-items: center;
-            }
-
-            .product-area,
-            .topic-area {
-                width: 50%;
-                height: 250px;
-                text-align: center;
-                border-style: solid;
-                border-color: white;
-                display: flex;
-                border-width: thin;
-                border-color: rgba(255, 255, 255, 0.1);
-                justify-content: center;
-                align-items: center;
-            }
-
-            .product-img,
-            .topic-img {
-                margin-top: 40px;
-                margin-bottom: 18px;
-            }
-
-            /* texts for each category */
-            .title-area {
-                text-align: center;
-                color: white;
-                text-align: center;
-                color: white;
-                padding-top: 45px;
-                padding-bottom: 46px;
-            }
-
-            .title-padding {
-                padding-bottom: 10px;
-            }
-
-            .product-text,
-            .topic-text {
-                color: white;
-                text-decoration: none;
-                text-align: center;
-            }
-
-            .product-strong,
-            .topic-strong {
-                display: block;
-            }
-
-            /* image slider css */
-            .recent-container {
-                max-width: 1000px;
-                position: relative;
-                margin: auto;
-            }
-
-            .recent-area {
-                display: none;
-                background: #4b4a4a;
-                color: white;
-                padding: 18px;
-                width: 72vw;
-                height: 32vw;
-                text-align: center;
-                align-items: center;
-                flex-direction: row;
-            }
-
-            .rcent-area-container {
-                display: flex;
-                justify-content: center;
-            }
-
-            /* Next & previous buttons */
-            .prev,
-            .next {
-                cursor: pointer;
-                position: absolute;
-                top: 50%;
-                width: auto;
-                padding: 16px;
-                margin-top: -22px;
-                color: white;
-                font-weight: bold;
-                font-size: 18px;
-                transition: 0.6s ease;
-                border-radius: 0 3px 3px 0;
-                user-select: none;
-            }
-
-            /* Position the "next button" to the right */
-            .next {
-                right: 0;
-                border-radius: 3px 0 0 3px;
-            }
-
-            /* On hover, add a black background color with a little bit see-through */
-            .prev:hover,
-            .next:hover {
-                background-color: rgba(0, 0, 0, 0.8);
-            }
-
-            /* recent button */
-            .recent-button {
-                border: 2px solid white;
-                border-radius: 11px;
-                border-width: 1px;
-                padding: 4px 10px 4px 10px;
-                font-size: 2vw;
-            }
-
-            .recent-img {
-                width: vw;
-            }
-
-            .recent-txt {
-                font-size: 3vw;
-                margin-bottom: 10px;
-            }
-
-            .recent-desc {
-                margin-bottom: 10px;
-                font-size: 1vw;
-            }
-
-            /* customer css */
-            .customer-care {
-                padding-top: 45px;
-                padding-bottom: 45px;
-                align-items: center;
-                display: flex;
-                flex-direction: column;
-            }
-
-            .customer-image {
-                background-image: linear-gradient(rgba(0, 0, 0, 0.5),
-                        rgba(0, 0, 0, 0.5)),
-                    url(./img/customer_care.jpg);
-                width: 62vw;
-                background-size: cover;
-                height: 30vw;
-                display: inline-block;
-            }
-
-            .customer-title {
-                margin: 14px 0 14px 0;
-            }
-
-            .customer-button {
-                border: solid;
-                color: white;
-                padding: 10px;
-            }
-
-            .footer a {
-                text-decoration: none;
-
-            }
-
-            .footer-link a {
-                color: gray;
-            }
-
-            .footer h4 {
-                color: white;
-            }
-
-            .footer-link {
-                padding: 20px;
-                text-align: center;
-            }
-
-            .footer-link h4 {
-                padding-bottom: 20px;
-            }
-
-            .footer-link li {
-                padding-bottom: 5px;
-            }
-
-            .footer-bottom {
-                background-color: black;
-                text-align: center;
-            }
-
-            .follow {
-                display: flex;
-                justify-content: center;
-            }
-
-            .follow ul {
-                display: inline-flex;
-            }
-
-            .follow li {
-                margin: 0 5px 0 5px;
-            }
-
-            .footer-bottom h4 {
-                color: white;
-
-            }
-
-            .footer-bottom a {
-                color: white;
-            }
-
-            .footer-margin {
-                margin: 10px 0 10px 0;
-            }
-
-            .footer-search-input {
-                background-color: transparent;
-                border-style: solid;
-                border-width: 1px;
-            }
-
-            .footer-search-button {
-                background-color: transparent;
-                color: white;
-                border-style: none;
-            }
+        .header button.icon-menu {
+          display: block;
+          position: absolute;
+          top: 0;
         }
+
+        .header a.icon-search {
+          display: block;
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
+
+        .search-button {
+          background-color: transparent;
+          border: none;
+          color: white;
+        }
+
+        .active {
+          background-color: #191919;
+          color: white;
+        }
+
+        .logo {
+          text-align: center;
+        }
+
+        .search {
+          width: 80%;
+          height: 40px;
+          z-index: 1;
+          background: rgba(0, 0, 0, 0.2);
+          border: 1px solid hsla(0, 0%, 100%, 0.5);
+          border-radius: 30px;
+
+          position: absolute;
+          top: 73%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: white;
+        }
+
+        .search-input {
+          border: 0;
+          width: 52vw;
+          height: 38px;
+          background: transparent;
+          font-size: 3vw;
+          line-height: 110%;
+          padding: 0;
+          box-sizing: border-box;
+          margin: auto;
+          color: #fafafa;
+        }
+
+        #product-list {
+          width: 10vw;
+          background-color: transparent;
+          color: white;
+          border-color: transparent;
+          margin-left: 14px;
+        }
+
+        select option {
+          background: black;
+          color: white;
+        }
+
+        .search-vertical {
+          width: 1px;
+          height: 18px;
+          display: inline-block;
+        }
+
+        .icon-search {
+          color: white;
+        }
+
+        .common-list {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+        }
+
+        .product-area,
+        .topic-area {
+          width: 50%;
+          height: 250px;
+          text-align: center;
+          border-style: solid;
+          border-color: white;
+          display: flex;
+          border-width: thin;
+          border-color: rgba(255, 255, 255, 0.1);
+          justify-content: center;
+          align-items: center;
+        }
+
+        .product-img,
+        .topic-img {
+          margin-top: 40px;
+          margin-bottom: 18px;
+        }
+
+        /* texts for each category */
+        .title-area {
+          text-align: center;
+          color: white;
+          text-align: center;
+          color: white;
+          padding-top: 45px;
+          padding-bottom: 46px;
+        }
+
+        .title-padding {
+          padding-bottom: 10px;
+        }
+
+        .product-text,
+        .topic-text {
+          color: white;
+          text-decoration: none;
+          text-align: center;
+        }
+
+        .product-strong,
+        .topic-strong {
+          display: block;
+        }
+
+        /* image slider css */
+        .recent-container {
+          max-width: 1000px;
+          position: relative;
+          margin: auto;
+        }
+
+        .recent-area {
+          display: none;
+          background: #4b4a4a;
+          color: white;
+          padding: 18px;
+          width: 72vw;
+          height: 32vw;
+          text-align: center;
+          align-items: center;
+          flex-direction: row;
+        }
+
+        .rcent-area-container {
+          display: flex;
+          justify-content: center;
+        }
+
+        /* Next & previous buttons */
+        .prev,
+        .next {
+          cursor: pointer;
+          position: absolute;
+          top: 50%;
+          width: auto;
+          padding: 16px;
+          margin-top: -22px;
+          color: white;
+          font-weight: bold;
+          font-size: 18px;
+          transition: 0.6s ease;
+          border-radius: 0 3px 3px 0;
+          user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+          right: 0;
+          border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover,
+        .next:hover {
+          background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* recent button */
+        .recent-button {
+          border: 2px solid white;
+          border-radius: 11px;
+          border-width: 1px;
+          padding: 4px 10px 4px 10px;
+          font-size: 2vw;
+        }
+
+        .recent-img {
+          width: 15vw;
+        }
+
+        .recent-txt {
+          font-size: 3vw;
+          margin-bottom: 10px;
+        }
+
+        .recent-desc {
+          margin-bottom: 10px;
+          font-size: 1vw;
+        }
+
+        /* customer css */
+        .customer-care {
+          padding-top: 45px;
+          padding-bottom: 45px;
+          align-items: center;
+          display: flex;
+          flex-direction: column;
+        }
+
+        .customer-image {
+          background-image: linear-gradient(
+              rgba(0, 0, 0, 0.5),
+              rgba(0, 0, 0, 0.5)
+            ),
+            url(./img/customer_care.jpg);
+          width: 62vw;
+          background-size: cover;
+          height: 30vw;
+          display: inline-block;
+        }
+
+        .customer-title {
+          margin: 14px 0 14px 0;
+        }
+
+        .customer-button {
+          border: solid;
+          color: white;
+          padding: 10px;
+        }
+
+        .footer a {
+          text-decoration: none;
+        }
+
+        .footer-link a {
+          color: gray;
+        }
+
+        .footer h4 {
+          color: white;
+        }
+
+        .footer-link {
+          padding: 20px;
+          text-align: center;
+        }
+
+        .footer-link h4 {
+          padding-bottom: 20px;
+        }
+
+        .footer-link li {
+          padding-bottom: 5px;
+        }
+
+        .footer-bottom {
+          background-color: black;
+          text-align: center;
+          padding: 15px 0 15px 0;
+        }
+
+        .follow {
+          display: flex;
+          justify-content: center;
+        }
+
+        .follow ul {
+          display: inline-flex;
+        }
+
+        .follow li {
+          margin: 0 10px 0 10px;
+        }
+
+        .footer-bottom h4 {
+          color: white;
+        }
+
+        .footer-bottom a {
+          color: white;
+        }
+
+        .footer-margin {
+          margin: 15px 0 15px 0;
+        }
+
+        .footer-search-input {
+          background-color: transparent;
+          border-style: solid none solid solid;
+          border-width: 1px;
+        }
+
+        .footer-search-button {
+          background-color: transparent;
+          color: white;
+          border-style: solid solid solid none;
+          border-width: 1px;
+        }
+        .footer-search-form {
+          display: inline-flex;
+        }
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="header">
-        <h1 class="logo">
-            <a href="#home" class="active">Logo</a>
-        </h1>
-        <button class="icon-menu" onclick="openNav()">
-            <i class="fas fa-bars"><span class="hidden-txt">Menu Bar</span></i>
-        </button>
-        <div id="myNav" class="overlay">
-            <div class="overlay-content">
-                <button class="dropdown-btn" onclick="openDropdown()">
-                    PRODUCT SUPPORT<i class="fa fa-caret-down"><span class="hidden-txt">Dropdown button</span></i>
-                </button>
-                <div class="dropdown-container">
-                    <a href="#">RANGES</a>
-                    <a href="#">COOKTOPS</a>
-                    <a href="#">WALL OVENS</a>
-                    <a href="#">VENTILATION</a>
-                </div>
-                <a href="#">About</a>
-                <a href="#">Services</a>
-                <a href="#">Clients</a>
-                <a href="#">Contact</a>
-            </div>
+      <h1 class="logo">
+        <a href="#home" class="active">Logo</a>
+      </h1>
+      <button class="icon-menu" onclick="openNav()">
+        <i class="fas fa-bars"><span class="hidden-txt">Menu Bar</span></i>
+      </button>
+      <div id="myNav" class="overlay">
+        <div class="overlay-content">
+          <button class="dropdown-btn" onclick="openDropdown()">
+            PRODUCT SUPPORT<i class="fa fa-caret-down"
+              ><span class="hidden-txt">Dropdown button</span></i
+            >
+          </button>
+          <div class="dropdown-container">
+            <a href="#">RANGES</a>
+            <a href="#">COOKTOPS</a>
+            <a href="#">WALL OVENS</a>
+            <a href="#">VENTILATION</a>
+          </div>
+          <a href="#">About</a>
+          <a href="#">Services</a>
+          <a href="#">Clients</a>
+          <a href="#">Contact</a>
         </div>
+      </div>
 
-        <a href="#" class="icon-search">
-            <i class="fas fa-search">
-                <span class="hidden-txt">Header Search icon</span>
-            </i>
-        </a>
+      <a href="#" class="icon-search">
+        <i class="fas fa-search">
+          <span class="hidden-txt">Header Search icon</span>
+        </i>
+      </a>
     </div>
 
     <!-- css background-image will be used  -->
     <div class="banner-image">
-        <div class="banner-text">
-            <h2>Know your Product / Serial Number?</h2>
-        </div>
-        <form class="search">
-            <select name="product-list" id="product-list">
-                <option value="">Product</option>
-                <option value="ranges">Ranges</option>
-                <option value="cooktops">Cooktops</option>
-                <option value="wall-ovens">Wall Ovens</option>
-                <option value="ventilation">Ventilation</option>
-                <option value="microwaves">Microwaves</option>
-                <option value="warming-drawer">Warming Drawer</option>
-                <option value="outdoor">Outdoor</option>
-                <option value="refrigeration">Refrigeration</option>
-                <option value="wine-beverage">Wine&Beverage</option>
-                <option value="dishwashers">Dishwashers</option>
-                <option value="accessories">Accessories</option>
-                <option value="coffee-systems">Coffee Systems</option>
-            </select>
-            <hr class="search-vertical" />
-            <input class="search-input" type="text" placeholder="Enter your model number" />
-            <button class="search-button icon-search" type="submit">
-                <i class="fas fa-search">
-                    <span class="hidden-txt">Banner Search icon</span>
-                </i>
-            </button>
-        </form>
+      <div class="banner-text">
+        <h2>Know your Product / Serial Number?</h2>
+      </div>
+      <form class="search">
+        <select name="product-list" id="product-list">
+          <option value="">Product</option>
+          <option value="ranges">Ranges</option>
+          <option value="cooktops">Cooktops</option>
+          <option value="wall-ovens">Wall Ovens</option>
+          <option value="ventilation">Ventilation</option>
+          <option value="microwaves">Microwaves</option>
+          <option value="warming-drawer">Warming Drawer</option>
+          <option value="outdoor">Outdoor</option>
+          <option value="refrigeration">Refrigeration</option>
+          <option value="wine-beverage">Wine&Beverage</option>
+          <option value="dishwashers">Dishwashers</option>
+          <option value="accessories">Accessories</option>
+          <option value="coffee-systems">Coffee Systems</option>
+        </select>
+        <hr class="search-vertical" />
+        <input
+          class="search-input"
+          type="text"
+          placeholder="Enter your model number"
+        />
+        <button class="search-button icon-search" type="submit">
+          <i class="fas fa-search">
+            <span class="hidden-txt">Banner Search icon</span>
+          </i>
+        </button>
+      </form>
     </div>
 
     <div class="container">
-        <div class="product_category">
-            <div class="title-area">
-                <h3 class="title-padding">PRODUCT CATEGORY</h3>
-                <p>
-                    Start your product knowledge discovery by selecting it's category
-                </p>
-            </div>
-            <ul class="common-list">
-                <li class="product-area">
-                    <a class="product-text" href="#">
-                        <img class="product-img" src="./img/product_category/ranges.jpg" alt="an image for ranges" />
-                        <strong class="product-strong">RANGES</strong>
-                    </a>
-                </li>
-                <li class="product-area">
-                    <a class="product-text" href="#">
-                        <img class="product-img" src="./img/product_category/cooktops.jpg" alt="" />
-                        <strong class="product-strong">COOKTOPS</strong>
-                    </a>
-                </li>
-                <li class="product-area">
-                    <a class="product-text" href="#">
-                        <img class="product-img" src="./img/product_category/wallovens.jpg"
-                            alt="an image for wall ovens" />
-                        <strong class="product-strong">WALL OVENS</strong>
-                    </a>
-                </li>
-                <li class="product-area">
-                    <a class="product-text" href="#">
-                        <img class="product-img" src="./img/product_category/ventilation.jpg"
-                            alt="an image for microwaves" />
-                        <strong class="product-strong">VENTILATION</strong>
-                    </a>
-                </li>
-                <li class="product-area">
-                    <a class="product-text" href="#">
-                        <img class="product-img" src="./img/product_category/microwaves.jpg"
-                            alt="an image for microwaves" />
-                        <strong class="product-strong">MICROWAVES</strong>
-                    </a>
-                </li>
-                <li class="product-area">
-                    <a class="product-text" href="#">
-                        <img class="product-img" src="./img/product_category/warming_drawer.jpg"
-                            alt="an image for warming DRAWER" />
-                        <strong class="product-strong">WARMING DRAWER</strong>
-                    </a>
-                </li>
-                <li class="product-area">
-                    <a class="product-text" href="#">
-                        <img class="product-img" src="./img/product_category/outdoor.jpg" alt="an image for outdoor" />
-                        <strong class="product-strong">OUTDOOR</strong>
-                    </a>
-                </li>
-                <li class="product-area">
-                    <a class="product-text" href="#">
-                        <img class="product-img" src="./img/product_category/refrigeration.jpg"
-                            alt="an image for refrigeration" />
-                        <strong class="product-strong">REGRIGERATION</strong>
-                    </a>
-                </li>
-                <li class="product-area">
-                    <a class="product-text" href="#">
-                        <img class="product-img" src="./img/product_category/wine_beverage.jpg"
-                            alt="an image for wine and beverage" />
-                        <strong class="product-strong">WINE & BEVERAGE</strong>
-                    </a>
-                </li>
-                <li class="product-area">
-                    <a class="product-text" href="#">
-                        <img class="product-img" src="./img/product_category/dishwashers.jpg"
-                            alt="an image for dishwashers" />
-                        <strong class="product-strong">DISHWASHERS</strong>
-                    </a>
-                </li>
-                <li class="product-area">
-                    <a class="product-text" href="#">
-                        <img class="product-img" src="./img/product_category/accessories.jpg"
-                            alt="an image for accessories" />
-                        <strong class="product-strong">ACCESSORIES</strong>
-                    </a>
-                </li>
-                <li class="product-area">
-                    <a class="product-text" href="#">
-                        <img class="product-img" src="./img/product_category/coffeesystems.jpg"
-                            alt="an image for coffee system" />
-                        <strong class="product-strong">COFFEE SYSTEMS</strong>
-                    </a>
-                </li>
-            </ul>
+      <div class="product_category">
+        <div class="title-area">
+          <h3 class="title-padding">PRODUCT CATEGORY</h3>
+          <p>
+            Start your product knowledge discovery by selecting it's category
+          </p>
         </div>
+        <ul class="common-list">
+          <li class="product-area">
+            <a class="product-text" href="#">
+              <img
+                class="product-img"
+                src="./img/product_category/ranges.jpg"
+                alt="an image for ranges"
+              />
+              <strong class="product-strong">RANGES</strong>
+            </a>
+          </li>
+          <li class="product-area">
+            <a class="product-text" href="#">
+              <img
+                class="product-img"
+                src="./img/product_category/cooktops.jpg"
+                alt=""
+              />
+              <strong class="product-strong">COOKTOPS</strong>
+            </a>
+          </li>
+          <li class="product-area">
+            <a class="product-text" href="#">
+              <img
+                class="product-img"
+                src="./img/product_category/wallovens.jpg"
+                alt="an image for wall ovens"
+              />
+              <strong class="product-strong">WALL OVENS</strong>
+            </a>
+          </li>
+          <li class="product-area">
+            <a class="product-text" href="#">
+              <img
+                class="product-img"
+                src="./img/product_category/ventilation.jpg"
+                alt="an image for microwaves"
+              />
+              <strong class="product-strong">VENTILATION</strong>
+            </a>
+          </li>
+          <li class="product-area">
+            <a class="product-text" href="#">
+              <img
+                class="product-img"
+                src="./img/product_category/microwaves.jpg"
+                alt="an image for microwaves"
+              />
+              <strong class="product-strong">MICROWAVES</strong>
+            </a>
+          </li>
+          <li class="product-area">
+            <a class="product-text" href="#">
+              <img
+                class="product-img"
+                src="./img/product_category/warming_drawer.jpg"
+                alt="an image for warming DRAWER"
+              />
+              <strong class="product-strong">WARMING DRAWER</strong>
+            </a>
+          </li>
+          <li class="product-area">
+            <a class="product-text" href="#">
+              <img
+                class="product-img"
+                src="./img/product_category/outdoor.jpg"
+                alt="an image for outdoor"
+              />
+              <strong class="product-strong">OUTDOOR</strong>
+            </a>
+          </li>
+          <li class="product-area">
+            <a class="product-text" href="#">
+              <img
+                class="product-img"
+                src="./img/product_category/refrigeration.jpg"
+                alt="an image for refrigeration"
+              />
+              <strong class="product-strong">REGRIGERATION</strong>
+            </a>
+          </li>
+          <li class="product-area">
+            <a class="product-text" href="#">
+              <img
+                class="product-img"
+                src="./img/product_category/wine_beverage.jpg"
+                alt="an image for wine and beverage"
+              />
+              <strong class="product-strong">WINE & BEVERAGE</strong>
+            </a>
+          </li>
+          <li class="product-area">
+            <a class="product-text" href="#">
+              <img
+                class="product-img"
+                src="./img/product_category/dishwashers.jpg"
+                alt="an image for dishwashers"
+              />
+              <strong class="product-strong">DISHWASHERS</strong>
+            </a>
+          </li>
+          <li class="product-area">
+            <a class="product-text" href="#">
+              <img
+                class="product-img"
+                src="./img/product_category/accessories.jpg"
+                alt="an image for accessories"
+              />
+              <strong class="product-strong">ACCESSORIES</strong>
+            </a>
+          </li>
+          <li class="product-area">
+            <a class="product-text" href="#">
+              <img
+                class="product-img"
+                src="./img/product_category/coffeesystems.jpg"
+                alt="an image for coffee system"
+              />
+              <strong class="product-strong">COFFEE SYSTEMS</strong>
+            </a>
+          </li>
+        </ul>
+      </div>
 
-        <div class="topics">
-            <div class="title-area">
-                <h3 class="title-padding">TOPICS</h3>
-                <p>You can access knowledge detail by knowledge content type</p>
-            </div>
-            <ul class="common-list">
-                <li class="topic-area">
-                    <a class="topic-text" href="#">
-                        <img class="topic-img" src="./img/topics/error_codes.jpg" alt="an image for error code" />
-                        <strong class="topic-strong">ERROR CODES</strong>
-                    </a>
-                </li>
-                <li class="topic-area">
-                    <a class="topic-text" href="#">
-                        <img class="topic-img" src="./img/topics/service_guide.jpg" alt="an image for service guide" />
-                        <strong class="topic-strong">SERVICE GUIDE</strong>
-                    </a>
-                </li>
-                <li class="topic-area">
-                    <a class="topic-text" href="#">
-                        <img class="topic-img" src="./img/topics/parts_catalog.jpg" alt="an image for parts catalog" />
-                        <strong class="topic-strong">PARTS CATALOG</strong>
-                    </a>
-                </li>
-                <li class="topic-area">
-                    <a class="topic-text" href="#">
-                        <img class="topic-img" src="./img/topics/symptoms.jpg" alt="an image for symptoms" />
-                        <strong class="topic-strong">SYMPTOMS</strong>
-                    </a>
-                </li>
-                <li class="topic-area">
-                    <a class="topic-text" href="#">
-                        <img class="topic-img" src="./img/topics/product_info.jpg" alt="an image for product info" />
-                        <strong class="topic-strong">PRODUCT INFO</strong>
-                    </a>
-                </li>
-                <li class="topic-area">
-                    <a class="topic-text" href="#">
-                        <img class="topic-img" src="./img/topics/faq.jpg" alt="an image for faq" />
-                        <strong class="topic-strong">FAQ</strong>
-                    </a>
-                </li>
-            </ul>
+      <div class="topics">
+        <div class="title-area">
+          <h3 class="title-padding">TOPICS</h3>
+          <p>You can access knowledge detail by knowledge content type</p>
         </div>
-        <div class="recent-searched">
-            <div class="title-area">
-                <h3>RECENT SEARCHED</h3>
-            </div>
-            <div class="recent-container">
-                <div class="rcent-area-container">
-                    <div class="recent-area">
-                        <img class="recent-img" src="./img/recent_searched/wallovens.jpg"
-                            alt="an image for wallovens" />
-                        <div class="recent-text-img">
-                            <p class="recent-desc">
-                                5.8 cu. ft. 30" Gas Chef Collection Pro Range with Dual
-                                Convection
-                            </p>
-                            <a class="recent-button">RF22N9781SG/AA</a>
-                        </div>
-                    </div>
-                    <div class="recent-area">
-                        <img class="recent-img" src="./img/recent_searched/ranges.jpg" alt="an image for ranges" />
-                        <div class="recent-text-img">
-                            <p class="recent-desc">
-                                5.8 cu. ft. 30" Gas Chef Collection Pro Range with Dual
-                                Convection
-                            </p>
-                            <a class="recent-button">NX58M9960PS/AA</a>
-                        </div>
-                    </div>
-                    <div class="recent-area">
-                        <img class="recent-img" src="./img/recent_searched/single_wallovens.jpg"
-                            alt="an image for wallovens" />
-                        <div class="recent-text-img">
-                            <p class="recent-desc">
-                                30" Chef Collection Single Wall Oven with Flex Duo™
-                            </p>
-                            <a class="recent-button">NV51M9770SM/AA</a>
-                        </div>
-                    </div>
-                    <div class="recent-area">
-                        <img class="recent-img" src="./img/recent_searched/refrigerator.jpg"
-                            alt="an image for refrigerator" />
-                        <div class="recent-text-img">
-                            <p class="recent-desc">
-                                29 cu. ft. Side-by-Side Food ShowCase Refrigerator with Metal
-                                Cooling
-                            </p>
-                            <a class="recent-button">RH29H9000SR/AA</a>
-                        </div>
-                    </div>
-                    <div class="recent-area">
-                        <img class="recent-img" src="./img/recent_searched/gasdryer.jpg"
-                            alt="an image for a gas dryer" />
-                        <div class="recent-text-img">
-                            <p class="recent-desc">DV9600 7.5 cu. ft. FlexDry™ Gas Dryer</p>
-                            <a class="recent-button">DVG55M9600V/A3</a>
-                        </div>
-                    </div>
-                    <div class="recent-area">
-                        <img class="recent-img" src="./img/recent_searched/washer.jpg" alt="an image for a washer" />
-                        <div class="recent-text-img">
-                            <p class="recent-desc">WA7450 5.0 cu. ft. Top Load Washer</p>
-                            <a class="recent-button">WA50M7450AW/A4</a>
-                        </div>
-                    </div>
-                </div>
-
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
-            </div>
-            <hr class="hr-style" />
+        <ul class="common-list">
+          <li class="topic-area">
+            <a class="topic-text" href="#">
+              <img
+                class="topic-img"
+                src="./img/topics/error_codes.jpg"
+                alt="an image for error code"
+              />
+              <strong class="topic-strong">ERROR CODES</strong>
+            </a>
+          </li>
+          <li class="topic-area">
+            <a class="topic-text" href="#">
+              <img
+                class="topic-img"
+                src="./img/topics/service_guide.jpg"
+                alt="an image for service guide"
+              />
+              <strong class="topic-strong">SERVICE GUIDE</strong>
+            </a>
+          </li>
+          <li class="topic-area">
+            <a class="topic-text" href="#">
+              <img
+                class="topic-img"
+                src="./img/topics/parts_catalog.jpg"
+                alt="an image for parts catalog"
+              />
+              <strong class="topic-strong">PARTS CATALOG</strong>
+            </a>
+          </li>
+          <li class="topic-area">
+            <a class="topic-text" href="#">
+              <img
+                class="topic-img"
+                src="./img/topics/symptoms.jpg"
+                alt="an image for symptoms"
+              />
+              <strong class="topic-strong">SYMPTOMS</strong>
+            </a>
+          </li>
+          <li class="topic-area">
+            <a class="topic-text" href="#">
+              <img
+                class="topic-img"
+                src="./img/topics/product_info.jpg"
+                alt="an image for product info"
+              />
+              <strong class="topic-strong">PRODUCT INFO</strong>
+            </a>
+          </li>
+          <li class="topic-area">
+            <a class="topic-text" href="#">
+              <img
+                class="topic-img"
+                src="./img/topics/faq.jpg"
+                alt="an image for faq"
+              />
+              <strong class="topic-strong">FAQ</strong>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="recent-searched">
+        <div class="title-area">
+          <h3>RECENT SEARCHED</h3>
         </div>
-        <div class="customer-care">
-            <div class="title-area">
-                <div class="customer-image"></div>
-                <h3>EXCEPTIONAL 24/7</h3>
-                <p>
-                    Our dedicated support team is ready to take your call 24/7. We are
-                    committed to ensuring you have an exceptional customer experience.
+        <div class="recent-container">
+          <div class="rcent-area-container">
+            <div class="recent-area">
+              <img
+                class="recent-img"
+                src="./img/recent_searched/wallovens.jpg"
+                alt="an image for wallovens"
+              />
+              <div class="recent-text-img">
+                <p class="recent-desc">
+                  5.8 cu. ft. 30" Gas Chef Collection Pro Range with Dual
+                  Convection
                 </p>
+                <a class="recent-button">RF22N9781SG/AA</a>
+              </div>
             </div>
-            <a class="customer-button">CONTACT US</a>
+            <div class="recent-area">
+              <img
+                class="recent-img"
+                src="./img/recent_searched/ranges.jpg"
+                alt="an image for ranges"
+              />
+              <div class="recent-text-img">
+                <p class="recent-desc">
+                  5.8 cu. ft. 30" Gas Chef Collection Pro Range with Dual
+                  Convection
+                </p>
+                <a class="recent-button">NX58M9960PS/AA</a>
+              </div>
+            </div>
+            <div class="recent-area">
+              <img
+                class="recent-img"
+                src="./img/recent_searched/single_wallovens.jpg"
+                alt="an image for wallovens"
+              />
+              <div class="recent-text-img">
+                <p class="recent-desc">
+                  30" Chef Collection Single Wall Oven with Flex Duo™
+                </p>
+                <a class="recent-button">NV51M9770SM/AA</a>
+              </div>
+            </div>
+            <div class="recent-area">
+              <img
+                class="recent-img"
+                src="./img/recent_searched/refrigerator.jpg"
+                alt="an image for refrigerator"
+              />
+              <div class="recent-text-img">
+                <p class="recent-desc">
+                  29 cu. ft. Side-by-Side Food ShowCase Refrigerator with Metal
+                  Cooling
+                </p>
+                <a class="recent-button">RH29H9000SR/AA</a>
+              </div>
+            </div>
+            <div class="recent-area">
+              <img
+                class="recent-img"
+                src="./img/recent_searched/gasdryer.jpg"
+                alt="an image for a gas dryer"
+              />
+              <div class="recent-text-img">
+                <p class="recent-desc">DV9600 7.5 cu. ft. FlexDry™ Gas Dryer</p>
+                <a class="recent-button">DVG55M9600V/A3</a>
+              </div>
+            </div>
+            <div class="recent-area">
+              <img
+                class="recent-img"
+                src="./img/recent_searched/washer.jpg"
+                alt="an image for a washer"
+              />
+              <div class="recent-text-img">
+                <p class="recent-desc">WA7450 5.0 cu. ft. Top Load Washer</p>
+                <a class="recent-button">WA50M7450AW/A4</a>
+              </div>
+            </div>
+          </div>
+
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
+        <hr class="hr-style" />
+      </div>
+      <div class="customer-care">
+        <div class="title-area">
+          <div class="customer-image"></div>
+          <h3>EXCEPTIONAL 24/7</h3>
+          <p>
+            Our dedicated support team is ready to take your call 24/7. We are
+            committed to ensuring you have an exceptional customer experience.
+          </p>
+        </div>
+        <a class="customer-button">CONTACT US</a>
+      </div>
     </div>
 
     <div class="footer">
-        <div class="footer-link">
-            <h4>PRODUCT SUPPORT</h4>
-            <ul>
-                <li><a href="#">Wall Ovens</a></li>
-                <li><a href="#">Ranges</a></li>
-                <li><a href="#">Cooktops</a></li>
-                <li><a href="#">Regrigeration</a></li>
-                <li><a href="#">Microwaves</a></li>
-                <li><a href="#">Dishwashers</a></li>
-                <li><a href="#">Ventilation</a></li>
-                <li><a href="#">Wine & Beverage</a></li>
-                <li><a href="#">Warming Drawers</a></li>
-                <li><a href="#">Outdoor</a></li>
-                <li><a href="#">Coffee system</a></li>
-                <li><a href="#">Accessories</a></li>
-            </ul>
-        </div>
-        <div class="footer-link">
-            <h4>TOPICS</h4>
-            <ul>
-                <li><a href="#">Error Codes</a></li>
-                <li><a href="#">Service Guide</a></li>
-                <li><a href="#">Parts Catalog</a></li>
-                <li><a href="#">Symptoms</a></li>
-                <li><a href="#">Product Info</a></li>
-                <li><a href="#">FAQ</a></li>
-            </ul>
-        </div>
-        <div class="footer-link">
+      <div class="footer-link">
+        <h4>PRODUCT SUPPORT</h4>
+        <ul>
+          <li><a href="#">Wall Ovens</a></li>
+          <li><a href="#">Ranges</a></li>
+          <li><a href="#">Cooktops</a></li>
+          <li><a href="#">Regrigeration</a></li>
+          <li><a href="#">Microwaves</a></li>
+          <li><a href="#">Dishwashers</a></li>
+          <li><a href="#">Ventilation</a></li>
+          <li><a href="#">Wine & Beverage</a></li>
+          <li><a href="#">Warming Drawers</a></li>
+          <li><a href="#">Outdoor</a></li>
+          <li><a href="#">Coffee system</a></li>
+          <li><a href="#">Accessories</a></li>
+        </ul>
+      </div>
+      <div class="footer-link">
+        <h4>TOPICS</h4>
+        <ul>
+          <li><a href="#">Error Codes</a></li>
+          <li><a href="#">Service Guide</a></li>
+          <li><a href="#">Parts Catalog</a></li>
+          <li><a href="#">Symptoms</a></li>
+          <li><a href="#">Product Info</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-link">
+        <h4>Training</h4>
 
-            <h4>Training</h4>
-
-            <ul>
-                <li><a href="#">Technical Training</a></li>
-                <li><a href="#">Customer Service Training</a></li>
-            </ul>
-        </div>
-        <div class="footer-link">
-
-            <h4>NewLetters</h4>
-
-        </div>
-        <div class="footer-bottom">
-            <div class="footer-search footer-margin">
-                <form form action="#">
-                    <input class="footer-search-input" type="text" placeholder="Search" name="search">
-                    <button type="submit" class="footer-search-button">
-                        <i class="fa fa-search">
-                            <span class="hidden-txt">Footer Search icon</span>
-                        </i>
-                    </button>
-                </form>
-
-            </div>
-
-            <div class="follow footer-margin">
-                <h4>FOLLOW US</h4>
-                <ul>
-                    <li>
-                        <a href="www.facebook.com">
-                            <i class="fab fa-facebook-f">
-                                <span class="hidden-txt">facebook icon</span>
-                            </i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="www.twitter.com">
-                            <i class="fab fa-twitter">
-                                <span class="hidden-txt">twitter icon</span>
-                            </i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="www.youtube.com"><i class="fab fa-youtube"><span class="hidden-txt">youtube
-                                    icon</span></i></a>
-                    </li>
-                    <li>
-                        <a href="www.pinterest.com">
-                            <i class="fab fa-pinterest-p">
-                                <span class="hidden-txt">pinterest icon</span>
-                            </i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="footer-info footer-margin">
-
-                <h4 class="footer-margin"><a href="#">SITEMAP</a></h4>
-                <h4 class="footer-margin"><a href="#">PRIVACY POLICY</a></h4>
-                <h4 class="footer-margin"><a href="#">TERMS OF USE</a></h4>
-                <h4 class="footer-margin"><a href="#">CONTACT US</a></h4>
-
-            </div>
-
+        <ul>
+          <li><a href="#">Technical Training</a></li>
+          <li><a href="#">Customer Service Training</a></li>
+        </ul>
+      </div>
+      <div class="footer-link">
+        <h4>NewLetters</h4>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-search footer-margin">
+          <form class="footer-search-form" action="#">
+            <input
+              class="footer-search-input"
+              type="text"
+              placeholder="Search"
+              name="search"
+            />
+            <button type="submit" class="footer-search-button">
+              <i class="fa fa-search">
+                <span class="hidden-txt">Footer Search icon</span>
+              </i>
+            </button>
+          </form>
         </div>
 
+        <div class="follow footer-margin">
+          <h4>FOLLOW US</h4>
+          <ul>
+            <li>
+              <a href="www.facebook.com">
+                <i class="fab fa-facebook-f">
+                  <span class="hidden-txt">facebook icon</span>
+                </i>
+              </a>
+            </li>
+            <li>
+              <a href="www.twitter.com">
+                <i class="fab fa-twitter">
+                  <span class="hidden-txt">twitter icon</span>
+                </i>
+              </a>
+            </li>
+            <li>
+              <a href="www.youtube.com"
+                ><i class="fab fa-youtube"
+                  ><span class="hidden-txt">youtube icon</span></i
+                ></a
+              >
+            </li>
+            <li>
+              <a href="www.pinterest.com">
+                <i class="fab fa-pinterest-p">
+                  <span class="hidden-txt">pinterest icon</span>
+                </i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-info footer-margin">
+          <h4 class="footer-margin"><a href="#">SITEMAP</a></h4>
+          <h4 class="footer-margin"><a href="#">PRIVACY POLICY</a></h4>
+          <h4 class="footer-margin"><a href="#">TERMS OF USE</a></h4>
+          <h4 class="footer-margin"><a href="#">CONTACT US</a></h4>
+        </div>
+      </div>
     </div>
     <script>
-        window.onscroll = function () {
-            myFunction();
-        };
+      window.onscroll = function () {
+        myFunction();
+      };
 
-        var navbar = document.getElementsByClassName("header")[0];
-        var sticky = navbar.offsetTop;
+      var navbar = document.getElementsByClassName("header")[0];
+      var sticky = navbar.offsetTop;
 
-        function myFunction() {
-            if (window.pageYOffset >= sticky) {
-                navbar.classList.add("sticky");
-            } else {
-                navbar.classList.remove("sticky");
-            }
+      function myFunction() {
+        if (window.pageYOffset >= sticky) {
+          navbar.classList.add("sticky");
+        } else {
+          navbar.classList.remove("sticky");
         }
-        function openNav() {
-            var nav = document.getElementById("myNav");
-            if (nav.style.width === "") {
-                nav.style.width = "100vw";
-            } else {
-                nav.style.width = "";
-            }
+      }
+      function openNav() {
+        var nav = document.getElementById("myNav");
+        if (nav.style.width === "") {
+          nav.style.width = "100vw";
+        } else {
+          nav.style.width = "";
+        }
+      }
+
+      function openDropdown() {
+        var dropdown = document.getElementsByClassName("dropdown-btn")[0];
+        var dropdownContainer =
+          document.getElementsByClassName("dropdown-container")[0];
+        if (dropdownContainer.style.display === "") {
+          dropdownContainer.style.display = "block";
+        } else {
+          dropdownContainer.style.display = "";
+        }
+      }
+
+      // image slider functions
+
+      var slideIndex = 1;
+      showSlides(slideIndex);
+
+      function plusSlides(n) {
+        showSlides((slideIndex += n));
+      }
+
+      function currentSlide(n) {
+        showSlides((slideIndex = n));
+      }
+
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("recent-area");
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
         }
 
-        function openDropdown() {
-            var dropdown = document.getElementsByClassName("dropdown-btn")[0];
-            var dropdownContainer =
-                document.getElementsByClassName("dropdown-container")[0];
-            if (dropdownContainer.style.display === "") {
-                dropdownContainer.style.display = "block";
-            } else {
-                dropdownContainer.style.display = "";
-            }
-        }
-
-        // image slider functions
-
-        var slideIndex = 1;
-        showSlides(slideIndex);
-
-        function plusSlides(n) {
-            showSlides((slideIndex += n));
-        }
-
-        function currentSlide(n) {
-            showSlides((slideIndex = n));
-        }
-
-        function showSlides(n) {
-            var i;
-            var slides = document.getElementsByClassName("recent-area");
-            if (n > slides.length) {
-                slideIndex = 1;
-            }
-            if (n < 1) {
-                slideIndex = slides.length;
-            }
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-
-            slides[slideIndex - 1].style.display = "flex";
-        }
+        slides[slideIndex - 1].style.display = "flex";
+      }
     </script>
-</body>
-
+  </body>
 </html>
