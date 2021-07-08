@@ -83,7 +83,6 @@
 
       @media screen and (max-width: 812px) {
         .hr-style {
-          margin-top: 45px;
           border-style: solid;
           border-color: white;
           border-width: thin;
@@ -106,8 +105,8 @@
 
         .overlay-content {
           position: relative;
-          width: 100%;
-          margin-top: 20px;
+          width: 50%;
+          background-color: #282828;
         }
 
         .overlay a,
@@ -146,7 +145,6 @@
           color: white;
           padding: 14px 16px;
           text-decoration: none;
-          font-size: 17px;
           display: block;
           border: none;
           background: none;
@@ -159,14 +157,14 @@
         .header button.icon-menu {
           display: block;
           position: absolute;
-          top: 0;
+          top: 10px;
         }
 
-        .header a.icon-search {
+        .header button.icon-search {
           display: block;
           position: absolute;
           right: 0;
-          top: 0;
+          top: 10px;
         }
 
         .search-button {
@@ -306,9 +304,10 @@
           flex-direction: row;
         }
 
-        .rcent-area-container {
+        .recent-area-container {
           display: flex;
           justify-content: center;
+          margin-bottom: 45px;
         }
 
         /* Next & previous buttons */
@@ -471,17 +470,34 @@
 
   <body>
     <div class="header">
-      <h1 class="logo">
-        <a href="#home" class="active">Logo</a>
-      </h1>
-      <button class="icon-menu" onclick="openNav()">
-        <i class="fas fa-bars"><span class="hidden-txt">Menu Bar</span></i>
-      </button>
+      <div class="header-hide">
+        <h1 class="logo">
+          <a href="#home" class="active">Logo</a>
+        </h1>
+        <button class="icon-menu" onclick="openNav()">
+          <i class="fas fa-bars"><span class="hidden-txt">Menu Bar</span></i>
+        </button>
+      </div>
+      <div class="footer-search footer-margin">
+        <form class="footer-search-form" action="#">
+          <input
+            class="footer-search-input"
+            type="text"
+            placeholder="Search"
+            name="search"
+          />
+          <button type="submit" class="footer-search-button">
+            <i class="fa fa-search">
+              <span class="hidden-txt">Footer Search icon</span>
+            </i>
+          </button>
+        </form>
+      </div>
       <div id="myNav" class="overlay">
         <div class="overlay-content">
           <button class="dropdown-btn" onclick="openDropdown()">
-            PRODUCT SUPPORT<i class="fa fa-caret-down"
-              ><span class="hidden-txt">Dropdown button</span></i
+            PRODUCT SUPPORT<i class="fa fa-caret-down">
+              <span class="hidden-txt">Dropdown button</span></i
             >
           </button>
           <div class="dropdown-container">
@@ -489,19 +505,31 @@
             <a href="#">COOKTOPS</a>
             <a href="#">WALL OVENS</a>
             <a href="#">VENTILATION</a>
+            <a href="#">MICROWAVES</a>
+            <a href="#">WARMING DRAWERS</a>
+            <a href="#">OUTDOOR</a>
+            <a href="#">REFRIGERATION</a>
+            <a href="#">WINE & BEVERAGE</a>
+            <a href="#">DISHWASHERS</a>
+            <a href="#">ACCESSORIES</a>
+            <a href="#">COFFEE SYSTEMS</a>
           </div>
-          <a href="#">About</a>
-          <a href="#">Services</a>
-          <a href="#">Clients</a>
-          <a href="#">Contact</a>
+          <a href="#">TOPICS</a>
+          <a href="#">TRAINING</a>
+          <a href="#">NEWSLETTERS</a>
+          <a href="#">ADMIN</a>
+          <hr class="hr-style" />
+          <a href="#">TERMS OF USE</a>
+          <a href="#">CONTACT US</a>
+          <a href="#">LOGOUT</a>
         </div>
       </div>
 
-      <a href="#" class="icon-search">
+      <button href="#" class="icon-search" onclick="hideSearch()">
         <i class="fas fa-search">
           <span class="hidden-txt">Header Search icon</span>
         </i>
-      </a>
+      </button>
     </div>
 
     <!-- css background-image will be used  -->
@@ -744,7 +772,7 @@
           <h3>RECENT SEARCHED</h3>
         </div>
         <div class="recent-container">
-          <div class="rcent-area-container">
+          <div class="recent-area-container">
             <div class="recent-area">
               <img
                 class="recent-img"
@@ -1002,6 +1030,18 @@
         }
 
         slides[slideIndex - 1].style.display = "flex";
+      }
+
+      function hideSearch() {
+        var hide = document.getElementsByClassName("header-hide")[0];
+        var logo = document.getElementsByClassName("logo")[0];
+        if (hide.style.visibility === "") {
+          hide.style.visibility = "hidden";
+          logo.style.display = "none";
+        } else {
+          hide.style.visibility = "";
+          logo.style.display = "block";
+        }
       }
     </script>
   </body>
