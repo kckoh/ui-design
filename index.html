@@ -94,6 +94,54 @@
         .title-padding {
           padding-bottom: 10px;
         }
+
+        /* login css */
+
+        .login-overlay {
+          height: 100%;
+          width: 100vw;
+          position: fixed;
+          z-index: 3;
+          top: 0;
+          background-color: rgba(0, 0, 0, 0.9);
+          display: flex;
+          justify-content: center;
+        }
+
+        .login-popup {
+          width: 301px;
+          height: 341px;
+          border: solid;
+          border-color: white;
+          margin: 80px 30px 0 30px;
+        }
+
+        .login-header {
+          display: inline-flex;
+          flex-direction: row;
+          width: 100%;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .login-header {
+          color: white;
+        }
+        .login-close {
+          background-color: transparent;
+          color: white;
+          border-style: none;
+          padding: 10px;
+          font-size: 21px;
+        }
+        .login-banner {
+          color: white;
+          font-size: 11px;
+          text-align: center;
+        }
+        .login-input {
+          padding: 20px;
+        }
       }
     </style>
   </head>
@@ -151,7 +199,7 @@
           <hr class="hr-style" />
           <a href="#">TERMS OF USE</a>
           <a href="#">CONTACT US</a>
-          <a href="#">LOGIN </a>
+          <a onclick="openLogin()" class="login-link" href="#">LOGIN </a>
           <a href="#">LOGOUT</a>
         </div>
       </div>
@@ -163,6 +211,42 @@
       </button>
     </div>
 
+    <div class="login-overlay">
+      <div class="login-popup">
+        <form action="#" class="login-form">
+          <div class="login-header">
+            <h1 class="login-header">Logo</h1>
+            <button class="login-close" onclick="closeLogin()">
+              <i class="fas fa-times"
+                ><span class="hidden-txt">Close Button</span></i
+              >
+            </button>
+          </div>
+          <div class="login-banner">
+            <h2>SERVICE NETWORK FOR DACOR INFORMATION</h2>
+          </div>
+          <div class="login-input-container">
+            <input
+              type="text"
+              placeholder="Enter Username"
+              name="uname"
+              required
+            />
+          </div>
+          <div class="login-input-container">
+            <input
+              type="password"
+              placeholder="Enter Password"
+              name="psw"
+              required
+            />
+          </div>
+
+          <div class="login-remember-container"></div>
+          <button class="login-button">LOGIN</button>
+        </form>
+      </div>
+    </div>
     <!-- css background-image will be used  -->
     <div class="banner-image">
       <div class="banner-text">
@@ -661,6 +745,21 @@
           hide.style.visibility = "";
           logo.style.display = "block";
           headerSearch.style.display = "none";
+        }
+      }
+
+      function openLogin() {
+        var loginOverlay = document.getElementsByClassName("login-overlay")[0];
+
+        if (loginOverlay.style.display === "") {
+          loginOverlay.style.display = "flex";
+        }
+      }
+      function closeLogin() {
+        var loginOverlay = document.getElementsByClassName("login-overlay")[0];
+
+        if (loginOverlay.style.display === "flex") {
+          loginOverlay.style.display = "";
         }
       }
     </script>
