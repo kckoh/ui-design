@@ -1,0 +1,31 @@
+@media screen and (max-width: 812px) {
+  .product-area {
+    width: 50%;
+    height: 250px;
+    text-align: center;
+    border-style: solid;
+    border-color: white;
+    display: flex;
+    border-width: thin;
+    border-color: rgba(255, 255, 255, 0.1);
+    justify-content: center;
+    align-items: center;
+  }
+
+  .product-img {
+    margin-top: 40px;
+    margin-bottom: 18px;
+  }
+
+  /* texts for each category */
+
+  .product-text {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  .product-strong {
+    display: block;
+  }
+}

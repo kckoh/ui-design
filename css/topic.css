@@ -1,0 +1,28 @@
+@media screen and (max-width: 812px) {
+  .topic-img {
+    margin-top: 40px;
+    margin-bottom: 18px;
+  }
+  .topic-text {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  .topic-strong {
+    display: block;
+  }
+
+  .topic-area {
+    width: 50%;
+    height: 250px;
+    text-align: center;
+    border-style: solid;
+    border-color: white;
+    display: flex;
+    border-width: thin;
+    border-color: rgba(255, 255, 255, 0.1);
+    justify-content: center;
+    align-items: center;
+  }
+}

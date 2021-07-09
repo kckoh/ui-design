@@ -1,0 +1,29 @@
+@media screen and (max-width: 812px) {
+  /* customer css */
+  .customer-care {
+    padding-top: 45px;
+    padding-bottom: 45px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .customer-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url(../img/customer_care.jpg);
+    width: 62vw;
+    background-size: cover;
+    height: 30vw;
+    display: inline-block;
+  }
+
+  .customer-title {
+    margin: 14px 0 14px 0;
+  }
+
+  .customer-button {
+    border: solid;
+    color: white;
+    padding: 10px;
+  }
+}
