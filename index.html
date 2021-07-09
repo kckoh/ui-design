@@ -165,10 +165,10 @@
         .header button.icon-menu {
           display: block;
           position: absolute;
-          top: 10px;
+          top: 20px;
           color: white;
           padding: 14px 16px;
-
+          font-size: 26px;
           text-decoration: none;
           display: block;
           border: none;
@@ -179,10 +179,10 @@
           display: block;
           position: absolute;
           right: 0;
-          top: 10px;
+          top: 20px;
           color: white;
           padding: 14px 16px;
-
+          font-size: 26px;
           text-decoration: none;
           display: block;
           border: none;
@@ -211,8 +211,9 @@
           background-color: transparent;
           border-style: solid none solid solid;
           border-width: 1px;
-          width: 76vw;
-          height: 4vw;
+          width: 66vw;
+          height: 62px;
+          color: white;
         }
 
         .header-search-button {
@@ -220,15 +221,19 @@
           color: white;
           border-style: solid solid solid none;
           border-width: 1px;
+          height: 62px;
+          font-size: 25px;
         }
+
         .header-search-form {
           display: inline-flex;
-          width: 80vw;
+          width: 67vw;
+          display: none;
         }
 
         .logo {
           text-align: center;
-          font-size: 60px;
+          font-size: 52px;
         }
 
         .search {
@@ -238,7 +243,6 @@
           background: rgba(0, 0, 0, 0.2);
           border: 1px solid hsla(0, 0%, 100%, 0.5);
           border-radius: 30px;
-
           position: absolute;
           top: 73%;
           left: 50%;
@@ -570,6 +574,7 @@
           <hr class="hr-style" />
           <a href="#">TERMS OF USE</a>
           <a href="#">CONTACT US</a>
+          <a href="#">LOGIN </a>
           <a href="#">LOGOUT</a>
         </div>
       </div>
@@ -1084,12 +1089,16 @@
       function hideSearch() {
         var hide = document.getElementsByClassName("header-hide")[0];
         var logo = document.getElementsByClassName("logo")[0];
+        var headerSearch =
+          document.getElementsByClassName("header-search-form")[0];
         if (hide.style.visibility === "") {
           hide.style.visibility = "hidden";
           logo.style.display = "none";
+          headerSearch.style.display = "inline-flex";
         } else {
           hide.style.visibility = "";
           logo.style.display = "block";
+          headerSearch.style.display = "none";
         }
       }
     </script>
