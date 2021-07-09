@@ -113,7 +113,7 @@
         .dropdown-btn {
           padding: 8px;
           text-decoration: none;
-          font-size: 36px;
+          font-size: 17px;
           color: #818181;
           display: block;
           transition: 0.3s;
@@ -139,11 +139,19 @@
         }
 
         /* general link color and style */
-        .header a,
-        .header button,
+        .header-hide a {
+          color: white;
+          padding: 14px 16px;
+          text-decoration: none;
+          display: block;
+          border: none;
+          background: none;
+        }
+
         .dropdown-btn {
           color: white;
           padding: 14px 16px;
+
           text-decoration: none;
           display: block;
           border: none;
@@ -158,6 +166,13 @@
           display: block;
           position: absolute;
           top: 10px;
+          color: white;
+          padding: 14px 16px;
+
+          text-decoration: none;
+          display: block;
+          border: none;
+          background: none;
         }
 
         .header button.icon-search {
@@ -165,6 +180,13 @@
           position: absolute;
           right: 0;
           top: 10px;
+          color: white;
+          padding: 14px 16px;
+
+          text-decoration: none;
+          display: block;
+          border: none;
+          background: none;
         }
 
         .search-button {
@@ -178,8 +200,35 @@
           color: white;
         }
 
+        .header-margin {
+          margin: 15px 0 15px 0;
+        }
+
+        .header-search {
+          text-align: center;
+        }
+        .header-search-input {
+          background-color: transparent;
+          border-style: solid none solid solid;
+          border-width: 1px;
+          width: 76vw;
+          height: 4vw;
+        }
+
+        .header-search-button {
+          background-color: transparent;
+          color: white;
+          border-style: solid solid solid none;
+          border-width: 1px;
+        }
+        .header-search-form {
+          display: inline-flex;
+          width: 80vw;
+        }
+
         .logo {
           text-align: center;
+          font-size: 60px;
         }
 
         .search {
@@ -478,15 +527,15 @@
           <i class="fas fa-bars"><span class="hidden-txt">Menu Bar</span></i>
         </button>
       </div>
-      <div class="footer-search footer-margin">
-        <form class="footer-search-form" action="#">
+      <div class="header-search header-margin">
+        <form class="header-search-form" action="#">
           <input
-            class="footer-search-input"
+            class="header-search-input"
             type="text"
             placeholder="Search"
             name="search"
           />
-          <button type="submit" class="footer-search-button">
+          <button type="submit" class="header-search-button">
             <i class="fa fa-search">
               <span class="hidden-txt">Footer Search icon</span>
             </i>
