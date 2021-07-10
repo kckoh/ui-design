@@ -210,30 +210,46 @@
 
             .login-option-unable {
                 color: white;
-                display: flex;
+                display: none;
                 align-content: center;
                 flex-direction: column;
                 align-items: center;
                 margin-top: 14px;
             }
 
-            .login-option-unable-icon {
+            .login-option-icon {
                 font-size: 37px;
                 margin: 20px;
             }
 
-            .login-option-unable-strong {
+            .login-option-strong {
                 margin: 20px;
                 font-size: 22px;
             }
 
-            .login-option-unable-text {
+            .login-option-text {
                 margin: 20px;
                 text-align: center;
             }
 
             .login-option-button-yes {
                 padding: 11px 31px;
+            }
+
+            .login-option-button-no {
+                padding: 11px 31px;
+                background-color: transparent;
+                color: white;
+                border-style: solid;
+            }
+
+            .login-option-reset-question {
+                color: white;
+                display: none;
+                align-content: center;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 14px;
             }
         }
     </style>
@@ -325,7 +341,7 @@
                         <span></span>
                         Remember me
                     </label>
-                    <button class="login-forgot" onclick="()">
+                    <button class="login-forgot" onclick="openForgot()">
                         <span class="hidden-txt">Forgot Password Button</span>
                         Forgot your Password?
                     </button>
@@ -341,15 +357,26 @@
             </div>
 
             <div class="login-option-unable">
-                <i class="fas fa-lock login-option-unable-icon"><span class="hidden-txt">Password Icon</span></i>
-                <strong class="login-option-unable-strong">UNABLE TO LOGIN</strong>
-                <p class="login-option-unable-text">
+                <i class="fas fa-lock login-option-icon"><span class="hidden-txt">Password Icon</span></i>
+                <strong class="login-option-strong">UNABLE TO LOGIN</strong>
+                <p class="login-option-text">
                     The UserID or Password you entered is incorrect. Please click 'OK'
                 </p>
                 <button class="login-option-button-yes" onclick="closeLoginOption()">YES</button>
             </div>
 
-            <div class="login-option-reset-question"></div>
+            <div class="login-option-reset-question">
+                <i class="fas fa-redo-alt login-option-icon"><span class="hidden-txt">Reset Icon</span></i>
+
+                <p class="login-option-text">
+                    Do you want to reset your password?
+                </p>
+                <div class="button-container">
+                    <button submit="#" class="login-option-button-no" onclick="closeLoginOption()">No</button>
+                    <button submit="#" class="login-option-button-yes" onclick="closeLoginOption()">YES</button>
+                </div>
+
+            </div>
             <div class="login-option-reset"></div>
             <div class="login-option-logout"></div>
         </div>
@@ -783,9 +810,11 @@
 
         function openLoginUnable() {
             var loginUnable = document.getElementsByClassName("login-option")[0];
+            var unable = document.getElementsByClassName("login-option-unable")[0];
             if (loginUnable.style.display === "") {
                 loginUnable.style.display = "flex";
                 loginUnable.style.flexDirection = "column";
+                unable.style.display = "flex"
             }
         }
 
@@ -794,6 +823,16 @@
             if (loginOption.style.display === "flex") {
                 loginOption.style.display = "";
                 loginOption.style.flexDirection = "";
+            }
+        }
+
+        function openForgot() {
+            var loginUnable = document.getElementsByClassName("login-option")[0];
+            var resetQuestion = document.getElementsByClassName("login-option-reset-question")[0];
+            if (loginUnable.style.display === "") {
+                loginUnable.style.display = "flex";
+                loginUnable.style.flexDirection = "column";
+                resetQuestion.style.display = "flex";
             }
         }
 
