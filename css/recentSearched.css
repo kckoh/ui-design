@@ -60,6 +60,8 @@
     border-width: 1px;
     padding: 4px 10px 4px 10px;
     font-size: 2vw;
+    text-decoration: none;
+    color: white;
   }
 
   .recent-img {

@@ -536,7 +536,7 @@
                                 5.8 cu. ft. 30" Gas Chef Collection Pro Range with Dual
                                 Convection
                             </p>
-                            <a class="recent-button">RF22N9781SG/AA</a>
+                            <a href="#" class="recent-button">RF22N9781SG/AA</a>
                         </div>
                     </div>
                     <div class="recent-area">
@@ -546,7 +546,7 @@
                                 5.8 cu. ft. 30" Gas Chef Collection Pro Range with Dual
                                 Convection
                             </p>
-                            <a class="recent-button">NX58M9960PS/AA</a>
+                            <a href="#" class="recent-button">NX58M9960PS/AA</a>
                         </div>
                     </div>
                     <div class="recent-area">
@@ -556,7 +556,7 @@
                             <p class="recent-desc">
                                 30" Chef Collection Single Wall Oven with Flex Duo™
                             </p>
-                            <a class="recent-button">NV51M9770SM/AA</a>
+                            <a href="#" class="recent-button">NV51M9770SM/AA</a>
                         </div>
                     </div>
                     <div class="recent-area">
@@ -567,7 +567,7 @@
                                 29 cu. ft. Side-by-Side Food ShowCase Refrigerator with Metal
                                 Cooling
                             </p>
-                            <a class="recent-button">RH29H9000SR/AA</a>
+                            <a href="#" class="recent-button">RH29H9000SR/AA</a>
                         </div>
                     </div>
                     <div class="recent-area">
@@ -575,14 +575,14 @@
                             alt="an image for a gas dryer" />
                         <div class="recent-text-img">
                             <p class="recent-desc">DV9600 7.5 cu. ft. FlexDry™ Gas Dryer</p>
-                            <a class="recent-button">DVG55M9600V/A3</a>
+                            <a href="#" class="recent-button">DVG55M9600V/A3</a>
                         </div>
                     </div>
                     <div class="recent-area">
                         <img class="recent-img" src="./img/recent_searched/washer.jpg" alt="an image for a washer" />
                         <div class="recent-text-img">
                             <p class="recent-desc">WA7450 5.0 cu. ft. Top Load Washer</p>
-                            <a class="recent-button">WA50M7450AW/A4</a>
+                            <a href="#" class="recent-button">WA50M7450AW/A4</a>
                         </div>
                     </div>
                 </div>
@@ -700,10 +700,14 @@
     <script>
         function openNav() {
             var nav = document.getElementById("myNav");
+            var body = document.getElementsByTagName("BODY")[0];
+
             if (nav.style.width === "") {
                 nav.style.width = "100vw";
+                body.style.overflow = "hidden";
             } else {
                 nav.style.width = "";
+                body.style.overflow = "";
             }
         }
 
