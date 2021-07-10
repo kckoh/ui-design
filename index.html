@@ -147,6 +147,7 @@
 
             .login-input {
                 padding: 20px;
+                color: white;
             }
 
             .login-form {
@@ -251,6 +252,24 @@
                 align-items: center;
                 margin-top: 14px;
             }
+
+            .login-option-reset {
+                color: white;
+                display: none;
+                align-content: center;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 14px;
+            }
+
+            .login-option-logout {
+                color: white;
+                display: none;
+                align-content: center;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 14px;
+            }
         }
     </style>
 </head>
@@ -303,7 +322,7 @@
                 <a href="#">TERMS OF USE</a>
                 <a href="#">CONTACT US</a>
                 <a onclick="openLogin()" class="login-link" href="#">LOGIN </a>
-                <a href="#">LOGOUT</a>
+                <a onclick="openLogout()" class="login-link" href="#">LOGOUT</a>
             </div>
         </div>
 
@@ -351,7 +370,7 @@
         </div>
         <div class="login-option">
             <div class="login-header login-option-right">
-                <button class="login-close" onclick="closeLoginOption()">
+                <button class="login-close" onclick="closeLoginOption();goToLogin()">
                     <i class="fas fa-times"><span class="hidden-txt">Close Button</span></i>
                 </button>
             </div>
@@ -362,7 +381,7 @@
                 <p class="login-option-text">
                     The UserID or Password you entered is incorrect. Please click 'OK'
                 </p>
-                <button class="login-option-button-yes" onclick="closeLoginOption()">YES</button>
+                <button class="login-option-button-yes" onclick="closeLoginOption();closeLoginUnable()">YES</button>
             </div>
 
             <div class="login-option-reset-question">
@@ -373,12 +392,24 @@
                 </p>
                 <div class="button-container">
                     <button submit="#" class="login-option-button-no" onclick="closeLoginOption()">No</button>
-                    <button submit="#" class="login-option-button-yes" onclick="closeLoginOption()">YES</button>
+                    <button submit="#" class="login-option-button-yes" onclick="openResetMessage()">YES</button>
                 </div>
 
             </div>
-            <div class="login-option-reset"></div>
-            <div class="login-option-logout"></div>
+            <div class="login-option-reset">
+                <i class="fas fa-redo-alt login-option-icon"><span class="hidden-txt">Reset Icon</span></i>
+                <strong class="login-option-strong">RESET PASSWORD</strong>
+                <p class="login-option-text">
+                    A new password is sent to your email.
+                </p>
+
+                <button submit="#" class="login-option-button-yes" onclick="goToLogin()">Go To Login</button>
+
+            </div>
+            <div class="login-option-logout">
+
+
+            </div>
         </div>
     </div>
     <!-- css background-image will be used  -->
@@ -818,23 +849,74 @@
             }
         }
 
+        function closeLoginUnable() {
+            var loginOption = document.getElementsByClassName("login-option")[0];
+            var loginUnable = document.getElementsByClassName("login-option-unable")[0];
+
+            loginOption.style.display = "";
+            loginOption.style.flexDirection = "";
+            loginUnable.style.display = ""
+
+        }
+
         function closeLoginOption() {
             var loginOption = document.getElementsByClassName("login-option")[0];
-            if (loginOption.style.display === "flex") {
-                loginOption.style.display = "";
-                loginOption.style.flexDirection = "";
-            }
+            var resetQuestion = document.getElementsByClassName("login-option-reset-question")[0];
+            loginOption.style.display = "";
+            loginOption.style.flexDirection = "";
+            resetQuestion.style.display = ""
+
         }
 
         function openForgot() {
-            var loginUnable = document.getElementsByClassName("login-option")[0];
+            var loginOption = document.getElementsByClassName("login-option")[0];
             var resetQuestion = document.getElementsByClassName("login-option-reset-question")[0];
-            if (loginUnable.style.display === "") {
-                loginUnable.style.display = "flex";
-                loginUnable.style.flexDirection = "column";
-                resetQuestion.style.display = "flex";
-            }
+
+            loginOption.style.display = "flex";
+            loginOption.style.flexDirection = "column";
+            resetQuestion.style.display = "flex";
+
         }
+
+        function openResetMessage() {
+            var loginOption = document.getElementsByClassName("login-option")[0];
+            var reset = document.getElementsByClassName("login-option-reset")[0];
+            var resetQuestion = document.getElementsByClassName("login-option-reset-question")[0];
+
+            reset.style.display = "flex";
+            loginOption.style.flexDirection = "column";
+            resetQuestion.style.display = "none"
+
+        }
+
+        function goToLogin() {
+            var loginOption = document.getElementsByClassName("login-option")[0];
+            var reset = document.getElementsByClassName("login-option-reset")[0];
+
+            reset.style.display = "";
+            loginOption.style.display = "";
+
+
+        }
+
+        // function openLogout() {
+        //     var overlay = document.getElementsByClassName("login-overlay")[0];
+        //     var logout = document.getElementsByClassName("login-option-logout")[0];
+        //     var loginOption = document.getElementsByClassName("login-option")[0];
+        //     var loginPopup = document.getElementsByClassName("login-popup")[0]
+        //     if (logout.style.display === "") {
+        //         overlay.style.display = "flex"
+        //         logout.style.display = "flex";
+        //         loginOption.style.display = "flex";
+        //         loginOption.style.flexDirection = "column";
+        //         loginPopup.style.display = "none"
+        //     }
+        // }
+
+        // function closeOverlay() {
+        //     var overlay = document.getElementsByClassName("login-overlay")[0];
+        //     overlay.style.display = "";
+        // }
 
 
     </script>
