@@ -109,11 +109,12 @@
         }
 
         .login-popup {
-          width: 301px;
-          height: 341px;
+          width: 290px;
+          height: 475px;
           border: solid;
           border-color: white;
           margin: 80px 30px 0 30px;
+          background-color: #282828;
         }
 
         .login-header {
@@ -138,9 +139,84 @@
           color: white;
           font-size: 11px;
           text-align: center;
+          padding: 60px 0 60px 0;
         }
         .login-input {
           padding: 20px;
+        }
+        .login-form {
+          padding: 17px;
+        }
+
+        .login-input-container {
+          color: white;
+          border-style: none none solid none;
+          border-width: 1px;
+          margin-bottom: 20px;
+        }
+        .login-input {
+          background-color: transparent;
+          border-style: none;
+          width: 90%;
+          padding: 8px;
+        }
+        .login-remember-container {
+          color: white;
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 30px;
+        }
+        .login-remember-text {
+          font-size: 12px;
+        }
+        .login-forgot {
+          background-color: transparent;
+          color: white;
+          border-style: none;
+          font-size: 12px;
+        }
+        .login-button {
+          background-color: black;
+          border-style: none;
+          color: white;
+          width: 100%;
+          height: 50px;
+        }
+        .login-option {
+          width: 310px;
+          height: 396px;
+          border: solid;
+          border-color: white;
+          margin: 110px 20px 0 20px;
+          background-color: #282828;
+          position: absolute;
+        }
+        .login-option-right {
+          justify-content: flex-end;
+        }
+        .login-option-unable {
+          color: white;
+          display: flex;
+          align-content: center;
+          flex-direction: column;
+          align-items: center;
+          margin-top: 14px;
+        }
+        .login-option-unable-icon {
+          font-size: 37px;
+          margin: 20px;
+        }
+
+        .login-option-unable-strong {
+          margin: 20px;
+          font-size: 22px;
+        }
+        .login-option-unable-text {
+          margin: 20px;
+          text-align: center;
+        }
+        .login-option-button-yes {
+          padding: 11px 31px;
         }
       }
     </style>
@@ -226,25 +302,61 @@
             <h2>SERVICE NETWORK FOR DACOR INFORMATION</h2>
           </div>
           <div class="login-input-container">
+            <i class="fas fa-user"></i>
             <input
+              class="login-input"
               type="text"
               placeholder="Enter Username"
               name="uname"
-              required
             />
           </div>
           <div class="login-input-container">
+            <i class="fas fa-lock"></i>
             <input
+              class="login-input"
               type="password"
               placeholder="Enter Password"
               name="psw"
-              required
             />
           </div>
 
-          <div class="login-remember-container"></div>
+          <div class="login-remember-container">
+            <label class="login-remember-text">
+              <input type="checkbox" checked="checked" name="remember" />
+              <span></span>
+              Remember me
+            </label>
+            <button class="login-forgot" onclick="()">
+              <span class="hidden-txt">Forgot Password Button</span>
+              Forgot your Password?
+            </button>
+          </div>
           <button class="login-button">LOGIN</button>
         </form>
+      </div>
+      <div class="login-option">
+        <div class="login-header login-option-right">
+          <button class="login-close" onclick="()">
+            <i class="fas fa-times"
+              ><span class="hidden-txt">Close Button</span></i
+            >
+          </button>
+        </div>
+
+        <div class="login-option-unable">
+          <i class="fas fa-lock login-option-unable-icon"
+            ><span class="hidden-txt">Password Icon</span></i
+          >
+          <strong class="login-option-unable-strong">UNABLE TO LOGIN</strong>
+          <p class="login-option-unable-text">
+            The UserID or Password you entered is incorrect. Please click 'OK'
+          </p>
+          <button class="login-option-button-yes">YES</button>
+        </div>
+
+        <div class="login-option-reset-question"></div>
+        <div class="login-option-reset"></div>
+        <div class="login-option-logout"></div>
       </div>
     </div>
     <!-- css background-image will be used  -->
