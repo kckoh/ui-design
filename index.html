@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>2주차 과제</title>
 
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="./css/header.css" />
     <link rel="stylesheet" href="./css/banner.css" />
     <link rel="stylesheet" href="./css/productCategory.css" />
@@ -19,733 +22,861 @@
     <link rel="stylesheet" href="./css/login.css" />
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+      body,
+      html {
+        height: 100%;
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      li {
+        list-style-type: none;
+      }
+
+      ul {
+        padding: 0;
+      }
+
+      .hidden-txt {
+        position: absolute;
+
+        width: 0;
+
+        height: 0;
+
+        overflow: hidden;
+
+        font-size: 0;
+
+        line-height: 0;
+
+        color: rgba(0, 0, 0, 0);
+      }
+
+      .container {
+        background-color: #282828;
+      }
+
+      @media screen and (max-width: 812px) {
+        .hr-style {
+          border-style: solid;
+          border-color: white;
+          border-width: thin;
+          border-color: rgba(255, 255, 255, 0.1);
         }
 
-        h2,
-        h6 {
-            margin: auto;
+        select option {
+          background: black;
+          color: white;
         }
 
-        body,
-        html {
-            height: 100%;
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
+        .common-list {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
         }
 
-        li {
-            list-style-type: none;
+        /* texts for each category */
+        .title-area {
+          text-align: center;
+          color: white;
+          text-align: center;
+          color: white;
+          padding-top: 45px;
+          padding-bottom: 46px;
         }
 
-        .hidden-txt {
-            position: absolute;
-
-            width: 0;
-
-            height: 0;
-
-            overflow: hidden;
-
-            font-size: 0;
-
-            line-height: 0;
-
-            color: rgba(0, 0, 0, 0);
+        .title-padding {
+          padding-bottom: 10px;
         }
-
-        .container {
-            background-color: #282828;
-        }
-
-        @media screen and (max-width: 812px) {
-            .hr-style {
-                border-style: solid;
-                border-color: white;
-                border-width: thin;
-                border-color: rgba(255, 255, 255, 0.1);
-            }
-
-            select option {
-                background: black;
-                color: white;
-            }
-
-            .common-list {
-                display: flex;
-                flex-wrap: wrap;
-                align-items: center;
-            }
-
-            /* texts for each category */
-            .title-area {
-                text-align: center;
-                color: white;
-                text-align: center;
-                color: white;
-                padding-top: 45px;
-                padding-bottom: 46px;
-            }
-
-            .title-padding {
-                padding-bottom: 10px;
-            }
-
-
-        }
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="header">
-        <div class="header-hide">
-            <h1 class="logo">
-                <a href="#home" class="active">Logo</a>
-            </h1>
-            <button class="icon-menu" onclick="openNav()">
-                <i class="fas fa-bars"><span class="hidden-txt">Menu Bar</span></i>
-            </button>
-        </div>
-        <div class="header-search header-margin">
-            <form class="header-search-form" action="#">
-                <input class="header-search-input" type="text" placeholder="Search" name="search" />
-                <button type="submit" class="header-search-button">
-                    <i class="fa fa-search">
-                        <span class="hidden-txt">Footer Search icon</span>
-                    </i>
-                </button>
-            </form>
-        </div>
-        <div id="myNav" class="overlay">
-            <div class="overlay-content">
-                <button class="dropdown-btn" onclick="openDropdown()">
-                    PRODUCT SUPPORT<i class="fa fa-caret-down">
-                        <span class="hidden-txt">Dropdown button</span></i>
-                </button>
-                <div class="dropdown-container">
-                    <a href="#">RANGES</a>
-                    <a href="#">COOKTOPS</a>
-                    <a href="#">WALL OVENS</a>
-                    <a href="#">VENTILATION</a>
-                    <a href="#">MICROWAVES</a>
-                    <a href="#">WARMING DRAWERS</a>
-                    <a href="#">OUTDOOR</a>
-                    <a href="#">REFRIGERATION</a>
-                    <a href="#">WINE & BEVERAGE</a>
-                    <a href="#">DISHWASHERS</a>
-                    <a href="#">ACCESSORIES</a>
-                    <a href="#">COFFEE SYSTEMS</a>
-                </div>
-                <a href="#">TOPICS</a>
-                <a href="#">TRAINING</a>
-                <a href="#">NEWSLETTERS</a>
-                <a href="#">ADMIN</a>
-                <hr class="hr-style" />
-                <a href="#">TERMS OF USE</a>
-                <a href="#">CONTACT US</a>
-                <a onclick="openLogin()" class="login-link" href="#">LOGIN </a>
-                <a onclick="openLogout()" class="login-link" href="#">LOGOUT</a>
-            </div>
-        </div>
-
-        <button href="#" class="icon-search" onclick="hideSearch()">
-            <i class="fas fa-search">
-                <span class="hidden-txt">Header Search icon</span>
-            </i>
+      <div class="header-hide">
+        <h1 class="logo">
+          <a href="#home" class="active">Logo</a>
+        </h1>
+        <button class="icon-menu" onclick="openNav()">
+          <i class="fas fa-bars"><span class="hidden-txt">Menu Bar</span></i>
         </button>
+      </div>
+      <div class="header-search header-margin">
+        <form class="header-search-form" action="#">
+          <input
+            class="header-search-input"
+            type="text"
+            placeholder="Search"
+            name="search"
+          />
+          <button type="submit" class="header-search-button">
+            <i class="fa fa-search">
+              <span class="hidden-txt">Footer Search icon</span>
+            </i>
+          </button>
+        </form>
+      </div>
+      <div id="myNav" class="overlay">
+        <div class="overlay-content">
+          <button class="dropdown-btn" onclick="openDropdown()">
+            PRODUCT SUPPORT<i class="fa fa-caret-down">
+              <span class="hidden-txt">Dropdown button</span></i
+            >
+          </button>
+          <div class="dropdown-container">
+            <a href="#">RANGES</a>
+            <a href="#">COOKTOPS</a>
+            <a href="#">WALL OVENS</a>
+            <a href="#">VENTILATION</a>
+            <a href="#">MICROWAVES</a>
+            <a href="#">WARMING DRAWERS</a>
+            <a href="#">OUTDOOR</a>
+            <a href="#">REFRIGERATION</a>
+            <a href="#">WINE & BEVERAGE</a>
+            <a href="#">DISHWASHERS</a>
+            <a href="#">ACCESSORIES</a>
+            <a href="#">COFFEE SYSTEMS</a>
+          </div>
+          <a href="#">TOPICS</a>
+          <a href="#">TRAINING</a>
+          <a href="#">NEWSLETTERS</a>
+          <a href="#">ADMIN</a>
+
+          <a href="#">TERMS OF USE</a>
+          <a href="#">CONTACT US</a>
+          <a onclick="openLogin()" class="login-link" href="#">LOGIN </a>
+          <a onclick="openLogout()" class="login-link" href="#">LOGOUT</a>
+        </div>
+      </div>
+
+      <button href="#" class="icon-search" onclick="hideSearch()">
+        <i class="fas fa-search">
+          <span class="hidden-txt">Header Search icon</span>
+        </i>
+      </button>
     </div>
 
     <div class="login-overlay">
-        <div class="login-popup">
-            <form action="#" class="login-form">
-                <div class="login-header">
-                    <h1 class="login-header">Logo</h1>
-                    <button class="login-close" onclick="closeLogin()">
-                        <i class="fas fa-times"><span class="hidden-txt">Close Button</span></i>
-                    </button>
-                </div>
-                <div class="login-banner">
-                    <h2>SERVICE NETWORK FOR DACOR INFORMATION</h2>
-                </div>
-                <div class="login-input-container">
-                    <i class="fas fa-user"></i>
-                    <input class="login-input" type="text" placeholder="Enter Username" name="uname" />
-                </div>
-                <div class="login-input-container">
-                    <i class="fas fa-lock"></i>
-                    <input class="login-input" type="password" placeholder="Enter Password" name="psw" />
-                </div>
+      <div class="login-popup">
+        <form action="#" class="login-form">
+          <div class="login-header">
+            <h1 class="login-header">Logo</h1>
+            <button class="login-close" onclick="closeLogin()">
+              <i class="fas fa-times"
+                ><span class="hidden-txt">Close Button</span></i
+              >
+            </button>
+          </div>
+          <div class="login-banner">
+            <h2>SERVICE NETWORK FOR DACOR INFORMATION</h2>
+          </div>
+          <div class="login-input-container">
+            <i class="fas fa-user"></i>
+            <input
+              class="login-input"
+              type="text"
+              placeholder="Enter Username"
+              name="uname"
+            />
+          </div>
+          <div class="login-input-container">
+            <i class="fas fa-lock"></i>
+            <input
+              class="login-input"
+              type="password"
+              placeholder="Enter Password"
+              name="psw"
+            />
+          </div>
 
-                <div class="login-remember-container">
-                    <label class="login-remember-text">
-                        <input type="checkbox" checked="checked" name="remember" />
-                        <span></span>
-                        Remember me
-                    </label>
-                    <button class="login-forgot" onclick="openForgot()">
-                        <span class="hidden-txt">Forgot Password Button</span>
-                        Forgot your Password?
-                    </button>
-                </div>
-                <button class="login-button" type="submit" onclick="openLoginUnable()">LOGIN</button>
-            </form>
+          <div class="login-remember-container">
+            <label class="login-remember-text">
+              <input type="checkbox" checked="checked" name="remember" />
+              <span></span>
+              Remember me
+            </label>
+            <button class="login-forgot" onclick="openForgot()">
+              <span class="hidden-txt">Forgot Password Button</span>
+              Forgot your Password?
+            </button>
+          </div>
+          <button
+            class="login-button"
+            type="submit"
+            onclick="openLoginUnable()"
+          >
+            LOGIN
+          </button>
+        </form>
+      </div>
+      <div class="login-option">
+        <div class="login-header login-option-right">
+          <button class="login-close" onclick="closeLoginOption();goToLogin()">
+            <i class="fas fa-times"
+              ><span class="hidden-txt">Close Button</span></i
+            >
+          </button>
         </div>
-        <div class="login-option">
-            <div class="login-header login-option-right">
-                <button class="login-close" onclick="closeLoginOption();goToLogin()">
-                    <i class="fas fa-times"><span class="hidden-txt">Close Button</span></i>
-                </button>
-            </div>
 
-            <div class="login-option-unable">
-                <i class="fas fa-lock login-option-icon"><span class="hidden-txt">Password Icon</span></i>
-                <strong class="login-option-strong">UNABLE TO LOGIN</strong>
-                <p class="login-option-text">
-                    The UserID or Password you entered is incorrect. Please click 'OK'
-                </p>
-                <button class="login-option-button-yes" onclick="closeLoginOption();closeLoginUnable()">YES</button>
-            </div>
-
-            <div class="login-option-reset-question">
-                <i class="fas fa-redo-alt login-option-icon"><span class="hidden-txt">Reset Icon</span></i>
-
-                <p class="login-option-text">
-                    Do you want to reset your password?
-                </p>
-                <div class="button-container">
-                    <button submit="#" class="login-option-button-no" onclick="closeLoginOption()">No</button>
-                    <button submit="#" class="login-option-button-yes" onclick="openResetMessage()">YES</button>
-                </div>
-
-            </div>
-            <div class="login-option-reset">
-                <i class="fas fa-redo-alt login-option-icon"><span class="hidden-txt">Reset Icon</span></i>
-                <strong class="login-option-strong">RESET PASSWORD</strong>
-                <p class="login-option-text">
-                    A new password is sent to your email.
-                </p>
-
-                <button submit="#" class="login-option-button-yes" onclick="goToLogin()">Go To Login</button>
-
-            </div>
-            <div class="login-option-logout">
-
-
-            </div>
+        <div class="login-option-unable">
+          <i class="fas fa-lock login-option-icon"
+            ><span class="hidden-txt">Password Icon</span></i
+          >
+          <strong class="login-option-strong">UNABLE TO LOGIN</strong>
+          <p class="login-option-text">
+            The UserID or Password you entered is incorrect. Please click 'OK'
+          </p>
+          <button
+            class="login-option-button-yes"
+            onclick="closeLoginOption();closeLoginUnable()"
+          >
+            YES
+          </button>
         </div>
+
+        <div class="login-option-reset-question">
+          <i class="fas fa-redo-alt login-option-icon"
+            ><span class="hidden-txt">Reset Icon</span></i
+          >
+
+          <p class="login-option-text">Do you want to reset your password?</p>
+          <div class="button-container">
+            <button
+              submit="#"
+              class="login-option-button-no"
+              onclick="closeLoginOption()"
+            >
+              No
+            </button>
+            <button
+              submit="#"
+              class="login-option-button-yes"
+              onclick="openResetMessage()"
+            >
+              YES
+            </button>
+          </div>
+        </div>
+        <div class="login-option-reset">
+          <i class="fas fa-redo-alt login-option-icon"
+            ><span class="hidden-txt">Reset Icon</span></i
+          >
+          <strong class="login-option-strong">RESET PASSWORD</strong>
+          <p class="login-option-text">A new password is sent to your email.</p>
+
+          <button
+            submit="#"
+            class="login-option-button-yes"
+            onclick="goToLogin()"
+          >
+            Go To Login
+          </button>
+        </div>
+        <div class="login-option-logout"></div>
+      </div>
     </div>
     <!-- css background-image will be used  -->
     <div class="banner-image">
-        <div class="banner-text">
-            <h2>Know your Product / Serial Number?</h2>
-        </div>
-        <form class="search">
-            <select name="product-list" id="product-list">
-                <option value="">Product</option>
-                <option value="ranges">Ranges</option>
-                <option value="cooktops">Cooktops</option>
-                <option value="wall-ovens">Wall Ovens</option>
-                <option value="ventilation">Ventilation</option>
-                <option value="microwaves">Microwaves</option>
-                <option value="warming-drawer">Warming Drawer</option>
-                <option value="outdoor">Outdoor</option>
-                <option value="refrigeration">Refrigeration</option>
-                <option value="wine-beverage">Wine&Beverage</option>
-                <option value="dishwashers">Dishwashers</option>
-                <option value="accessories">Accessories</option>
-                <option value="coffee-systems">Coffee Systems</option>
-            </select>
-            <hr class="search-vertical" />
-            <input class="search-input" type="text" placeholder="Enter your model number" />
-            <button class="search-button icon-search" type="submit">
-                <i class="fas fa-search">
-                    <span class="hidden-txt">Banner Search icon</span>
-                </i>
-            </button>
-        </form>
+      <div class="banner-text">
+        <h2>Know your Product / Serial Number?</h2>
+      </div>
+      <form class="search">
+        <select name="product-list" id="product-list">
+          <option value="">Product</option>
+          <option value="ranges">Ranges</option>
+          <option value="cooktops">Cooktops</option>
+          <option value="wall-ovens">Wall Ovens</option>
+          <option value="ventilation">Ventilation</option>
+          <option value="microwaves">Microwaves</option>
+          <option value="warming-drawer">Warming Drawer</option>
+          <option value="outdoor">Outdoor</option>
+          <option value="refrigeration">Refrigeration</option>
+          <option value="wine-beverage">Wine&Beverage</option>
+          <option value="dishwashers">Dishwashers</option>
+          <option value="accessories">Accessories</option>
+          <option value="coffee-systems">Coffee Systems</option>
+        </select>
+
+        <input
+          class="search-input"
+          type="text"
+          placeholder="Enter your model number"
+        />
+        <button class="search-button icon-search" type="submit">
+          <i class="fas fa-search">
+            <span class="hidden-txt">Banner Search icon</span>
+          </i>
+        </button>
+      </form>
     </div>
 
     <div class="container">
-        <div class="product_category">
-            <div class="title-area">
-                <h3 class="title-padding">PRODUCT CATEGORY</h3>
-                <p>
-                    Start your product knowledge discovery by selecting it's category
-                </p>
-            </div>
-            <ul class="common-list">
-                <li class="product-area">
-                    <a class="product-text" href="#">
-                        <img class="product-img" src="./img/product_category/ranges.jpg" alt="an image for ranges" />
-                        <strong class="product-strong">RANGES</strong>
-                    </a>
-                </li>
-                <li class="product-area">
-                    <a class="product-text" href="#">
-                        <img class="product-img" src="./img/product_category/cooktops.jpg" alt="" />
-                        <strong class="product-strong">COOKTOPS</strong>
-                    </a>
-                </li>
-                <li class="product-area">
-                    <a class="product-text" href="#">
-                        <img class="product-img" src="./img/product_category/wallovens.jpg"
-                            alt="an image for wall ovens" />
-                        <strong class="product-strong">WALL OVENS</strong>
-                    </a>
-                </li>
-                <li class="product-area">
-                    <a class="product-text" href="#">
-                        <img class="product-img" src="./img/product_category/ventilation.jpg"
-                            alt="an image for microwaves" />
-                        <strong class="product-strong">VENTILATION</strong>
-                    </a>
-                </li>
-                <li class="product-area">
-                    <a class="product-text" href="#">
-                        <img class="product-img" src="./img/product_category/microwaves.jpg"
-                            alt="an image for microwaves" />
-                        <strong class="product-strong">MICROWAVES</strong>
-                    </a>
-                </li>
-                <li class="product-area">
-                    <a class="product-text" href="#">
-                        <img class="product-img" src="./img/product_category/warming_drawer.jpg"
-                            alt="an image for warming DRAWER" />
-                        <strong class="product-strong">WARMING DRAWER</strong>
-                    </a>
-                </li>
-                <li class="product-area">
-                    <a class="product-text" href="#">
-                        <img class="product-img" src="./img/product_category/outdoor.jpg" alt="an image for outdoor" />
-                        <strong class="product-strong">OUTDOOR</strong>
-                    </a>
-                </li>
-                <li class="product-area">
-                    <a class="product-text" href="#">
-                        <img class="product-img" src="./img/product_category/refrigeration.jpg"
-                            alt="an image for refrigeration" />
-                        <strong class="product-strong">REGRIGERATION</strong>
-                    </a>
-                </li>
-                <li class="product-area">
-                    <a class="product-text" href="#">
-                        <img class="product-img" src="./img/product_category/wine_beverage.jpg"
-                            alt="an image for wine and beverage" />
-                        <strong class="product-strong">WINE & BEVERAGE</strong>
-                    </a>
-                </li>
-                <li class="product-area">
-                    <a class="product-text" href="#">
-                        <img class="product-img" src="./img/product_category/dishwashers.jpg"
-                            alt="an image for dishwashers" />
-                        <strong class="product-strong">DISHWASHERS</strong>
-                    </a>
-                </li>
-                <li class="product-area">
-                    <a class="product-text" href="#">
-                        <img class="product-img" src="./img/product_category/accessories.jpg"
-                            alt="an image for accessories" />
-                        <strong class="product-strong">ACCESSORIES</strong>
-                    </a>
-                </li>
-                <li class="product-area">
-                    <a class="product-text" href="#">
-                        <img class="product-img" src="./img/product_category/coffeesystems.jpg"
-                            alt="an image for coffee system" />
-                        <strong class="product-strong">COFFEE SYSTEMS</strong>
-                    </a>
-                </li>
-            </ul>
+      <div class="product_category">
+        <div class="title-area">
+          <h3 class="title-padding">PRODUCT CATEGORY</h3>
+          <p>
+            Start your product knowledge discovery by selecting it's category
+          </p>
         </div>
+        <ul class="common-list">
+          <li class="product-area">
+            <a class="product-text" href="#">
+              <img
+                class="product-img"
+                src="./img/product_category/ranges.png"
+                alt="an image for ranges"
+              />
+              <strong class="product-strong">RANGES</strong>
+            </a>
+          </li>
+          <li class="product-area">
+            <a class="product-text" href="#">
+              <img
+                class="product-img"
+                src="./img/product_category/cooktops.png"
+                alt=""
+              />
+              <strong class="product-strong">COOKTOPS</strong>
+            </a>
+          </li>
+          <li class="product-area">
+            <a class="product-text" href="#">
+              <img
+                class="product-img"
+                src="./img/product_category/wallovens.png"
+                alt="an image for wall ovens"
+              />
+              <strong class="product-strong">WALL OVENS</strong>
+            </a>
+          </li>
+          <li class="product-area">
+            <a class="product-text" href="#">
+              <img
+                class="product-img"
+                src="./img/product_category/ventilation.png"
+                alt="an image for microwaves"
+              />
+              <strong class="product-strong">VENTILATION</strong>
+            </a>
+          </li>
+          <li class="product-area">
+            <a class="product-text" href="#">
+              <img
+                class="product-img"
+                src="./img/product_category/microwaves.png"
+                alt="an image for microwaves"
+              />
+              <strong class="product-strong">MICROWAVES</strong>
+            </a>
+          </li>
+          <li class="product-area">
+            <a class="product-text" href="#">
+              <img
+                class="product-img"
+                src="./img/product_category/warming_drawer.png"
+                alt="an image for warming DRAWER"
+              />
+              <strong class="product-strong">WARMING DRAWER</strong>
+            </a>
+          </li>
+          <li class="product-area">
+            <a class="product-text" href="#">
+              <img
+                class="product-img"
+                src="./img/product_category/outdoor.png"
+                alt="an image for outdoor"
+              />
+              <strong class="product-strong">OUTDOOR</strong>
+            </a>
+          </li>
+          <li class="product-area">
+            <a class="product-text" href="#">
+              <img
+                class="product-img"
+                src="./img/product_category/refrigeration.png"
+                alt="an image for refrigeration"
+              />
+              <strong class="product-strong">REGRIGERATION</strong>
+            </a>
+          </li>
+          <li class="product-area">
+            <a class="product-text" href="#">
+              <img
+                class="product-img"
+                src="./img/product_category/wine_beverage.png"
+                alt="an image for wine and beverage"
+              />
+              <strong class="product-strong">WINE & BEVERAGE</strong>
+            </a>
+          </li>
+          <li class="product-area">
+            <a class="product-text" href="#">
+              <img
+                class="product-img"
+                src="./img/product_category/dishwashers.png"
+                alt="an image for dishwashers"
+              />
+              <strong class="product-strong">DISHWASHERS</strong>
+            </a>
+          </li>
+          <li class="product-area">
+            <a class="product-text" href="#">
+              <img
+                class="product-img"
+                src="./img/product_category/accessories.png"
+                alt="an image for accessories"
+              />
+              <strong class="product-strong">ACCESSORIES</strong>
+            </a>
+          </li>
+          <li class="product-area">
+            <a class="product-text" href="#">
+              <img
+                class="product-img"
+                src="./img/product_category/coffeesystems.png"
+                alt="an image for coffee system"
+              />
+              <strong class="product-strong">COFFEE SYSTEMS</strong>
+            </a>
+          </li>
+        </ul>
+      </div>
 
-        <div class="topics">
-            <div class="title-area">
-                <h3 class="title-padding">TOPICS</h3>
-                <p>You can access knowledge detail by knowledge content type</p>
-            </div>
-            <ul class="common-list">
-                <li class="topic-area">
-                    <a class="topic-text" href="#">
-                        <img class="topic-img" src="./img/topics/error_codes.jpg" alt="an image for error code" />
-                        <strong class="topic-strong">ERROR CODES</strong>
-                    </a>
-                </li>
-                <li class="topic-area">
-                    <a class="topic-text" href="#">
-                        <img class="topic-img" src="./img/topics/service_guide.jpg" alt="an image for service guide" />
-                        <strong class="topic-strong">SERVICE GUIDE</strong>
-                    </a>
-                </li>
-                <li class="topic-area">
-                    <a class="topic-text" href="#">
-                        <img class="topic-img" src="./img/topics/parts_catalog.jpg" alt="an image for parts catalog" />
-                        <strong class="topic-strong">PARTS CATALOG</strong>
-                    </a>
-                </li>
-                <li class="topic-area">
-                    <a class="topic-text" href="#">
-                        <img class="topic-img" src="./img/topics/symptoms.jpg" alt="an image for symptoms" />
-                        <strong class="topic-strong">SYMPTOMS</strong>
-                    </a>
-                </li>
-                <li class="topic-area">
-                    <a class="topic-text" href="#">
-                        <img class="topic-img" src="./img/topics/product_info.jpg" alt="an image for product info" />
-                        <strong class="topic-strong">PRODUCT INFO</strong>
-                    </a>
-                </li>
-                <li class="topic-area">
-                    <a class="topic-text" href="#">
-                        <img class="topic-img" src="./img/topics/faq.jpg" alt="an image for faq" />
-                        <strong class="topic-strong">FAQ</strong>
-                    </a>
-                </li>
-            </ul>
+      <div class="topics">
+        <div class="title-area">
+          <h3 class="title-padding">TOPICS</h3>
+          <p>You can access knowledge detail by knowledge content type</p>
         </div>
-        <div class="recent-searched">
-            <div class="title-area">
-                <h3>RECENT SEARCHED</h3>
-            </div>
-            <div class="recent-container">
-                <div class="recent-area-container">
-                    <div class="recent-area">
-                        <img class="recent-img" src="./img/recent_searched/wallovens.jpg"
-                            alt="an image for wallovens" />
-                        <div class="recent-text-img">
-                            <p class="recent-desc">
-                                5.8 cu. ft. 30" Gas Chef Collection Pro Range with Dual
-                                Convection
-                            </p>
-                            <a href="#" class="recent-button">RF22N9781SG/AA</a>
-                        </div>
-                    </div>
-                    <div class="recent-area">
-                        <img class="recent-img" src="./img/recent_searched/ranges.jpg" alt="an image for ranges" />
-                        <div class="recent-text-img">
-                            <p class="recent-desc">
-                                5.8 cu. ft. 30" Gas Chef Collection Pro Range with Dual
-                                Convection
-                            </p>
-                            <a href="#" class="recent-button">NX58M9960PS/AA</a>
-                        </div>
-                    </div>
-                    <div class="recent-area">
-                        <img class="recent-img" src="./img/recent_searched/single_wallovens.jpg"
-                            alt="an image for wallovens" />
-                        <div class="recent-text-img">
-                            <p class="recent-desc">
-                                30" Chef Collection Single Wall Oven with Flex Duo™
-                            </p>
-                            <a href="#" class="recent-button">NV51M9770SM/AA</a>
-                        </div>
-                    </div>
-                    <div class="recent-area">
-                        <img class="recent-img" src="./img/recent_searched/refrigerator.jpg"
-                            alt="an image for refrigerator" />
-                        <div class="recent-text-img">
-                            <p class="recent-desc">
-                                29 cu. ft. Side-by-Side Food ShowCase Refrigerator with Metal
-                                Cooling
-                            </p>
-                            <a href="#" class="recent-button">RH29H9000SR/AA</a>
-                        </div>
-                    </div>
-                    <div class="recent-area">
-                        <img class="recent-img" src="./img/recent_searched/gasdryer.jpg"
-                            alt="an image for a gas dryer" />
-                        <div class="recent-text-img">
-                            <p class="recent-desc">DV9600 7.5 cu. ft. FlexDry™ Gas Dryer</p>
-                            <a href="#" class="recent-button">DVG55M9600V/A3</a>
-                        </div>
-                    </div>
-                    <div class="recent-area">
-                        <img class="recent-img" src="./img/recent_searched/washer.jpg" alt="an image for a washer" />
-                        <div class="recent-text-img">
-                            <p class="recent-desc">WA7450 5.0 cu. ft. Top Load Washer</p>
-                            <a href="#" class="recent-button">WA50M7450AW/A4</a>
-                        </div>
-                    </div>
-                </div>
-
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
-            </div>
-            <hr class="hr-style" />
+        <ul class="common-list">
+          <li class="topic-area">
+            <a class="topic-text" href="#">
+              <img
+                class="topic-img"
+                src="./img/topics/error_codes.png"
+                alt="an image for error code"
+              />
+              <strong class="topic-strong">ERROR CODES</strong>
+            </a>
+          </li>
+          <li class="topic-area">
+            <a class="topic-text" href="#">
+              <img
+                class="topic-img"
+                src="./img/topics/service_guide.png"
+                alt="an image for service guide"
+              />
+              <strong class="topic-strong">SERVICE GUIDE</strong>
+            </a>
+          </li>
+          <li class="topic-area">
+            <a class="topic-text" href="#">
+              <img
+                class="topic-img"
+                src="./img/topics/parts_catalog.png"
+                alt="an image for parts catalog"
+              />
+              <strong class="topic-strong">PARTS CATALOG</strong>
+            </a>
+          </li>
+          <li class="topic-area">
+            <a class="topic-text" href="#">
+              <img
+                class="topic-img"
+                src="./img/topics/symptoms.png"
+                alt="an image for symptoms"
+              />
+              <strong class="topic-strong">SYMPTOMS</strong>
+            </a>
+          </li>
+          <li class="topic-area">
+            <a class="topic-text" href="#">
+              <img
+                class="topic-img"
+                src="./img/topics/product_info.png"
+                alt="an image for product info"
+              />
+              <strong class="topic-strong">PRODUCT INFO</strong>
+            </a>
+          </li>
+          <li class="topic-area">
+            <a class="topic-text" href="#">
+              <img
+                class="topic-img"
+                src="./img/topics/faq.png"
+                alt="an image for faq"
+              />
+              <strong class="topic-strong">FAQ</strong>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="recent-searched">
+        <div class="title-area">
+          <h3>RECENT SEARCHED</h3>
         </div>
-        <div class="customer-care">
-            <div class="title-area">
-                <div class="customer-image"></div>
-                <h3>EXCEPTIONAL 24/7</h3>
-                <p>
-                    Our dedicated support team is ready to take your call 24/7. We are
-                    committed to ensuring you have an exceptional customer experience.
+        <div class="recent-container">
+          <div class="recent-area-container">
+            <div class="recent-area">
+              <img
+                class="recent-img"
+                src="./img/recent_searched/wallovens.png"
+                alt="an image for wallovens"
+              />
+              <div class="recent-text-img">
+                <p class="recent-desc">
+                  5.8 cu. ft. 30" Gas Chef Collection Pro Range with Dual
+                  Convection
                 </p>
+                <a href="#" class="recent-button">RF22N9781SG/AA</a>
+              </div>
             </div>
-            <a class="customer-button">CONTACT US</a>
+            <div class="recent-area">
+              <img
+                class="recent-img"
+                src="./img/recent_searched/ranges.png"
+                alt="an image for ranges"
+              />
+              <div class="recent-text-img">
+                <p class="recent-desc">
+                  5.8 cu. ft. 30" Gas Chef Collection Pro Range with Dual
+                  Convection
+                </p>
+                <a href="#" class="recent-button">NX58M9960PS/AA</a>
+              </div>
+            </div>
+            <div class="recent-area">
+              <img
+                class="recent-img"
+                src="./img/recent_searched/single_wallovens.png"
+                alt="an image for wallovens"
+              />
+              <div class="recent-text-img">
+                <p class="recent-desc">
+                  30" Chef Collection Single Wall Oven with Flex Duo™
+                </p>
+                <a href="#" class="recent-button">NV51M9770SM/AA</a>
+              </div>
+            </div>
+            <div class="recent-area">
+              <img
+                class="recent-img"
+                src="./img/recent_searched/refrigerator.png"
+                alt="an image for refrigerator"
+              />
+              <div class="recent-text-img">
+                <p class="recent-desc">
+                  29 cu. ft. Side-by-Side Food ShowCase Refrigerator with Metal
+                  Cooling
+                </p>
+                <a href="#" class="recent-button">RH29H9000SR/AA</a>
+              </div>
+            </div>
+            <div class="recent-area">
+              <img
+                class="recent-img"
+                src="./img/recent_searched/gasdryer.png"
+                alt="an image for a gas dryer"
+              />
+              <div class="recent-text-img">
+                <p class="recent-desc">DV9600 7.5 cu. ft. FlexDry™ Gas Dryer</p>
+                <a href="#" class="recent-button">DVG55M9600V/A3</a>
+              </div>
+            </div>
+            <div class="recent-area">
+              <img
+                class="recent-img"
+                src="./img/recent_searched/washer.png"
+                alt="an image for a washer"
+              />
+              <div class="recent-text-img">
+                <p class="recent-desc">WA7450 5.0 cu. ft. Top Load Washer</p>
+                <a href="#" class="recent-button">WA50M7450AW/A4</a>
+              </div>
+            </div>
+          </div>
+
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
+      </div>
+      <div class="customer-care">
+        <div class="title-area">
+          <div class="customer-image"></div>
+          <h3>EXCEPTIONAL 24/7</h3>
+          <p>
+            Our dedicated support team is ready to take your call 24/7. We are
+            committed to ensuring you have an exceptional customer experience.
+          </p>
+        </div>
+        <a class="customer-button">CONTACT US</a>
+      </div>
     </div>
 
     <div class="footer">
-        <div class="footer-link">
-            <h4>PRODUCT SUPPORT</h4>
-            <ul>
-                <li><a href="#">Wall Ovens</a></li>
-                <li><a href="#">Ranges</a></li>
-                <li><a href="#">Cooktops</a></li>
-                <li><a href="#">Regrigeration</a></li>
-                <li><a href="#">Microwaves</a></li>
-                <li><a href="#">Dishwashers</a></li>
-                <li><a href="#">Ventilation</a></li>
-                <li><a href="#">Wine & Beverage</a></li>
-                <li><a href="#">Warming Drawers</a></li>
-                <li><a href="#">Outdoor</a></li>
-                <li><a href="#">Coffee system</a></li>
-                <li><a href="#">Accessories</a></li>
-            </ul>
-        </div>
-        <div class="footer-link">
-            <h4>TOPICS</h4>
-            <ul>
-                <li><a href="#">Error Codes</a></li>
-                <li><a href="#">Service Guide</a></li>
-                <li><a href="#">Parts Catalog</a></li>
-                <li><a href="#">Symptoms</a></li>
-                <li><a href="#">Product Info</a></li>
-                <li><a href="#">FAQ</a></li>
-            </ul>
-        </div>
-        <div class="footer-link">
-            <h4>Training</h4>
+      <div class="footer-link">
+        <h4>PRODUCT SUPPORT</h4>
+        <ul>
+          <li><a href="#">Wall Ovens</a></li>
+          <li><a href="#">Ranges</a></li>
+          <li><a href="#">Cooktops</a></li>
+          <li><a href="#">Regrigeration</a></li>
+          <li><a href="#">Microwaves</a></li>
+          <li><a href="#">Dishwashers</a></li>
+          <li><a href="#">Ventilation</a></li>
+          <li><a href="#">Wine & Beverage</a></li>
+          <li><a href="#">Warming Drawers</a></li>
+          <li><a href="#">Outdoor</a></li>
+          <li><a href="#">Coffee system</a></li>
+          <li><a href="#">Accessories</a></li>
+        </ul>
+      </div>
+      <div class="footer-link">
+        <h4>TOPICS</h4>
+        <ul>
+          <li><a href="#">Error Codes</a></li>
+          <li><a href="#">Service Guide</a></li>
+          <li><a href="#">Parts Catalog</a></li>
+          <li><a href="#">Symptoms</a></li>
+          <li><a href="#">Product Info</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-link">
+        <h4>Training</h4>
 
-            <ul>
-                <li><a href="#">Technical Training</a></li>
-                <li><a href="#">Customer Service Training</a></li>
-            </ul>
+        <ul>
+          <li><a href="#">Technical Training</a></li>
+          <li><a href="#">Customer Service Training</a></li>
+        </ul>
+      </div>
+      <div class="footer-link">
+        <h4>NewLetters</h4>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-search footer-margin">
+          <form class="footer-search-form" action="#">
+            <input
+              class="footer-search-input"
+              type="text"
+              placeholder="Search"
+              name="search"
+            />
+            <button type="submit" class="footer-search-button">
+              <i class="fa fa-search">
+                <span class="hidden-txt">Footer Search icon</span>
+              </i>
+            </button>
+          </form>
         </div>
-        <div class="footer-link">
-            <h4>NewLetters</h4>
-        </div>
-        <div class="footer-bottom">
-            <div class="footer-search footer-margin">
-                <form class="footer-search-form" action="#">
-                    <input class="footer-search-input" type="text" placeholder="Search" name="search" />
-                    <button type="submit" class="footer-search-button">
-                        <i class="fa fa-search">
-                            <span class="hidden-txt">Footer Search icon</span>
-                        </i>
-                    </button>
-                </form>
-            </div>
 
-            <div class="follow footer-margin">
-                <h4>FOLLOW US</h4>
-                <ul>
-                    <li>
-                        <a href="www.facebook.com">
-                            <i class="fab fa-facebook-f">
-                                <span class="hidden-txt">facebook icon</span>
-                            </i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="www.twitter.com">
-                            <i class="fab fa-twitter">
-                                <span class="hidden-txt">twitter icon</span>
-                            </i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="www.youtube.com"><i class="fab fa-youtube"><span class="hidden-txt">youtube
-                                    icon</span></i></a>
-                    </li>
-                    <li>
-                        <a href="www.pinterest.com">
-                            <i class="fab fa-pinterest-p">
-                                <span class="hidden-txt">pinterest icon</span>
-                            </i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="footer-info footer-margin">
-                <h4 class="footer-margin"><a href="#">SITEMAP</a></h4>
-                <h4 class="footer-margin"><a href="#">PRIVACY POLICY</a></h4>
-                <h4 class="footer-margin"><a href="#">TERMS OF USE</a></h4>
-                <h4 class="footer-margin"><a href="#">CONTACT US</a></h4>
-            </div>
+        <div class="follow footer-margin">
+          <h4>FOLLOW US</h4>
+          <ul>
+            <li>
+              <a href="www.facebook.com">
+                <i class="fab fa-facebook-f">
+                  <span class="hidden-txt">facebook icon</span>
+                </i>
+              </a>
+            </li>
+            <li>
+              <a href="www.twitter.com">
+                <i class="fab fa-twitter">
+                  <span class="hidden-txt">twitter icon</span>
+                </i>
+              </a>
+            </li>
+            <li>
+              <a href="www.youtube.com"
+                ><i class="fab fa-youtube"
+                  ><span class="hidden-txt">youtube icon</span></i
+                ></a
+              >
+            </li>
+            <li>
+              <a href="www.pinterest.com">
+                <i class="fab fa-pinterest-p">
+                  <span class="hidden-txt">pinterest icon</span>
+                </i>
+              </a>
+            </li>
+          </ul>
         </div>
+        <div class="footer-info footer-margin">
+          <h4 class="footer-margin"><a href="#">SITEMAP</a></h4>
+          <h4 class="footer-margin"><a href="#">PRIVACY POLICY</a></h4>
+          <h4 class="footer-margin"><a href="#">TERMS OF USE</a></h4>
+          <h4 class="footer-margin"><a href="#">CONTACT US</a></h4>
+        </div>
+      </div>
     </div>
 
-
     <script>
-        function openNav() {
-            var nav = document.getElementById("myNav");
-            var body = document.getElementsByTagName("BODY")[0];
+      function openNav() {
+        var nav = document.getElementById("myNav");
+        var body = document.getElementsByTagName("BODY")[0];
 
-            if (nav.style.width === "") {
-                nav.style.width = "100vw";
-                body.style.overflow = "hidden";
-            } else {
-                nav.style.width = "";
-                body.style.overflow = "";
-            }
+        if (nav.style.width === "") {
+          nav.style.width = "100vw";
+          body.style.overflow = "hidden";
+        } else {
+          nav.style.width = "";
+          body.style.overflow = "";
+        }
+      }
+
+      function openDropdown() {
+        var dropdown = document.getElementsByClassName("dropdown-btn")[0];
+        var dropdownContainer =
+          document.getElementsByClassName("dropdown-container")[0];
+        if (dropdownContainer.style.display === "") {
+          dropdownContainer.style.display = "block";
+        } else {
+          dropdownContainer.style.display = "";
+        }
+      }
+
+      // image slider functions
+      var slideIndex = 1;
+      showSlides(slideIndex);
+
+      function plusSlides(n) {
+        showSlides((slideIndex += n));
+      }
+
+      function currentSlide(n) {
+        showSlides((slideIndex = n));
+      }
+
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("recent-area");
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
         }
 
-        function openDropdown() {
-            var dropdown = document.getElementsByClassName("dropdown-btn")[0];
-            var dropdownContainer =
-                document.getElementsByClassName("dropdown-container")[0];
-            if (dropdownContainer.style.display === "") {
-                dropdownContainer.style.display = "block";
-            } else {
-                dropdownContainer.style.display = "";
-            }
+        slides[slideIndex - 1].style.display = "flex";
+      }
+
+      function hideSearch() {
+        var hide = document.getElementsByClassName("header-hide")[0];
+        var logo = document.getElementsByClassName("logo")[0];
+        var headerSearch =
+          document.getElementsByClassName("header-search-form")[0];
+        if (hide.style.visibility === "") {
+          hide.style.visibility = "hidden";
+          logo.style.display = "none";
+          headerSearch.style.display = "inline-flex";
+        } else {
+          hide.style.visibility = "";
+          logo.style.display = "block";
+          headerSearch.style.display = "none";
         }
+      }
 
-        // image slider functions
-        var slideIndex = 1;
-        showSlides(slideIndex);
+      function openLogin() {
+        var loginOverlay = document.getElementsByClassName("login-overlay")[0];
 
-        function plusSlides(n) {
-            showSlides((slideIndex += n));
+        if (loginOverlay.style.display === "") {
+          loginOverlay.style.display = "flex";
         }
+      }
+      function closeLogin() {
+        var loginOverlay = document.getElementsByClassName("login-overlay")[0];
 
-        function currentSlide(n) {
-            showSlides((slideIndex = n));
+        if (loginOverlay.style.display === "flex") {
+          loginOverlay.style.display = "";
         }
+      }
 
-        function showSlides(n) {
-            var i;
-            var slides = document.getElementsByClassName("recent-area");
-            if (n > slides.length) {
-                slideIndex = 1;
-            }
-            if (n < 1) {
-                slideIndex = slides.length;
-            }
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-
-            slides[slideIndex - 1].style.display = "flex";
+      function openLoginUnable() {
+        var loginUnable = document.getElementsByClassName("login-option")[0];
+        var unable = document.getElementsByClassName("login-option-unable")[0];
+        if (loginUnable.style.display === "") {
+          loginUnable.style.display = "flex";
+          loginUnable.style.flexDirection = "column";
+          unable.style.display = "flex";
         }
+      }
 
-        function hideSearch() {
-            var hide = document.getElementsByClassName("header-hide")[0];
-            var logo = document.getElementsByClassName("logo")[0];
-            var headerSearch =
-                document.getElementsByClassName("header-search-form")[0];
-            if (hide.style.visibility === "") {
-                hide.style.visibility = "hidden";
-                logo.style.display = "none";
-                headerSearch.style.display = "inline-flex";
-            } else {
-                hide.style.visibility = "";
-                logo.style.display = "block";
-                headerSearch.style.display = "none";
-            }
-        }
+      function closeLoginUnable() {
+        var loginOption = document.getElementsByClassName("login-option")[0];
+        var loginUnable = document.getElementsByClassName(
+          "login-option-unable"
+        )[0];
 
-        function openLogin() {
-            var loginOverlay = document.getElementsByClassName("login-overlay")[0];
+        loginOption.style.display = "";
+        loginOption.style.flexDirection = "";
+        loginUnable.style.display = "";
+      }
 
-            if (loginOverlay.style.display === "") {
-                loginOverlay.style.display = "flex";
-            }
-        }
-        function closeLogin() {
-            var loginOverlay = document.getElementsByClassName("login-overlay")[0];
+      function closeLoginOption() {
+        var loginOption = document.getElementsByClassName("login-option")[0];
+        var resetQuestion = document.getElementsByClassName(
+          "login-option-reset-question"
+        )[0];
+        loginOption.style.display = "";
+        loginOption.style.flexDirection = "";
+        resetQuestion.style.display = "";
+      }
 
-            if (loginOverlay.style.display === "flex") {
-                loginOverlay.style.display = "";
-            }
-        }
+      function openForgot() {
+        var loginOption = document.getElementsByClassName("login-option")[0];
+        var resetQuestion = document.getElementsByClassName(
+          "login-option-reset-question"
+        )[0];
 
-        function openLoginUnable() {
-            var loginUnable = document.getElementsByClassName("login-option")[0];
-            var unable = document.getElementsByClassName("login-option-unable")[0];
-            if (loginUnable.style.display === "") {
-                loginUnable.style.display = "flex";
-                loginUnable.style.flexDirection = "column";
-                unable.style.display = "flex"
-            }
-        }
+        loginOption.style.display = "flex";
+        loginOption.style.flexDirection = "column";
+        resetQuestion.style.display = "flex";
+      }
 
-        function closeLoginUnable() {
-            var loginOption = document.getElementsByClassName("login-option")[0];
-            var loginUnable = document.getElementsByClassName("login-option-unable")[0];
+      function openResetMessage() {
+        var loginOption = document.getElementsByClassName("login-option")[0];
+        var reset = document.getElementsByClassName("login-option-reset")[0];
+        var resetQuestion = document.getElementsByClassName(
+          "login-option-reset-question"
+        )[0];
 
-            loginOption.style.display = "";
-            loginOption.style.flexDirection = "";
-            loginUnable.style.display = ""
+        reset.style.display = "flex";
+        loginOption.style.flexDirection = "column";
+        resetQuestion.style.display = "none";
+      }
 
-        }
+      function goToLogin() {
+        var loginOption = document.getElementsByClassName("login-option")[0];
+        var reset = document.getElementsByClassName("login-option-reset")[0];
 
-        function closeLoginOption() {
-            var loginOption = document.getElementsByClassName("login-option")[0];
-            var resetQuestion = document.getElementsByClassName("login-option-reset-question")[0];
-            loginOption.style.display = "";
-            loginOption.style.flexDirection = "";
-            resetQuestion.style.display = ""
+        reset.style.display = "";
+        loginOption.style.display = "";
+      }
 
-        }
+      // function openLogout() {
+      //     var overlay = document.getElementsByClassName("login-overlay")[0];
+      //     var logout = document.getElementsByClassName("login-option-logout")[0];
+      //     var loginOption = document.getElementsByClassName("login-option")[0];
+      //     var loginPopup = document.getElementsByClassName("login-popup")[0]
+      //     if (logout.style.display === "") {
+      //         overlay.style.display = "flex"
+      //         logout.style.display = "flex";
+      //         loginOption.style.display = "flex";
+      //         loginOption.style.flexDirection = "column";
+      //         loginPopup.style.display = "none"
+      //     }
+      // }
 
-        function openForgot() {
-            var loginOption = document.getElementsByClassName("login-option")[0];
-            var resetQuestion = document.getElementsByClassName("login-option-reset-question")[0];
-
-            loginOption.style.display = "flex";
-            loginOption.style.flexDirection = "column";
-            resetQuestion.style.display = "flex";
-
-        }
-
-        function openResetMessage() {
-            var loginOption = document.getElementsByClassName("login-option")[0];
-            var reset = document.getElementsByClassName("login-option-reset")[0];
-            var resetQuestion = document.getElementsByClassName("login-option-reset-question")[0];
-
-            reset.style.display = "flex";
-            loginOption.style.flexDirection = "column";
-            resetQuestion.style.display = "none"
-
-        }
-
-        function goToLogin() {
-            var loginOption = document.getElementsByClassName("login-option")[0];
-            var reset = document.getElementsByClassName("login-option-reset")[0];
-
-            reset.style.display = "";
-            loginOption.style.display = "";
-
-
-        }
-
-        // function openLogout() {
-        //     var overlay = document.getElementsByClassName("login-overlay")[0];
-        //     var logout = document.getElementsByClassName("login-option-logout")[0];
-        //     var loginOption = document.getElementsByClassName("login-option")[0];
-        //     var loginPopup = document.getElementsByClassName("login-popup")[0]
-        //     if (logout.style.display === "") {
-        //         overlay.style.display = "flex"
-        //         logout.style.display = "flex";
-        //         loginOption.style.display = "flex";
-        //         loginOption.style.flexDirection = "column";
-        //         loginPopup.style.display = "none"
-        //     }
-        // }
-
-        // function closeOverlay() {
-        //     var overlay = document.getElementsByClassName("login-overlay")[0];
-        //     overlay.style.display = "";
-        // }
-
-
+      // function closeOverlay() {
+      //     var overlay = document.getElementsByClassName("login-overlay")[0];
+      //     overlay.style.display = "";
+      // }
     </script>
-
-</body>
-
+  </body>
 </html>

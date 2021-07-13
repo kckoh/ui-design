@@ -50,8 +50,6 @@
 
   /* general link color and style */
   .header-hide a {
-    color: white;
-    padding: 14px 16px;
     text-decoration: none;
     display: block;
     border: none;
@@ -143,7 +141,7 @@
 
   .logo {
     text-align: center;
-    font-size: 52px;
+    font-size: 34px;
   }
 
   .search-input {
