@@ -36,6 +36,13 @@
       ul {
         padding: 0;
       }
+      h4 {
+        margin: 0;
+      }
+
+      .body-custom {
+        overflow: hidden;
+      }
 
       .hidden-txt {
         position: absolute;
@@ -57,38 +64,36 @@
         background-color: #282828;
       }
 
-      @media screen and (max-width: 812px) {
-        .hr-style {
-          border-style: solid;
-          border-color: white;
-          border-width: thin;
-          border-color: rgba(255, 255, 255, 0.1);
-        }
+      .hr-style {
+        border-style: solid;
+        border-color: white;
+        border-width: thin;
+        border-color: rgba(255, 255, 255, 0.1);
+      }
 
-        select option {
-          background: black;
-          color: white;
-        }
+      select option {
+        background: black;
+        color: white;
+      }
 
-        .common-list {
-          display: flex;
-          flex-wrap: wrap;
-          align-items: center;
-        }
+      .common-list {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+      }
 
-        /* texts for each category */
-        .title-area {
-          text-align: center;
-          color: white;
-          text-align: center;
-          color: white;
-          padding-top: 45px;
-          padding-bottom: 46px;
-        }
+      /* texts for each category */
+      .title-area {
+        text-align: center;
+        color: white;
+        text-align: center;
+        color: white;
+        padding-top: 45px;
+        padding-bottom: 46px;
+      }
 
-        .title-padding {
-          padding-bottom: 10px;
-        }
+      .title-padding {
+        padding-bottom: 10px;
       }
     </style>
   </head>
@@ -118,7 +123,7 @@
           </button>
         </form>
       </div>
-      <div id="myNav" class="overlay">
+      <div class="overlay">
         <div class="overlay-content">
           <button class="dropdown-btn" onclick="openDropdown()">
             PRODUCT SUPPORT<i class="fa fa-caret-down">
@@ -151,7 +156,7 @@
         </div>
       </div>
 
-      <button href="#" class="icon-search" onclick="hideSearch()">
+      <button class="icon-search" onclick="hideSearch()">
         <i class="fas fa-search">
           <span class="hidden-txt">Header Search icon</span>
         </i>
@@ -163,10 +168,10 @@
         <form action="#" class="login-form">
           <div class="login-header">
             <h1 class="login-header">Logo</h1>
-            <button class="login-close" onclick="closeLogin()">
-              <i class="fas fa-times"
-                ><span class="hidden-txt">Close Button</span></i
-              >
+            <button type="button" class="login-close" onclick="closeLogin()">
+              <i class="fas fa-times">
+                <span class="hidden-txt">Close Button</span>
+              </i>
             </button>
           </div>
           <div class="login-banner">
@@ -194,8 +199,7 @@
           <div class="login-remember-container">
             <label class="login-remember-text">
               <input type="checkbox" checked="checked" name="remember" />
-              <span></span>
-              Remember me
+              <span>Remember me</span>
             </label>
             <button class="login-forgot" onclick="openForgot()">
               <span class="hidden-txt">Forgot Password Button</span>
@@ -204,7 +208,7 @@
           </div>
           <button
             class="login-button"
-            type="submit"
+            type="button"
             onclick="openLoginUnable()"
           >
             LOGIN
@@ -213,7 +217,11 @@
       </div>
       <div class="login-option">
         <div class="login-header login-option-right">
-          <button class="login-close" onclick="closeLoginOption();goToLogin()">
+          <button
+            type="button"
+            class="login-close"
+            onclick="closeLoginOption();goToLogin()"
+          >
             <i class="fas fa-times"
               ><span class="hidden-txt">Close Button</span></i
             >
@@ -229,9 +237,11 @@
             The UserID or Password you entered is incorrect. Please click 'OK'
           </p>
           <button
+            type="button"
             class="login-option-button-yes"
             onclick="closeLoginOption();closeLoginUnable()"
           >
+            <span class="hidden-txt">Close Button</span>
             YES
           </button>
         </div>
@@ -243,18 +253,16 @@
 
           <p class="login-option-text">Do you want to reset your password?</p>
           <div class="button-container">
-            <button
-              submit="#"
-              class="login-option-button-no"
-              onclick="closeLoginOption()"
-            >
+            <button class="login-option-button-no" onclick="closeLoginOption()">
+              <span class="hidden-txt">No Button</span>
               No
             </button>
             <button
-              submit="#"
+              type="button"
               class="login-option-button-yes"
               onclick="openResetMessage()"
             >
+              <span class="hidden-txt">Yes Button</span>
               YES
             </button>
           </div>
@@ -271,6 +279,7 @@
             class="login-option-button-yes"
             onclick="goToLogin()"
           >
+            <span class="hidden-txt">Login Button</span>
             Go To Login
           </button>
         </div>
@@ -655,7 +664,7 @@
         <h4>NewLetters</h4>
       </div>
       <div class="footer-bottom">
-        <div class="footer-search footer-margin">
+        <div class="footer-search footer-link">
           <form class="footer-search-form" action="#">
             <input
               class="footer-search-input"
@@ -671,7 +680,7 @@
           </form>
         </div>
 
-        <div class="follow footer-margin">
+        <div class="follow footer-link">
           <h4>FOLLOW US</h4>
           <ul>
             <li>
@@ -704,37 +713,37 @@
             </li>
           </ul>
         </div>
-        <div class="footer-info footer-margin">
-          <h4 class="footer-margin"><a href="#">SITEMAP</a></h4>
-          <h4 class="footer-margin"><a href="#">PRIVACY POLICY</a></h4>
-          <h4 class="footer-margin"><a href="#">TERMS OF USE</a></h4>
-          <h4 class="footer-margin"><a href="#">CONTACT US</a></h4>
+        <div class="footer-info">
+          <h4 class="footer-link"><a href="#">SITEMAP</a></h4>
+          <h4 class="footer-link"><a href="#">PRIVACY POLICY</a></h4>
+          <h4 class="footer-link"><a href="#">TERMS OF USE</a></h4>
+          <h4 class="footer-link"><a href="#">CONTACT US</a></h4>
         </div>
       </div>
     </div>
 
     <script>
       function openNav() {
-        var nav = document.getElementById("myNav");
+        var overlay = document.querySelector(".overlay");
         var body = document.getElementsByTagName("BODY")[0];
 
-        if (nav.style.width === "") {
-          nav.style.width = "100vw";
-          body.style.overflow = "hidden";
+        if (body.className === "") {
+          overlay.classList.add("overlay-custom");
+          body.classList.add("body-custom");
         } else {
-          nav.style.width = "";
-          body.style.overflow = "";
+          overlay.classList.remove("overlay-custom");
+          body.classList.remove("body-custom");
         }
       }
 
       function openDropdown() {
-        var dropdown = document.getElementsByClassName("dropdown-btn")[0];
-        var dropdownContainer =
-          document.getElementsByClassName("dropdown-container")[0];
-        if (dropdownContainer.style.display === "") {
-          dropdownContainer.style.display = "block";
+        var dropdownContainer = document.querySelector(".dropdown-container");
+        if (
+          dropdownContainer.className !== "dropdown-container dropdown-custom"
+        ) {
+          dropdownContainer.classList.add("dropdown-custom");
         } else {
-          dropdownContainer.style.display = "";
+          dropdownContainer.classList.remove("dropdown-custom");
         }
       }
 
@@ -767,10 +776,9 @@
       }
 
       function hideSearch() {
-        var hide = document.getElementsByClassName("header-hide")[0];
-        var logo = document.getElementsByClassName("logo")[0];
-        var headerSearch =
-          document.getElementsByClassName("header-search-form")[0];
+        var hide = document.querySelector(".header-hide");
+        var logo = document.querySelector(".logo");
+        var headerSearch = document.querySelector(".header-search-form");
         if (hide.style.visibility === "") {
           hide.style.visibility = "hidden";
           logo.style.display = "none";
@@ -783,87 +791,77 @@
       }
 
       function openLogin() {
-        var loginOverlay = document.getElementsByClassName("login-overlay")[0];
-
-        if (loginOverlay.style.display === "") {
-          loginOverlay.style.display = "flex";
-        }
+        var loginOverlay = document.querySelector(".login-overlay");
+        loginOverlay.classList.add("overlay-custom");
       }
       function closeLogin() {
-        var loginOverlay = document.getElementsByClassName("login-overlay")[0];
+        var loginOverlay = document.querySelector(".login-overlay");
 
-        if (loginOverlay.style.display === "flex") {
-          loginOverlay.style.display = "";
-        }
+        loginOverlay.classList.remove("overlay-custom");
       }
 
       function openLoginUnable() {
-        var loginUnable = document.getElementsByClassName("login-option")[0];
-        var unable = document.getElementsByClassName("login-option-unable")[0];
-        if (loginUnable.style.display === "") {
-          loginUnable.style.display = "flex";
-          loginUnable.style.flexDirection = "column";
-          unable.style.display = "flex";
-        }
+        var loginOption = document.querySelector(".login-option");
+        var unable = document.querySelector(".login-option-unable");
+
+        loginOption.classList.add("login-option-custom");
+
+        unable.classList.add("login-unable-custom");
       }
 
       function closeLoginUnable() {
-        var loginOption = document.getElementsByClassName("login-option")[0];
-        var loginUnable = document.getElementsByClassName(
-          "login-option-unable"
-        )[0];
+        var loginOption = document.querySelector(".login-option");
+        var unable = document.querySelector(".login-option-unable");
 
-        loginOption.style.display = "";
-        loginOption.style.flexDirection = "";
-        loginUnable.style.display = "";
+        loginOption.classList.remove("login-option-custom");
+        unable.classList.remove("login-unable-custom");
       }
 
       function closeLoginOption() {
-        var loginOption = document.getElementsByClassName("login-option")[0];
-        var resetQuestion = document.getElementsByClassName(
-          "login-option-reset-question"
-        )[0];
-        loginOption.style.display = "";
-        loginOption.style.flexDirection = "";
-        resetQuestion.style.display = "";
+        var loginOption = document.querySelector(".login-option");
+        var resetQuestion = document.querySelector(
+          ".login-option-reset-question"
+        );
+
+        loginOption.classList.remove("login-option-custom");
+        resetQuestion.classList.remove("login-reset-custom");
       }
 
       function openForgot() {
-        var loginOption = document.getElementsByClassName("login-option")[0];
-        var resetQuestion = document.getElementsByClassName(
-          "login-option-reset-question"
-        )[0];
+        var loginOption = document.querySelector(".login-option");
+        var resetQuestion = document.querySelector(
+          ".login-option-reset-question"
+        );
 
-        loginOption.style.display = "flex";
-        loginOption.style.flexDirection = "column";
-        resetQuestion.style.display = "flex";
+        loginOption.classList.add("login-option-custom");
+        resetQuestion.classList.add("login-reset-custom");
       }
 
       function openResetMessage() {
-        var loginOption = document.getElementsByClassName("login-option")[0];
-        var reset = document.getElementsByClassName("login-option-reset")[0];
-        var resetQuestion = document.getElementsByClassName(
-          "login-option-reset-question"
-        )[0];
+        var loginOption = document.querySelector(".login-option");
+        var reset = document.querySelector(".login-option-reset");
+        var resetQuestion = document.querySelector(
+          ".login-option-reset-question"
+        );
 
-        reset.style.display = "flex";
-        loginOption.style.flexDirection = "column";
-        resetQuestion.style.display = "none";
+        reset.classList.add("login-reset-custom2");
+        loginOption.classList.add("login-option-custom");
+        resetQuestion.classList.remove("login-reset-custom");
       }
 
       function goToLogin() {
-        var loginOption = document.getElementsByClassName("login-option")[0];
-        var reset = document.getElementsByClassName("login-option-reset")[0];
+        var loginOption = document.querySelector(".login-option");
+        var reset = document.querySelector(".login-option-reset");
 
-        reset.style.display = "";
-        loginOption.style.display = "";
+        reset.classList.remove("login-reset-custom2");
+        loginOption.classList.remove("login-option-custom");
       }
 
       // function openLogout() {
-      //     var overlay = document.getElementsByClassName("login-overlay")[0];
-      //     var logout = document.getElementsByClassName("login-option-logout")[0];
-      //     var loginOption = document.getElementsByClassName("login-option")[0];
-      //     var loginPopup = document.getElementsByClassName("login-popup")[0]
+      //     var overlay = document.querySelector("login-overlay")[0];
+      //     var logout = document.querySelector("login-option-logout")[0];
+      //     var loginOption = document.querySelector("login-option")[0];
+      //     var loginPopup = document.querySelector("login-popup")[0]
       //     if (logout.style.display === "") {
       //         overlay.style.display = "flex"
       //         logout.style.display = "flex";
@@ -874,7 +872,7 @@
       // }
 
       // function closeOverlay() {
-      //     var overlay = document.getElementsByClassName("login-overlay")[0];
+      //     var overlay = document.querySelector("login-overlay")[0];
       //     overlay.style.display = "";
       // }
     </script>
