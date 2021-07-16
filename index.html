@@ -784,14 +784,18 @@
         var hide = document.querySelector(".header-hide");
         var logo = document.querySelector(".logo");
         var headerSearch = document.querySelector(".header-search-form");
-        if (hide.style.visibility === "") {
+        var iconSearch = document.querySelector(".icon-x");
+
+        if (iconSearch.className !== "fas fa-search icon-x fa-times") {
           hide.style.visibility = "hidden";
           logo.style.display = "none";
           headerSearch.style.display = "inline-flex";
+          iconSearch.classList.add("fa-times")
         } else {
           hide.style.visibility = "";
           logo.style.display = "block";
           headerSearch.style.display = "none";
+          iconSearch.classList.remove("fa-times");
         }
       }
 
@@ -810,7 +814,6 @@
         var unable = document.querySelector(".login-option-unable");
 
         loginOption.classList.add("login-option-custom");
-
         unable.classList.add("login-unable-custom");
       }
 
