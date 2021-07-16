@@ -67,9 +67,10 @@
   width: 15vw;
 }
 
-.recent-txt {
-  font-size: 3vw;
-  margin-bottom: 10px;
+.recent-text-img {
+
+  margin: 10px;
+
 }
 
 .recent-desc {
