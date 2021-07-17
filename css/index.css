@@ -1,0 +1,525 @@
+/* General CSS */
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+li {
+  list-style-type: none;
+}
+
+ul {
+  padding: 0;
+}
+h4 {
+  margin: 0;
+}
+
+.body-custom {
+  overflow: hidden;
+}
+
+.hidden-txt {
+  position: absolute;
+
+  width: 0;
+
+  height: 0;
+
+  overflow: hidden;
+
+  font-size: 0;
+
+  line-height: 0;
+
+  color: rgba(0, 0, 0, 0);
+}
+
+.container {
+  background-color: #282828;
+}
+
+.hr-style {
+  border-style: solid;
+  border-color: white;
+  border-width: thin;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+select option {
+  background: black;
+  color: white;
+}
+
+.common-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* texts for each category */
+.title-area {
+  text-align: center;
+  color: white;
+  text-align: center;
+  color: white;
+  padding-top: 45px;
+  padding-bottom: 46px;
+}
+
+.title-padding {
+  padding-bottom: 10px;
+}
+
+/* Banner css */
+.banner-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../img/banner.jpg");
+  height: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.banner-text {
+  text-align: center;
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 16px;
+}
+
+.search {
+  width: 80%;
+  max-width: 504px;
+  height: 40px;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid hsla(0, 0%, 100%, 0.5);
+  border-radius: 30px;
+  position: absolute;
+  top: 73%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+#product-list {
+  width: 75px;
+  background-color: transparent;
+  color: white;
+  border-color: transparent;
+  margin-left: 14px;
+}
+.search-vertical {
+  width: 1px;
+  height: 18px;
+  display: inline-block;
+}
+
+.icon-search {
+  color: white;
+}
+
+.search-button {
+  background-color: transparent;
+  border: none;
+  padding-top: 15px;
+  float: right;
+}
+
+/* Product Category Css */
+
+.product-area {
+  width: calc(50% - 1px);
+  height: 180px;
+  text-align: center;
+  border-style: solid;
+  display: flex;
+  border-width: 1px 0 0 0;
+  border-color: rgba(255, 255, 255, 0.1);
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.product-area:nth-child(odd) {
+  border-right-width: 1px;
+}
+.product-area:nth-last-child(-n + 2) {
+  border-bottom-width: 1px;
+}
+
+.product-img {
+  max-width: 86px;
+  max-height: 66px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -75%);
+}
+
+/* texts for each category */
+
+.product-text {
+  color: white;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+}
+
+.product-strong {
+  position: absolute;
+  transform: translate(-50%, 127px);
+}
+
+/* Topics Category */
+
+.topic-img {
+  max-width: 51px;
+  max-height: 51px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -75%);
+}
+.topic-text {
+  color: white;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+}
+
+.topic-strong {
+  position: absolute;
+  transform: translate(-50%, 127px);
+}
+
+.topic-area:nth-child(odd) {
+  border-right-width: 1px;
+}
+.topic-area:nth-last-child(-n + 2) {
+  border-bottom-width: 1px;
+}
+
+.topic-area {
+  width: calc(50% - 1px);
+  height: 180px;
+  text-align: center;
+  border-style: solid;
+  display: flex;
+  border-width: 1px 0 0 0;
+  border-color: rgba(255, 255, 255, 0.1);
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Recent Search category */
+
+/* image slider css */
+.recent-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.recent-area {
+  display: none;
+  background: #4b4a4a;
+  color: white;
+  padding: 18px;
+  width: 72vw;
+  height: 32vw;
+  text-align: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.recent-area-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 45px;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* recent button */
+.recent-button {
+  border: 2px solid white;
+  border-radius: 11px;
+  border-width: 1px;
+  padding: 4px 10px 4px 10px;
+  font-size: 2vw;
+  text-decoration: none;
+  color: white;
+}
+
+.recent-img {
+  width: 15vw;
+}
+
+.recent-text-img {
+  margin: 10px;
+}
+
+.recent-desc {
+  margin-bottom: 10px;
+  font-size: 1vw;
+}
+
+/* Customer Css */
+/* customer css */
+.customer-care {
+  padding-top: 45px;
+  padding-bottom: 45px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.customer-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../img/customer_care.jpg);
+  width: 62vw;
+  background-size: cover;
+  height: 30vw;
+  display: inline-block;
+}
+
+.customer-title {
+  margin: 14px 0 14px 0;
+}
+
+.customer-button {
+  border: solid;
+  color: white;
+  padding: 10px;
+  border-width: thin;
+}
+
+/* Login Css */
+
+/* login css */
+
+.login-overlay {
+  height: 100%;
+  width: 100vw;
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  overflow: auto;
+  display: none;
+}
+
+.overlay-custom {
+  display: flex;
+}
+
+.login-popup {
+  width: 290px;
+  height: 543px;
+  border: solid;
+  border-color: white;
+  margin: 80px 30px 80px 30px;
+  background-color: #282828;
+}
+
+.login-header {
+  display: inline-flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.login-header {
+  color: white;
+}
+
+.login-close {
+  background-color: transparent;
+  color: white;
+  border-style: none;
+  padding: 10px;
+  font-size: 21px;
+}
+
+.login-banner {
+  color: white;
+  font-size: 11px;
+  text-align: center;
+  padding: 60px 0 60px 0;
+}
+
+.login-input {
+  background-color: transparent;
+  border-style: none;
+  width: calc(100% - 36px);
+  padding: 8px;
+  color: white;
+}
+
+.login-form {
+  padding: 17px;
+}
+
+.login-input-container {
+  color: white;
+  border-style: none none solid none;
+  border-width: 1px;
+  margin-bottom: 20px;
+}
+
+.login-remember-container {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.login-remember-text {
+  font-size: 12px;
+}
+
+.login-forgot {
+  background-color: transparent;
+  color: white;
+  border-style: none;
+  font-size: 12px;
+}
+
+.login-button {
+  background-color: black;
+  border-style: none;
+  color: white;
+  width: 100%;
+  height: 50px;
+}
+
+.login-option {
+  width: 310px;
+  height: 396px;
+  border: solid;
+  border-color: white;
+  margin: 110px 20px 0 20px;
+  background-color: #282828;
+  position: absolute;
+  display: none;
+}
+
+.login-option-custom {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-option-right {
+  justify-content: flex-end;
+}
+
+.login-option-unable {
+  color: white;
+  display: none;
+  align-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 14px;
+}
+
+.login-unable-custom {
+  display: flex;
+}
+
+.login-option-icon {
+  font-size: 37px;
+  margin: 20px;
+}
+
+.login-option-strong {
+  margin: 20px;
+  font-size: 22px;
+}
+
+.login-option-text {
+  margin: 20px;
+  text-align: center;
+}
+
+.login-option-button-yes {
+  padding: 11px 31px;
+}
+
+.login-option-button-no {
+  padding: 11px 31px;
+  background-color: transparent;
+  color: white;
+  border-style: solid;
+}
+
+.login-option-reset-question {
+  color: white;
+  display: none;
+  align-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 14px;
+}
+
+.login-reset-custom {
+  display: flex;
+}
+
+.login-option-reset {
+  color: white;
+  display: none;
+  align-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 14px;
+}
+
+.login-reset-custom2 {
+  display: flex;
+}
+
+.login-option-logout {
+  color: white;
+  display: none;
+  align-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 14px;
+}

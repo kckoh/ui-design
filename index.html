@@ -13,91 +13,8 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="./css/header.css" />
-    <link rel="stylesheet" href="./css/banner.css" />
-    <link rel="stylesheet" href="./css/productCategory.css" />
-    <link rel="stylesheet" href="./css/topic.css" />
-    <link rel="stylesheet" href="./css/recentSearched.css" />
-    <link rel="stylesheet" href="./css/customer.css" />
+    <link rel="stylesheet" href="./css/index.css" />
     <link rel="stylesheet" href="./css/footer.css" />
-    <link rel="stylesheet" href="./css/login.css" />
-
-    <style>
-      body,
-      html {
-        height: 100%;
-        margin: 0;
-        font-family: Arial, Helvetica, sans-serif;
-      }
-
-      li {
-        list-style-type: none;
-      }
-
-      ul {
-        padding: 0;
-      }
-      h4 {
-        margin: 0;
-      }
-
-
-
-      .body-custom {
-        overflow: hidden;
-      }
-
-      .hidden-txt {
-        position: absolute;
-
-        width: 0;
-
-        height: 0;
-
-        overflow: hidden;
-
-        font-size: 0;
-
-        line-height: 0;
-
-        color: rgba(0, 0, 0, 0);
-      }
-
-      .container {
-        background-color: #282828;
-      }
-
-      .hr-style {
-        border-style: solid;
-        border-color: white;
-        border-width: thin;
-        border-color: rgba(255, 255, 255, 0.1);
-      }
-
-      select option {
-        background: black;
-        color: white;
-      }
-
-      .common-list {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-      }
-
-      /* texts for each category */
-      .title-area {
-        text-align: center;
-        color: white;
-        text-align: center;
-        color: white;
-        padding-top: 45px;
-        padding-bottom: 46px;
-      }
-
-      .title-padding {
-        padding-bottom: 10px;
-      }
-    </style>
   </head>
 
   <body>
@@ -150,9 +67,7 @@
           <a href="#">TRAINING</a>
           <a href="#">NEWSLETTERS</a>
           <a href="#">ADMIN</a>
-          <div class="header-line">
-
-          </div>
+          <div class="header-line"></div>
           <a href="#">TERMS OF USE</a>
           <a href="#">CONTACT US</a>
           <a onclick="openLogin()" class="login-link" href="#">LOGIN </a>
@@ -321,7 +236,6 @@
           <i class="fas fa-search">
             <span class="hidden-txt">Banner Search icon</span>
           </i>
-
         </button>
       </form>
     </div>
@@ -790,7 +704,7 @@
           hide.style.visibility = "hidden";
           logo.style.display = "none";
           headerSearch.style.display = "inline-flex";
-          iconSearch.classList.add("fa-times")
+          iconSearch.classList.add("fa-times");
         } else {
           hide.style.visibility = "";
           logo.style.display = "block";
