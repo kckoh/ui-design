@@ -161,12 +161,41 @@
   width: calc(100% - 119px);
 }
 
-.header-line{
-  border: solid;
-border-width: thin;
-margin: 16px 0;
-border-color: rgba(255, 255, 255, 0.5);
+.header-line {
+  border-top: solid;
+  border-width: thin;
+  margin: 16px 0;
+  border-color: rgba(255, 255, 255, 0.5);
 }
 
+@media (min-width: 813px) {
+  .logo {
+    text-align: start;
+    width: 80px;
+    background-color: black;
+    padding: 0 23px;
+  }
 
+  .header-margin {
+    margin: 0;
+  }
+
+  .header button.icon-menu {
+    display: none;
+  }
+
+  /* navbar */
+  .overlay {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: -11px;
+    left: 53px;
+    width: 0;
+    overflow-x: initial;
+  }
+
+  .overlay-content {
+    display: contents;
+  }
 }
