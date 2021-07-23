@@ -471,8 +471,8 @@
           <h3>RECENT SEARCHED</h3>
         </div>
         <div class="recent-container">
-          <div class="recent-area-container">
-            <div class="recent-area">
+          <ul class="recent-area-container">
+            <li class="recent-area">
               <img
                 class="recent-img"
                 src="./img/recent_searched/wallovens.png"
@@ -485,8 +485,8 @@
                 </p>
                 <a href="#" class="recent-button">RF22N9781SG/AA</a>
               </div>
-            </div>
-            <div class="recent-area">
+            </li>
+            <li class="recent-area">
               <img
                 class="recent-img"
                 src="./img/recent_searched/ranges.png"
@@ -499,8 +499,8 @@
                 </p>
                 <a href="#" class="recent-button">NX58M9960PS/AA</a>
               </div>
-            </div>
-            <div class="recent-area">
+            </li>
+            <li class="recent-area">
               <img
                 class="recent-img"
                 src="./img/recent_searched/single_wallovens.png"
@@ -512,8 +512,8 @@
                 </p>
                 <a href="#" class="recent-button">NV51M9770SM/AA</a>
               </div>
-            </div>
-            <div class="recent-area">
+            </li>
+            <li class="recent-area">
               <img
                 class="recent-img"
                 src="./img/recent_searched/refrigerator.png"
@@ -526,8 +526,8 @@
                 </p>
                 <a href="#" class="recent-button">RH29H9000SR/AA</a>
               </div>
-            </div>
-            <div class="recent-area">
+            </li>
+            <li class="recent-area">
               <img
                 class="recent-img"
                 src="./img/recent_searched/gasdryer.png"
@@ -537,8 +537,8 @@
                 <p class="recent-desc">DV9600 7.5 cu. ft. FlexDry™ Gas Dryer</p>
                 <a href="#" class="recent-button">DVG55M9600V/A3</a>
               </div>
-            </div>
-            <div class="recent-area">
+            </li>
+            <li class="recent-area">
               <img
                 class="recent-img"
                 src="./img/recent_searched/washer.png"
@@ -548,11 +548,18 @@
                 <p class="recent-desc">WA7450 5.0 cu. ft. Top Load Washer</p>
                 <a href="#" class="recent-button">WA50M7450AW/A4</a>
               </div>
-            </div>
-          </div>
-
-          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </li>
+          </ul>
+          <button class="prev" onclick="plusSlides(-1)">
+            &#10094;
+            <span class="hidden-txt">Prev</span>
+          </button>
+          <button class="next" onclick="plusSlides(1)">
+            &#10095;
+            <span class="hidden-txt">Next</span>
+          </button>
+          <!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a> -->
+          <!-- <a class="next" onclick="plusSlides(1)">&#10095;</a> -->
         </div>
       </div>
       <div class="customer-care">
@@ -660,10 +667,12 @@
         </div>
       </div>
       <div class="footer-info">
-        <h4 class="footer-link"><a href="#">SITEMAP</a></h4>
-        <h4 class="footer-link"><a href="#">PRIVACY POLICY</a></h4>
-        <h4 class="footer-link"><a href="#">TERMS OF USE</a></h4>
-        <h4 class="footer-link"><a href="#">CONTACT US</a></h4>
+        <ul>
+          <li class="footer-link"><a href="#">SITEMAP</a></li>
+          <li class="footer-link"><a href="#">PRIVACY POLICY</a></li>
+          <li class="footer-link"><a href="#">TERMS OF USE</a></li>
+          <li class="footer-link"><a href="#">CONTACT US</a></li>
+        </ul>
       </div>
     </div>
 
@@ -706,7 +715,8 @@
 
       function showSlides(n) {
         var i;
-        var slides = document.getElementsByClassName("recent-area");
+        var slides = document.querySelectorAll(".recent-area");
+
         if (n > slides.length) {
           slideIndex = 1;
         }
@@ -714,10 +724,11 @@
           slideIndex = slides.length;
         }
         for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
+          // slides[i].style.display = "none";
+          slides[i].classList.add("recent-hide");
         }
 
-        slides[slideIndex - 1].style.display = "flex";
+        slides[slideIndex - 1].classList.remove("recent-hide");
       }
 
       function hideSearch() {
