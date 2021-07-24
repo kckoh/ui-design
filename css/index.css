@@ -347,7 +347,7 @@ select option {
 
 /* image slider css */
 .recent-container {
-  max-width: 1000px;
+  max-width: 1440px;
   position: relative;
   margin: auto;
 }
@@ -419,7 +419,7 @@ select option {
   border-radius: 11px;
   border-width: 1px;
   padding: 4px 10px 4px 10px;
-  font-size: 2vw;
+  font-size: 14px;
   text-decoration: none;
   color: white;
 }
@@ -430,11 +430,12 @@ select option {
 
 .recent-text-img {
   margin: 10px;
+  border: 1px;
 }
 
 .recent-desc {
-  margin-bottom: 10px;
-  font-size: 1vw;
+  margin: 17px;
+  font-size: 12px;
 }
 
 /* Customer Css */
@@ -717,7 +718,21 @@ select option {
 
   .recent-img {
     max-width: 120px;
-    max-height: 104px;
+    max-height: 117px;
+    position: absolute;
+    transform: translate(0, -71px);
+    white-space: nowrap;
+  }
+
+  .recent-text-img {
+    transform: translate(0%, 87px);
+    border-top: 1px;
+    border-top-style: groove;
+  }
+
+  .recent-desc {
+    margin: 25px;
+    font-size: 12px;
   }
   .next,
   .prev {
