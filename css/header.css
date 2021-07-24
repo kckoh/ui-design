@@ -101,12 +101,6 @@
   background: none;
 }
 
-.search-button {
-  background-color: transparent;
-  border: none;
-  color: white;
-}
-
 .active {
   background-color: #191919;
   color: white;

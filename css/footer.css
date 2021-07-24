@@ -2,7 +2,8 @@
   background-color: #1f1f1f;
 }
 
-.footer a {
+.footer a,
+.footer-info a {
   text-decoration: none;
 }
 
@@ -19,7 +20,7 @@
 }
 
 .footer-link li {
-  padding-bottom: 5px;
+  padding: 10px 0;
 }
 
 .footer-bottom {
@@ -29,6 +30,7 @@
 
 .follow {
   display: flex;
+  align-items: center;
 }
 
 .follow ul {
@@ -80,13 +82,18 @@
   }
 
   .footer-link {
-    padding: 10px 30px;
-    width: calc(20% - 2px);
+    padding: 25px 30px;
   }
 
   .footer-bottom {
     background-color: #1f1f1f;
-    padding: 10px 30px;
+    padding: 0px 30px;
     width: calc(20% - 2px);
+  }
+  .footer-display {
+    display: contents;
+  }
+  .footer-info {
+    display: flex;
   }
 }

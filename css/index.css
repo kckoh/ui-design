@@ -343,6 +343,12 @@ select option {
   position: relative;
 }
 
+.topic-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
 /* Recent Search category */
 
 /* image slider css */
@@ -361,7 +367,6 @@ select option {
   height: 32vw;
   text-align: center;
   align-items: center;
-  justify-content: space-evenly;
 }
 
 .recent-hide {
@@ -431,6 +436,7 @@ select option {
 .recent-text-img {
   margin: 10px;
   border: 1px;
+  width: 100%;
 }
 
 .recent-desc {
@@ -677,6 +683,19 @@ select option {
     align-items: center;
     background-color: #383838;
     margin: 35px;
+  }
+
+  .topic-list {
+    margin: 35px;
+    display: flex;
+  }
+
+  .topic-area {
+    width: 16%;
+    height: 180px;
+    text-align: center;
+    position: relative;
+    border: 0;
   }
 
   .product-area {
