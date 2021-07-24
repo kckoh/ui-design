@@ -116,12 +116,12 @@
       <div class="overlay">
         <div class="overlay-content">
           <div class="nav-down">
-            <button class="dropdown-btn" onclick="openDropdown()">
+            <button class="dropdown-btn" onclick="openDropdown('product')">
               PRODUCT SUPPORT<i class="fa fa-caret-down">
                 <span class="hidden-txt">Dropdown button</span></i
               >
             </button>
-            <div class="dropdown-container">
+            <div class="dropdown-container dropdown-product">
               <a href="#">RANGES</a>
               <a href="#">COOKTOPS</a>
               <a href="#">WALL OVENS</a>
@@ -135,12 +135,12 @@
               <a href="#">ACCESSORIES</a>
               <a href="#">COFFEE SYSTEMS</a>
             </div>
-            <button class="dropdown-btn" onclick="openDropdown()">
+            <button class="dropdown-btn" onclick="openDropdown('topic')">
               TOPICS<i class="fa fa-caret-down">
                 <span class="hidden-txt">Topics button</span></i
               >
             </button>
-            <div class="dropdown-container">
+            <div class="dropdown-container dropdown-topic">
               <a href="#">ERROR CODE</a>
               <a href="#">SERVICE GUIDE</a>
               <a href="#">PARTS CATALOG</a>
@@ -149,12 +149,12 @@
               <a href="#">FAQ</a>
             </div>
 
-            <button class="dropdown-btn" onclick="openDropdown()">
+            <button class="dropdown-btn" onclick="openDropdown('training')">
               TRAINING<i class="fa fa-caret-down">
                 <span class="hidden-txt">Training button</span></i
               >
             </button>
-            <div class="dropdown-container">
+            <div class="dropdown-container dropdown-training">
               <a href="#">TECHNICAL</a>
               <a href="#">CUSTOMER SERVICE</a>
             </div>
@@ -337,7 +337,7 @@
     </div>
 
     <div class="container">
-      <div class="product_category">
+      <div class="product-category">
         <div class="title-area">
           <h3 class="title-padding">PRODUCT CATEGORY</h3>
           <p>
@@ -726,13 +726,6 @@
                 ></a
               >
             </li>
-            <li>
-              <a href="www.pinterest.com">
-                <i class="fab fa-pinterest-p">
-                  <span class="hidden-txt">pinterest icon</span>
-                </i>
-              </a>
-            </li>
           </ul>
         </div>
       </div>
@@ -760,15 +753,52 @@
         }
       }
 
-      function openDropdown() {
-        var dropdownContainer = document.querySelector(".dropdown-container");
-        if (
-          dropdownContainer.className !== "dropdown-container dropdown-custom"
-        ) {
-          dropdownContainer.classList.add("dropdown-custom");
-        } else {
-          dropdownContainer.classList.remove("dropdown-custom");
+      function openDropdown(str) {
+        var dropdownContainer = document.querySelectorAll(
+          ".dropdown-container"
+        );
+        switch (str) {
+          case "product":
+            if (
+              dropdownContainer[0].className !==
+              "dropdown-container dropdown-product dropdown-custom"
+            ) {
+              dropdownContainer[0].classList.add("dropdown-custom");
+            } else {
+              dropdownContainer[0].classList.remove("dropdown-custom");
+            }
+            break;
+          case "topic":
+            if (
+              dropdownContainer[1].className !==
+              "dropdown-container dropdown-topic dropdown-custom"
+            ) {
+              dropdownContainer[1].classList.add("dropdown-custom");
+            } else {
+              dropdownContainer[1].classList.remove("dropdown-custom");
+            }
+            break;
+          case "training":
+            if (
+              dropdownContainer[2].className !==
+              "dropdown-container dropdown-training dropdown-custom"
+            ) {
+              dropdownContainer[2].classList.add("dropdown-custom");
+            } else {
+              dropdownContainer[2].classList.remove("dropdown-custom");
+            }
+            break;
+          default:
         }
+
+        // if (
+        //   dropdownContainer.className !==
+        //   "dropdown-container dropdown-product dropdown-custom"
+        // ) {
+        //   dropdownContainer.classList.add("dropdown-custom");
+        // } else {
+        //   dropdownContainer.classList.remove("dropdown-custom");
+        // }
       }
 
       // image slider functions

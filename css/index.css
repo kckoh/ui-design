@@ -763,4 +763,24 @@ select option {
     padding: 20px;
     font-size: 30px;
   }
+
+  .product-category {
+    padding-bottom: 25px;
+    border-bottom-style: groove;
+    border-width: 1px;
+    color: white;
+  }
+  .topics {
+    padding-bottom: 25px;
+    border-bottom-style: groove;
+    border-width: 1px;
+    color: white;
+  }
+
+  .recent-searched {
+    padding-bottom: 25px;
+    border-bottom-style: groove;
+    border-width: 1px;
+    color: white;
+  }
 }

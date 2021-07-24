@@ -60,6 +60,7 @@
   border-style: solid none solid solid;
   border-width: 1px;
   color: white;
+  width: 116px;
 }
 
 .footer-search-button {
@@ -95,7 +96,7 @@
   .footer-bottom {
     background-color: #1f1f1f;
     padding: 0px 30px;
-    width: 25%;
+    width: 23%;
   }
   .footer-display {
     display: contents;
