@@ -298,7 +298,28 @@
             Go To Login
           </button>
         </div>
-        <div class="login-option-logout"></div>
+        <div class="login-option-logout">
+          <i class="fas fa-redo-alt login-option-icon"
+            ><span class="hidden-txt">Reset Icon</span></i
+          >
+
+          <p class="login-option-text">Are you sure you want to</p>
+          <strong class="logout-option-strong">LOGOUT?</strong>
+          <div class="button-container">
+            <button class="login-option-button-no" onclick="logoutNo()">
+              <span class="hidden-txt">No Button</span>
+              No
+            </button>
+            <button
+              type="button"
+              class="login-option-button-yes"
+              onclick="logoutYes()"
+            >
+              <span class="hidden-txt">Yes Button</span>
+              YES
+            </button>
+          </div>
+        </div>
       </div>
     </div>
     <!-- css background-image will be used  -->
@@ -921,19 +942,46 @@
       }
 
       function openLogout() {
-        var loginOption = document.querySelector(".login-overlay");
+        var overlay = document.querySelector(".login-overlay");
         var loginPopup = document.querySelector(".login-popup");
-        // var loginOption = document.querySelector(".login-option");
+        var loginOption = document.querySelector(".login-option");
+        var logout = document.querySelector(".login-option-logout");
+        var closeButton = document.querySelector(".login-option-right");
 
-        loginOption.classList.add("login-option-custom");
+        overlay.classList.add("overlay-custom");
         loginPopup.classList.add("login-nopopup");
-        // loginOption.classList.add("login-option-custom");
+        loginOption.classList.add("login-option-custom");
+        logout.classList.add("logout-show");
+        closeButton.classList.add("closeButton-remove");
       }
 
-      // function closeOverlay() {
-      //     var overlay = document.querySelector("login-overlay")[0];
-      //     overlay.style.display = "";
-      // }
+      function logoutNo() {
+        var overlay = document.querySelector(".login-overlay");
+        var loginPopup = document.querySelector(".login-popup");
+        var loginOption = document.querySelector(".login-option");
+        var logout = document.querySelector(".login-option-logout");
+        var closeButton = document.querySelector(".login-option-right");
+
+        overlay.classList.remove("overlay-custom");
+        loginPopup.classList.remove("login-nopopup");
+        loginOption.classList.remove("login-option-custom");
+        logout.classList.remove("logout-show");
+        closeButton.classList.remove("closeButton-remove");
+      }
+
+      function logoutYes() {
+        var overlay = document.querySelector(".login-overlay");
+        var loginPopup = document.querySelector(".login-popup");
+        var loginOption = document.querySelector(".login-option");
+        var logout = document.querySelector(".login-option-logout");
+        var closeButton = document.querySelector(".login-option-right");
+
+        overlay.classList.remove("overlay-custom");
+        loginPopup.classList.remove("login-nopopup");
+        loginOption.classList.remove("login-option-custom");
+        logout.classList.remove("logout-show");
+        closeButton.classList.remove("closeButton-remove");
+      }
     </script>
   </body>
 </html>

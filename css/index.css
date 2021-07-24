@@ -670,6 +670,17 @@ select option {
   margin-top: 14px;
 }
 
+.logout-show {
+  display: flex;
+}
+.logout-option-strong {
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+.closeButton-remove {
+  display: none;
+}
+
 @media (min-width: 813px) {
   /* CSS */
   h1 {
