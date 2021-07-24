@@ -94,6 +94,7 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
@@ -114,6 +115,9 @@ body {
 ol,
 ul {
   list-style: none;
+}
+ul {
+  margin: 0;
 }
 blockquote,
 q {
@@ -159,13 +163,6 @@ li {
   background-color: #282828;
 }
 
-.hr-style {
-  border-style: solid;
-  border-color: white;
-  border-width: thin;
-  border-color: rgba(255, 255, 255, 0.1);
-}
-
 select option {
   background: black;
   color: white;
@@ -187,7 +184,7 @@ select option {
 }
 
 .title-padding {
-  padding-bottom: 10px;
+  padding: 10px;
 }
 
 /* Banner css */
@@ -204,7 +201,7 @@ select option {
 .banner-text {
   text-align: center;
   position: absolute;
-  top: 55%;
+  top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
@@ -220,7 +217,7 @@ select option {
   border: 1px solid hsla(0, 0%, 100%, 0.5);
   border-radius: 30px;
   position: absolute;
-  top: 73%;
+  top: 53%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
@@ -727,7 +724,7 @@ select option {
     color: white;
     padding: 18px;
     width: calc(28% - 60px);
-    max-height: 360px;
+    height: 300px;
     text-align: center;
     align-items: center;
     justify-content: space-evenly;
@@ -756,5 +753,14 @@ select option {
   .next,
   .prev {
     display: none;
+  }
+
+  .banner-text {
+    font-size: 32px;
+  }
+
+  .title-padding {
+    padding: 20px;
+    font-size: 30px;
   }
 }

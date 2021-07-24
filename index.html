@@ -19,14 +19,85 @@
 
   <body>
     <div class="header">
-      <div class="header-hide">
+      <div class="logo-div">
         <h1 class="logo">
           <a href="#home" class="active">Logo</a>
         </h1>
-        <button class="icon-menu" onclick="openNav()">
-          <i class="fas fa-bars"><span class="hidden-txt">Menu Bar</span></i>
-        </button>
       </div>
+
+      <ul class="header-hide">
+        <li class="dropbtn-list">
+          <div class="dropdown">
+            <button class="dropbtn">
+              PRODUCT SUPPORT<span class="hidden-txt"
+                >Header Product Support button</span
+              >
+            </button>
+            <div class="dropdown-product">
+              <a href="#">ERROR CODES</a>
+              <a href="#">SERVICE GUIDE</a>
+              <a href="#">PARTS CATALOG</a>
+              <a href="#">SYMPTOMS</a>
+              <a href="#">PRODUCT INFO</a>
+              <a href="#">FAQ</a>
+            </div>
+          </div>
+        </li>
+        <li class="dropbtn-list">
+          <div class="dropdown">
+            <button class="dropbtn">
+              TOPICS<span class="hidden-txt">Header TOPICS button</span>
+            </button>
+            <div class="dropdown-product">
+              <a href="#">RANGES</a>
+              <a href="#">COOKTOPS</a>
+              <a href="#">WALL OVENS</a>
+              <a href="#">VENTILATION</a>
+              <a href="#">MICROWAVES</a>
+              <a href="#">WARMING DRAWERS</a>
+              <a href="#">OUTDOOR</a>
+              <a href="#">REFRIGERATION</a>
+              <a href="#">WINE & BEVERAGE</a>
+              <a href="#">DISHWASHERS</a>
+              <a href="#">ACCESSORIES</a>
+              <a href="#">COFFEE SYSTEMS</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="dropbtn-list">
+          <div class="dropdown">
+            <button class="dropbtn">
+              TRAINING<span class="hidden-txt">TRAINING button</span>
+            </button>
+            <div class="dropdown-product">
+              <a href="#">TECHNICAL</a>
+              <a href="#">CUSTOMER SERVICE</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="dropbtn-list">
+          <div class="dropdown">
+            <button class="dropbtn">
+              <a class="dropbtn-a" href="#">NEWSLETTERS</a
+              ><span class="hidden-txt">Newsletters button</span>
+            </button>
+          </div>
+        </li>
+
+        <li class="dropbtn-list">
+          <div class="dropdown">
+            <button class="dropbtn">
+              <a class="dropbtn-a" href="#">ADMIN</a
+              ><span class="hidden-txt">Admin button</span>
+            </button>
+          </div>
+        </li>
+      </ul>
+      <button class="icon-menu" onclick="openNav()">
+        <i class="fas fa-bars"><span class="hidden-txt">Menu Bar</span></i>
+      </button>
       <div class="header-search header-margin">
         <form class="header-search-form" action="#">
           <input
@@ -87,7 +158,6 @@
               <a href="#">TECHNICAL</a>
               <a href="#">CUSTOMER SERVICE</a>
             </div>
-
             <a href="#">NEWSLETTERS</a>
             <a href="#">ADMIN</a>
           </div>
@@ -468,7 +538,7 @@
       </div>
       <div class="recent-searched">
         <div class="title-area">
-          <h3>RECENT SEARCHED</h3>
+          <h3 class="title-padding">RECENT SEARCHED</h3>
         </div>
         <div class="recent-container">
           <ul class="recent-area-container">
@@ -565,7 +635,7 @@
       <div class="customer-care">
         <div class="title-area">
           <div class="customer-image"></div>
-          <h3>EXCEPTIONAL 24/7</h3>
+          <h3 class="title-padding">EXCEPTIONAL 24/7 CUSTOMER CARE</h3>
           <p>
             Our dedicated support team is ready to take your call 24/7. We are
             committed to ensuring you have an exceptional customer experience.
@@ -736,16 +806,20 @@
         var logo = document.querySelector(".logo");
         var headerSearch = document.querySelector(".header-search-form");
         var iconSearch = document.querySelector(".icon-x");
+        var iconMenu = document.querySelector(".icon-menu");
+        var searchDiv = document.querySelector(".header-search");
 
         if (iconSearch.className !== "fas fa-search icon-x fa-times") {
-          hide.style.visibility = "hidden";
+          hide.style.display = "none";
           logo.style.display = "none";
           headerSearch.style.display = "inline-flex";
+          searchDiv.style.width = "100%";
           iconSearch.classList.add("fa-times");
         } else {
-          hide.style.visibility = "";
-          logo.style.display = "block";
-          headerSearch.style.display = "none";
+          hide.style.display = "";
+          logo.style.display = "";
+          headerSearch.style.display = "";
+          searchDiv.style.width = "";
           iconSearch.classList.remove("fa-times");
         }
       }
