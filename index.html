@@ -920,19 +920,15 @@
         loginOption.classList.remove("login-option-custom");
       }
 
-      // function openLogout() {
-      //     var overlay = document.querySelector("login-overlay")[0];
-      //     var logout = document.querySelector("login-option-logout")[0];
-      //     var loginOption = document.querySelector("login-option")[0];
-      //     var loginPopup = document.querySelector("login-popup")[0]
-      //     if (logout.style.display === "") {
-      //         overlay.style.display = "flex"
-      //         logout.style.display = "flex";
-      //         loginOption.style.display = "flex";
-      //         loginOption.style.flexDirection = "column";
-      //         loginPopup.style.display = "none"
-      //     }
-      // }
+      function openLogout() {
+        var loginOption = document.querySelector(".login-overlay");
+        var loginPopup = document.querySelector(".login-popup");
+        // var loginOption = document.querySelector(".login-option");
+
+        loginOption.classList.add("login-option-custom");
+        loginPopup.classList.add("login-nopopup");
+        // loginOption.classList.add("login-option-custom");
+      }
 
       // function closeOverlay() {
       //     var overlay = document.querySelector("login-overlay")[0];

@@ -500,6 +500,10 @@ select option {
   background-color: #282828;
 }
 
+.login-nopopup {
+  display: none;
+}
+
 .login-header {
   display: inline-flex;
   flex-direction: row;
